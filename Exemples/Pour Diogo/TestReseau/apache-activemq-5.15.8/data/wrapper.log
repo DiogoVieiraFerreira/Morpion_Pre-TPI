@@ -1,0 +1,189 @@
+FATAL  | wrapper  | 2018/12/10 22:13:34 | OpenSCManager failed - Accès refusé. (0x5)
+FATAL  | wrapper  | 2018/12/10 22:16:25 | OpenSCManager failed - Accès refusé. (0x5)
+STATUS | wrapper  | 2018/12/10 22:18:32 | --> Wrapper Started as Console
+STATUS | wrapper  | 2018/12/10 22:18:32 | Launching a JVM...
+INFO   | jvm 1    | 2018/12/10 22:18:34 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2018/12/10 22:18:34 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2018/12/10 22:18:34 | 
+INFO   | jvm 1    | 2018/12/10 22:18:34 | Java Runtime: Oracle Corporation 1.8.0_111 C:\Program Files\Java\jre1.8.0_111
+INFO   | jvm 1    | 2018/12/10 22:18:34 |   Heap sizes: current=251392k  free=238203k  max=932352k
+INFO   | jvm 1    | 2018/12/10 22:18:34 |     JVM args: -Dactivemq.home=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8 -Dactivemq.base=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8 -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf/broker.ks -Djavax.net.ssl.trustStore=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf -Dactivemq.data=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data -Djava.security.auth.login.config=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf/login.config -Xmx1024m -Djava.library.path=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8/bin/win64 -Dwrapper.key=1Bp1JbLW1z0hVtnD -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=8768 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2018/12/10 22:18:34 | Extensions classpath:
+INFO   | jvm 1    | 2018/12/10 22:18:34 |   [C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib,C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib\camel,C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib\optional,C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib\web,C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib\extra]
+INFO   | jvm 1    | 2018/12/10 22:18:34 | ACTIVEMQ_HOME: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8
+INFO   | jvm 1    | 2018/12/10 22:18:34 | ACTIVEMQ_BASE: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8
+INFO   | jvm 1    | 2018/12/10 22:18:34 | ACTIVEMQ_CONF: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf
+INFO   | jvm 1    | 2018/12/10 22:18:34 | ACTIVEMQ_DATA: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data
+INFO   | jvm 1    | 2018/12/10 22:18:35 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2018/12/10 22:18:35 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@3d0d442e: startup date [Mon Dec 10 22:18:35 CET 2018]; root of context hierarchy
+INFO   | jvm 1    | 2018/12/10 22:18:38 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data\kahadb]
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  INFO | JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  INFO | PListStore:[C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  INFO | Apache ActiveMQ 5.15.8 (localhost, ID:SC-C221-LP15-63916-1544476719358-0:1) is starting
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  INFO | Listening for connections at: tcp://SC-C221-LP15:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  INFO | Listening for connections at: amqp://SC-C221-LP15:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  INFO | Listening for connections at: stomp://SC-C221-LP15:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  INFO | Listening for connections at: mqtt://SC-C221-LP15:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  INFO | Starting Jetty server
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  INFO | Creating Jetty connector
+INFO   | jvm 1    | 2018/12/10 22:18:39 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@25aed74a{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2018/12/10 22:18:40 |  INFO | Listening for connections at ws://SC-C221-LP15:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2018/12/10 22:18:40 |  INFO | Connector ws started
+INFO   | jvm 1    | 2018/12/10 22:18:40 |  INFO | Apache ActiveMQ 5.15.8 (localhost, ID:SC-C221-LP15-63916-1544476719358-0:1) started
+INFO   | jvm 1    | 2018/12/10 22:18:40 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2018/12/10 22:18:42 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2018/12/10 22:18:44 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2018/12/10 22:18:44 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2018/12/10 22:18:44 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2018/12/10 22:18:45 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2018/12/10 22:18:46 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2018/12/10 23:08:20 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:49573 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2018/12/10 23:10:46 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:49773 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2018/12/11 10:42:30 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:55718 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2018/12/11 10:42:30 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:55717 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2018/12/11 10:42:30 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:55715 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2018/12/11 10:48:42 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:55994 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2018/12/11 10:52:25 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:56098 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2018/12/11 10:53:38 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:56134 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2018/12/11 10:54:03 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:56150 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2018/12/11 11:13:07 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:57132 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2018/12/13 20:47:32 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:64821 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2018/12/13 20:49:43 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:64848 failed: java.io.EOFException
+INFO   | jvm 1    | 2018/12/13 20:50:54 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:65018 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2018/12/13 20:55:46 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:65123 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2019/01/07 09:56:14 | --> Wrapper Started as Console
+STATUS | wrapper  | 2019/01/07 09:56:14 | Launching a JVM...
+INFO   | jvm 1    | 2019/01/07 09:56:15 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2019/01/07 09:56:15 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2019/01/07 09:56:15 | 
+INFO   | jvm 1    | 2019/01/07 09:56:15 | 
+INFO   | jvm 1    | 2019/01/07 09:56:15 | WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 1    | 2019/01/07 09:56:15 |           The file is located on the path at the following location but
+INFO   | jvm 1    | 2019/01/07 09:56:15 |           could not be loaded:
+INFO   | jvm 1    | 2019/01/07 09:56:15 |             C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\bin\win32\wrapper.dll
+INFO   | jvm 1    | 2019/01/07 09:56:15 |           Please verify that the file is readable by the current user
+INFO   | jvm 1    | 2019/01/07 09:56:15 |           and that the file has not been corrupted in any way.
+INFO   | jvm 1    | 2019/01/07 09:56:15 |           One common cause of this problem is running a 32-bit version
+INFO   | jvm 1    | 2019/01/07 09:56:15 |           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 1    | 2019/01/07 09:56:15 |           This is a 64-bit JVM.
+INFO   | jvm 1    | 2019/01/07 09:56:15 |           Reported cause:
+INFO   | jvm 1    | 2019/01/07 09:56:15 |             C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\bin\win32\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 1    | 2019/01/07 09:56:15 |           System signals will not be handled correctly.
+INFO   | jvm 1    | 2019/01/07 09:56:15 | 
+INFO   | jvm 1    | 2019/01/07 09:56:15 | Java Runtime: Oracle Corporation 1.8.0_111 C:\Program Files\Java\jre1.8.0_111
+INFO   | jvm 1    | 2019/01/07 09:56:15 |   Heap sizes: current=251392k  free=238284k  max=932352k
+INFO   | jvm 1    | 2019/01/07 09:56:15 |     JVM args: -Dactivemq.home=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8 -Dactivemq.base=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8 -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf/broker.ks -Djavax.net.ssl.trustStore=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf -Dactivemq.data=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data -Djava.security.auth.login.config=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf/login.config -Xmx1024m -Djava.library.path=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8/bin/win32 -Dwrapper.key=nUGNcefiZDKygpDW -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=15208 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2019/01/07 09:56:15 | Extensions classpath:
+INFO   | jvm 1    | 2019/01/07 09:56:15 |   [C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib,C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib\camel,C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib\optional,C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib\web,C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib\extra]
+INFO   | jvm 1    | 2019/01/07 09:56:15 | ACTIVEMQ_HOME: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8
+INFO   | jvm 1    | 2019/01/07 09:56:15 | ACTIVEMQ_BASE: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8
+INFO   | jvm 1    | 2019/01/07 09:56:15 | ACTIVEMQ_CONF: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf
+INFO   | jvm 1    | 2019/01/07 09:56:15 | ACTIVEMQ_DATA: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data
+INFO   | jvm 1    | 2019/01/07 09:56:16 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2019/01/07 09:56:16 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@539f9286: startup date [Mon Jan 07 09:56:16 CET 2019]; root of context hierarchy
+INFO   | jvm 1    | 2019/01/07 09:56:18 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data\kahadb]
+INFO   | jvm 1    | 2019/01/07 09:56:18 |  INFO | JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+INFO   | jvm 1    | 2019/01/07 09:56:18 |  INFO | Page File: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data\kahadb\db.data. Recovering pageFile free list due to prior unclean shutdown..
+INFO   | jvm 1    | 2019/01/07 09:56:18 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2019/01/07 09:56:18 |  INFO | Page File: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data\kahadb\db.data. Recovered pageFile free list of size: 0
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | PListStore:[C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Apache ActiveMQ 5.15.8 (localhost, ID:SC-C221-LP15-64244-1546851379000-0:1) is starting
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Listening for connections at: tcp://SC-C221-LP15:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Listening for connections at: amqp://SC-C221-LP15:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Listening for connections at: stomp://SC-C221-LP15:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Listening for connections at: mqtt://SC-C221-LP15:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Starting Jetty server
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Creating Jetty connector
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@30a1713f{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Listening for connections at ws://SC-C221-LP15:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Connector ws started
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | Apache ActiveMQ 5.15.8 (localhost, ID:SC-C221-LP15-64244-1546851379000-0:1) started
+INFO   | jvm 1    | 2019/01/07 09:56:19 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2019/01/07 09:56:20 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2019/01/07 09:56:21 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2019/01/07 09:56:21 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2019/01/07 09:56:21 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2019/01/07 09:56:22 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2019/01/07 09:56:22 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2019/01/07 10:00:57 |  WARN | Transport Connection to: tcp://127.0.0.1:64485 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:00:57 |  WARN | Transport Connection to: tcp://127.0.0.1:64487 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:01:06 |  WARN | Transport Connection to: tcp://127.0.0.1:64492 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:01:06 |  WARN | Transport Connection to: tcp://127.0.0.1:64494 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:01:28 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:64536 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:01:58 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:64535 failed: org.apache.activemq.transport.InactivityIOException: Channel was inactive (no connection attempt made) for too (>30000) long: tcp://0:0:0:0:0:0:0:1:64535
+INFO   | jvm 1    | 2019/01/07 10:02:07 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:64589 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:02:08 |  WARN | Transport Connection to: tcp://127.0.0.1:64597 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:02:22 |  WARN | Transport Connection to: tcp://127.0.0.1:64607 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:02:22 |  WARN | Transport Connection to: tcp://127.0.0.1:64609 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:02:37 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:64590 failed: org.apache.activemq.transport.InactivityIOException: Channel was inactive (no connection attempt made) for too (>30000) long: tcp://0:0:0:0:0:0:0:1:64590
+INFO   | jvm 1    | 2019/01/07 10:02:38 |  WARN | Transport Connection to: tcp://127.0.0.1:64596 failed: org.apache.activemq.transport.InactivityIOException: Channel was inactive (no connection attempt made) for too (>30000) long: tcp://127.0.0.1:64596
+INFO   | jvm 1    | 2019/01/07 10:02:47 |  WARN | Transport Connection to: tcp://127.0.0.1:64628 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:02:47 |  WARN | Transport Connection to: tcp://127.0.0.1:64630 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:09:21 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:64910 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2019/01/07 10:13:55 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:65067 failed: java.io.EOFException
+INFO   | jvm 1    | 2019/01/07 10:15:10 |  WARN | Transport Connection to: tcp://127.0.0.1:65158 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:15:10 |  WARN | Transport Connection to: tcp://127.0.0.1:65160 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:16:05 |  WARN | Transport Connection to: tcp://127.0.0.1:65220 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:16:05 |  WARN | Transport Connection to: tcp://127.0.0.1:65222 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:18:23 |  WARN | Transport Connection to: tcp://127.0.0.1:65430 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:18:23 |  WARN | Transport Connection to: tcp://127.0.0.1:65432 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:19:44 |  WARN | Transport Connection to: tcp://0:0:0:0:0:0:0:1:65206 failed: java.io.EOFException
+STATUS | wrapper  | 2019/01/07 10:25:18 | --> Wrapper Started as Console
+STATUS | wrapper  | 2019/01/07 10:25:18 | Launching a JVM...
+INFO   | jvm 1    | 2019/01/07 10:25:19 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2019/01/07 10:25:19 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2019/01/07 10:25:19 | 
+INFO   | jvm 1    | 2019/01/07 10:25:19 | Java Runtime: Oracle Corporation 1.8.0_111 C:\Program Files\Java\jre1.8.0_111
+INFO   | jvm 1    | 2019/01/07 10:25:19 |   Heap sizes: current=251392k  free=238284k  max=932352k
+INFO   | jvm 1    | 2019/01/07 10:25:19 |     JVM args: -Dactivemq.home=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8 -Dactivemq.base=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8 -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf/broker.ks -Djavax.net.ssl.trustStore=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf -Dactivemq.data=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data -Djava.security.auth.login.config=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf/login.config -Xmx1024m -Djava.library.path=C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8/bin/win64 -Dwrapper.key=Hy6PManEbcQq6lmT -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=15240 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2019/01/07 10:25:19 | Extensions classpath:
+INFO   | jvm 1    | 2019/01/07 10:25:19 |   [C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib,C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib\camel,C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib\optional,C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib\web,C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\lib\extra]
+INFO   | jvm 1    | 2019/01/07 10:25:19 | ACTIVEMQ_HOME: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8
+INFO   | jvm 1    | 2019/01/07 10:25:19 | ACTIVEMQ_BASE: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8
+INFO   | jvm 1    | 2019/01/07 10:25:19 | ACTIVEMQ_CONF: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\conf
+INFO   | jvm 1    | 2019/01/07 10:25:19 | ACTIVEMQ_DATA: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data
+INFO   | jvm 1    | 2019/01/07 10:25:19 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2019/01/07 10:25:19 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@648e253e: startup date [Mon Jan 07 10:25:19 CET 2019]; root of context hierarchy
+INFO   | jvm 1    | 2019/01/07 10:25:21 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data\kahadb]
+INFO   | jvm 1    | 2019/01/07 10:25:21 |  INFO | JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+INFO   | jvm 1    | 2019/01/07 10:25:21 |  INFO | Page File: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data\kahadb\db.data. Recovering pageFile free list due to prior unclean shutdown..
+INFO   | jvm 1    | 2019/01/07 10:25:21 |  INFO | Page File: C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data\kahadb\db.data. Recovered pageFile free list of size: 0
+INFO   | jvm 1    | 2019/01/07 10:25:21 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2019/01/07 10:25:21 |  INFO | PListStore:[C:\Data\Cours\2018-2019\ProjetCsharp\TestActiveMQ\ConsoleApp1\apache-activemq-5.15.8\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Apache ActiveMQ 5.15.8 (localhost, ID:SC-C221-LP15-49329-1546853121904-0:1) is starting
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Listening for connections at: tcp://SC-C221-LP15:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Listening for connections at: amqp://SC-C221-LP15:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Listening for connections at: stomp://SC-C221-LP15:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Listening for connections at: mqtt://SC-C221-LP15:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Starting Jetty server
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Creating Jetty connector
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2ba461d3{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Listening for connections at ws://SC-C221-LP15:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Connector ws started
+INFO   | jvm 1    | 2019/01/07 10:25:22 |  INFO | Apache ActiveMQ 5.15.8 (localhost, ID:SC-C221-LP15-49329-1546853121904-0:1) started
+INFO   | jvm 1    | 2019/01/07 10:25:23 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2019/01/07 10:25:24 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2019/01/07 10:25:25 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2019/01/07 10:25:25 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2019/01/07 10:25:25 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2019/01/07 10:25:25 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2019/01/07 10:25:26 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2019/01/07 10:25:42 |  WARN | Transport Connection to: tcp://127.0.0.1:49351 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:25:42 |  WARN | Transport Connection to: tcp://127.0.0.1:49353 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:25:58 |  WARN | Transport Connection to: tcp://127.0.0.1:49361 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:26:08 |  WARN | Transport Connection to: tcp://127.0.0.1:49377 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:26:08 |  WARN | Transport Connection to: tcp://127.0.0.1:49379 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:26:42 |  WARN | Transport Connection to: tcp://127.0.0.1:49398 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
+INFO   | jvm 1    | 2019/01/07 10:26:42 |  WARN | Transport Connection to: tcp://127.0.0.1:49400 failed: java.io.IOException: Frame size of 1 GB larger than max allowed 100 MB
