@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Morpion
 {
-    static class Controller
+    static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -14,6 +14,7 @@ namespace Morpion
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new View());
