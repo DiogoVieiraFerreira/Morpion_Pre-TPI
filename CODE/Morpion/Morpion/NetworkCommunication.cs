@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Morpion
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    class Model
+    class NetworkCommunication
     {
+
     }
 }

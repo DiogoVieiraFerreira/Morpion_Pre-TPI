@@ -12,6 +12,9 @@ namespace Morpion
 {
     public partial class View : Form
     {
+        /// <summary>
+        /// The form Contain all views of game
+        /// </summary>
         public View()
         {
             InitializeComponent();
