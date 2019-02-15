@@ -11,5 +11,6 @@ namespace Morpion
     /// </summary>
     class Model
     {
+        DataBase db = new DataBase("Morpion");
     }
 }
