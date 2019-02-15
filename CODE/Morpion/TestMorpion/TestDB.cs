@@ -14,6 +14,7 @@ namespace TestMorpion
         private string _expectedDbDirLocation;
         private string _expectedDbLocation;
         private string _dbName;
+        private List<string> _exceptedScoreLst;
         #endregion private attributes
 
         #region TestInitialize
@@ -27,6 +28,7 @@ namespace TestMorpion
             this._db = new DataBase(_dbName);
             this._expectedDbDirLocation =  AppDomain.CurrentDomain.BaseDirectory + @"\DB\";
             this._expectedDbLocation = _expectedDbDirLocation + _dbName + ".sqlite";
+            
         }
         #endregion TestInitialize
 
@@ -49,7 +51,20 @@ namespace TestMorpion
         {
             //refere to Initialize()
             Assert.IsTrue(File.Exists(this._expectedDbLocation));
-        }        
+        }
+
+        /// <summary>
+        /// Check the database file has been created
+        /// </summary>
+        [TestMethod]
+        public void DataBase_ScoreList_AfterInitialization_ReturnList()
+        {
+            this._exceptedScoreLst = new List<string>();
+            //refere to Initialize()
+            _db.InsertScore("Diogo", "Ordinateur", 0, 1);
+            _exceptedScoreLst = _db.ScoreList();
+            Assert.AreEqual(1, _exceptedScoreLst.Count);
+        }
         #endregion TestMethods
 
         #region CleanUp
@@ -61,7 +76,8 @@ namespace TestMorpion
         {
             if (Directory.Exists(this._expectedDbDirLocation))
             {
-                Directory.Delete(this._expectedDbDirLocation);
+                
+                Directory.Delete(this._expectedDbDirLocation,true);
             }
             this._expectedDbDirLocation = null;
             this._expectedDbLocation = null;

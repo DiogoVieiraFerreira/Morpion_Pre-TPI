@@ -31,48 +31,73 @@ namespace Morpion
             if (!Directory.Exists(_dbDirLocation)) Directory.CreateDirectory(_dbDirLocation);
             if (!File.Exists(dbLocation))
             {
-                SQLiteConnection.CreateFile(dbLocation);
-                OpenDB();
+                SQLiteConnection.CreateFile(dbLocation);                
                 CreateTable(@"CREATE TABLE IF NOT EXISTS Scores (
-                                  idScore INT NOT NULL AUTO_INCREMENT,
+                                  idScore INTEGER PRIMARY KEY,
                                   Player01 VARCHAR(45) NOT NULL,
                                   Player02 VARCHAR(45) NOT NULL,
                                   ScoreP01 INT NOT NULL,
-                                  ScoreP02 INT NOT NULL,
-                                  PRIMARY KEY(idScore)
-                                );");
-                CloseDB();
+                                  ScoreP02 INT NOT NULL
+                                );");                
             }
         }
         #endregion Constructor
 
         #region private methods
+        /// <summary>
+        /// Open DB for use this
+        /// </summary>
         private void OpenDB()
         {
             _dbConnection.Open();
         }
+        /// <summary>
+        /// close DB
+        /// </summary>
         private void CloseDB()
         {
-            _dbConnection.Close();
+            try {
+                _dbConnection.Close();
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+            }
+
         }
+        /// <summary>
+        /// create Table
+        /// </summary>
+        /// <param name="query"></param>
         private void CreateTable(string query)
         {
+            OpenDB();
             SQLiteCommand command = new SQLiteCommand(query, _dbConnection);
             command.ExecuteNonQuery();
             command.Dispose();
+            CloseDB();
         }
-        
+
         #endregion private methods
 
         #region publics methods
+        /// <summary>
+        /// Add column in database with param values
+        /// </summary>
+        /// <param name="userName01">name of first user</param>
+        /// <param name="userName02">name of second user</param>
+        /// <param name="score01">score of first user</param>
+        /// <param name="score02">score of second user</param>
         public void InsertScore(string userName01, string userName02, int score01, int score02)
         {
-            SQLiteCommand query = new SQLiteCommand("INSERT INTO Scores(Player01, Player02, ScoreP01, ScoreP02) VALUES (?,?,?,?)", _dbConnection);
-            query.Parameters.Add(userName01);
-            query.Parameters.Add(userName02);
-            query.Parameters.Add(score01);
-            query.Parameters.Add(score02);
+            OpenDB();
+            SQLiteCommand query = new SQLiteCommand("INSERT INTO Scores(Player01, Player02, ScoreP01, ScoreP02) VALUES (@param1, @param2, @param3, @param4)", _dbConnection);
+            query.Parameters.Add(new SQLiteParameter("@param1",userName01));
+            query.Parameters.Add(new SQLiteParameter("@param2",userName02));
+            query.Parameters.Add(new SQLiteParameter("@param3",score01));
+            query.Parameters.Add(new SQLiteParameter("@param4",score02));
             query.ExecuteReader();
+            CloseDB();
         }
 
         /// <summary>
