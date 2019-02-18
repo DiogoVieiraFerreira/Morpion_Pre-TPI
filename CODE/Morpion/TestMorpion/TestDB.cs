@@ -59,11 +59,31 @@ namespace TestMorpion
         [TestMethod]
         public void DataBase_ScoreList_AfterInitialization_ReturnList()
         {
-            this._exceptedScoreLst = new List<string>();
             //refere to Initialize()
-            _db.InsertScore("Diogo", "Ordinateur", 0, 1);
+            _exceptedScoreLst = new List<string>();
             _exceptedScoreLst = _db.ScoreList();
-            Assert.AreEqual(1, _exceptedScoreLst.Count);
+            int expectedNbScores = _exceptedScoreLst.Count + 1;
+
+            _db.InsertScore("Diogo", "Ordinateur", 0, 1);
+
+            Assert.AreEqual(expectedNbScores, _db.ScoreList().Count);
+        }
+
+        /// <summary>
+        /// Insert 11 scores, test if db delete 
+        /// the oldes score after 10
+        /// </summary>
+        [TestMethod]
+        public void DataBase_ScoreList_AfterInitialization_tenScores()
+        {
+            //refere to Initialize()
+            _exceptedScoreLst = new List<string>();
+
+            //insert eleven scores
+            for(int i=0; i<11; i++)
+                _db.InsertScore("Diogo", "Ordinateur", i, 11-i);
+
+            Assert.AreEqual(10, _db.ScoreList().Count);
         }
         #endregion TestMethods
 
@@ -74,16 +94,12 @@ namespace TestMorpion
         [TestCleanup]
         public void Cleanup()
         {
-            if (Directory.Exists(this._expectedDbDirLocation))
-            {
-                
-                Directory.Delete(this._expectedDbDirLocation,true);
-            }
+             _db.ClearScores();
+            this._db = null;
             this._expectedDbDirLocation = null;
             this._expectedDbLocation = null;
-            this._db = null;
+            this._exceptedScoreLst = null;
         }
         #endregion CleanUp
-        
     }
 }

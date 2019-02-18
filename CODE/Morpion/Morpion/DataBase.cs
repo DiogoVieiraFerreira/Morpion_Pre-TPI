@@ -16,15 +16,19 @@ namespace Morpion
         #region private attributes
         private SQLiteConnection _dbConnection;
         private SQLiteDataReader _reader;
-        private List<string> _ScoreList;
         private string _sql;
-        private string _dbDirLocation = AppDomain.CurrentDomain.BaseDirectory + @"\DB\";
+        private string _dbDirLocation;
         #endregion private attributes
 
         #region Constructor
+        /// <summary>
+        /// Create Database and table scores
+        /// </summary>
+        /// <param name="dbName">name of Database</param>
         public DataBase(string dbName)
         {
             dbName += ".sqlite";
+            _dbDirLocation= AppDomain.CurrentDomain.BaseDirectory + @"\DB\";
             string dbLocation = _dbDirLocation + dbName;
             _dbConnection = new SQLiteConnection("Data Source=" + dbLocation + ";Version=3;");
 
@@ -56,14 +60,7 @@ namespace Morpion
         /// </summary>
         private void CloseDB()
         {
-            try {
-                _dbConnection.Close();
-            }
-            catch (Exception e)
-            {
-                e.ToString();
-            }
-
+           _dbConnection.Close();
         }
         /// <summary>
         /// create Table
@@ -78,9 +75,52 @@ namespace Morpion
             CloseDB();
         }
 
+        /// <summary>
+        /// Delete the oldest data when the db has more columns than the limit (defenied by parametre)
+        /// </summary>
+        /// <param name="limit">limit of columns in db, default is 10</param>
+        private void DeleteScores(int limit = 10)
+        {
+            OpenDB();
+            SQLiteCommand command = new SQLiteCommand("select count(idscore) as total from scores", _dbConnection);
+            _reader = command.ExecuteReader();
+
+            int tot = 0;
+            while (_reader.Read())
+            {
+                tot = Int32.Parse(_reader["total"].ToString());
+            }
+
+            command.Dispose();
+            CloseDB();
+            if (tot >= limit)
+            {
+                int over = tot - limit;
+                for (int i=0; i<over; i++)
+                {
+                    OpenDB();
+                    command = new SQLiteCommand("DELETE FROM Scores WHERE idScore LIKE(SELECT idScore FROM Scores LIMIT 1)", _dbConnection);
+                    command.ExecuteNonQuery();
+                    command.Dispose();
+                    CloseDB();
+                }
+            }   
+        }
         #endregion private methods
 
         #region publics methods
+        /// <summary>
+        /// clear all scores
+        /// </summary>
+        public void ClearScores()
+        {
+            OpenDB();
+            SQLiteCommand command = new SQLiteCommand("DELETE FROM Scores", _dbConnection);
+            command.ExecuteNonQuery();
+            command.Dispose();
+            CloseDB();
+        }
+
         /// <summary>
         /// Add column in database with param values
         /// </summary>
@@ -91,13 +131,15 @@ namespace Morpion
         public void InsertScore(string userName01, string userName02, int score01, int score02)
         {
             OpenDB();
-            SQLiteCommand query = new SQLiteCommand("INSERT INTO Scores(Player01, Player02, ScoreP01, ScoreP02) VALUES (@param1, @param2, @param3, @param4)", _dbConnection);
-            query.Parameters.Add(new SQLiteParameter("@param1",userName01));
-            query.Parameters.Add(new SQLiteParameter("@param2",userName02));
-            query.Parameters.Add(new SQLiteParameter("@param3",score01));
-            query.Parameters.Add(new SQLiteParameter("@param4",score02));
-            query.ExecuteReader();
+            SQLiteCommand command = new SQLiteCommand("INSERT INTO Scores(Player01, Player02, ScoreP01, ScoreP02) VALUES (@param1, @param2, @param3, @param4)", _dbConnection);
+            command.Parameters.Add(new SQLiteParameter("@param1",userName01));
+            command.Parameters.Add(new SQLiteParameter("@param2",userName02));
+            command.Parameters.Add(new SQLiteParameter("@param3",score01));
+            command.Parameters.Add(new SQLiteParameter("@param4",score02));
+            command.ExecuteNonQuery();
+            command.Dispose();
             CloseDB();
+            DeleteScores();
         }
 
         /// <summary>
@@ -106,8 +148,7 @@ namespace Morpion
         /// <returns>list with all scores</returns>
         public List<string> ScoreList()
         {
-            if (_ScoreList == null)
-                _ScoreList = new List<string>();
+            List<string> ScoreList = new List<string>();
 
             _sql = "SELECT * FROM Scores";
             SQLiteCommand command = new SQLiteCommand(_sql, _dbConnection);
@@ -119,12 +160,12 @@ namespace Morpion
 
             while (_reader.Read())
             {
-                _ScoreList.Add(_reader["Player01"] + " vs " + _reader["Player02"] + "\t" + _reader["ScoreP01"] + " : " + _reader["ScoreP02"]);
+                ScoreList.Add(_reader["Player01"] + " vs " + _reader["Player02"] + "\t" + _reader["ScoreP01"] + " : " + _reader["ScoreP02"]);
             }
 
             CloseDB();
 
-            return _ScoreList;
+            return ScoreList;
         }
         #endregion publics methods
 
