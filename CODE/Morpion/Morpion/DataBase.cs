@@ -168,9 +168,6 @@ namespace Morpion
             return ScoreList;
         }
         #endregion publics methods
-
-        #region accessor
-
-        #endregion accessor
+        
     }
 }
