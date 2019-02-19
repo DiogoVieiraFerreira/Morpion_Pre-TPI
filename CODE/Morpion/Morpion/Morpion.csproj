@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlor.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="NetworkCommunication.cs" />
