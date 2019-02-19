@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            
 
         }
 
         #endregion
-
     }
 }
 

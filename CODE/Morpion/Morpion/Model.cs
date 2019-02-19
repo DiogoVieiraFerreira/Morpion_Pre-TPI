@@ -17,14 +17,30 @@ namespace Morpion
     class Model
     {
         private DataBase db = new DataBase("Morpion");
-
-
-        public void localSolo_click(object sender, EventArgs e)
+        private View _view;
+        private Size _viewSize;
+        
+        private void LocalSolo_click(object sender, EventArgs e)
         {
 
         }
+        private void LocalMulti_click(object sender, EventArgs e)
+        {
 
-        public void show_interface(View view)
+        }
+        private void Network_click(object sender, EventArgs e)
+        {
+
+        }
+        private void Rules_click(object sender, EventArgs e)
+        {
+
+        }
+        private void Infos_click(object sender, EventArgs e)
+        {
+
+        }
+        private void topMenu()
         {
 
             System.Windows.Forms.MenuStrip mnu;
@@ -42,23 +58,25 @@ namespace Morpion
             mnuNetwork = new System.Windows.Forms.ToolStripMenuItem();
             mnuRules = new System.Windows.Forms.ToolStripMenuItem();
             mnuInfos = new System.Windows.Forms.ToolStripMenuItem();
+            
+            mnu.SuspendLayout();
 
             //insert menus in menustrip
             mnu.Name = "mnu";
             mnu.Text = "mnu";
             mnu.BackColor = System.Drawing.Color.Silver;
-            mnu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {  mnuLocal,
-                                                                                mnuNetwork,
-                                                                                mnuRules,
-                                                                                mnuInfos});
+            mnu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {   mnuLocal,
+                                                                            mnuNetwork,
+                                                                            mnuRules,
+                                                                            mnuInfos});
             mnu.Location = new System.Drawing.Point(0, 0);
             mnu.Size = new System.Drawing.Size(600, 24);
             mnu.TabIndex = 0;
 
             // add local menu in mnu
             mnuLocal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            mnuLocal.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { mnuLocalSolo,
-                                                                                            mnuLocalMulti});
+            mnuLocal.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {  mnuLocalSolo,
+                                                                                        mnuLocalMulti});
             mnuLocal.Name = "mnuLocal";
             mnuLocal.Size = new System.Drawing.Size(86, 20);
             mnuLocal.Text = "Partie Locale";
@@ -67,41 +85,124 @@ namespace Morpion
             mnuLocalSolo.Name = "mnuLocalSolo";
             mnuLocalSolo.Size = new System.Drawing.Size(180, 22);
             mnuLocalSolo.Text = "En Solo";
-            mnuLocalSolo.Click += localSolo_click;
+            mnuLocalSolo.Click += LocalSolo_click;
 
             //add multijoueur button in local menu
             mnuLocalMulti.Name = "mnuLocalMulti";
             mnuLocalMulti.Size = new System.Drawing.Size(180, 22);
             mnuLocalMulti.Text = "En Multijoueur";
+            mnuLocalMulti.Click += LocalMulti_click;
 
             //create mnuNetwork in mnu
             mnuNetwork.Name = "mnuNetwork";
             mnuNetwork.Size = new System.Drawing.Size(120, 20);
             mnuNetwork.Text = "Partie sur le Réseau";
+            mnuNetwork.Click += Network_click;
 
             //create mnuRules in mnu
             mnuRules.Name = "mnuRules";
             mnuRules.Size = new System.Drawing.Size(53, 20);
             mnuRules.Text = "Règles";
+            mnuRules.Click += Rules_click;
 
             //create mnuInfos in mnu
             mnuInfos.Name = "mnuInfos";
             mnuInfos.Size = new System.Drawing.Size(87, 20);
             mnuInfos.Text = "Informations";
+            mnuNetwork.Click += Infos_click;
 
-            //menu strip on the top of form
-            mnu.PerformLayout();
+            //menu strip on the top of form and add it on the form
+            _view.Controls.Add(mnu);
+            _view.MainMenuStrip = mnu;
             mnu.ResumeLayout(false);
-            view.ResumeLayout(false);
-            view.PerformLayout();
-            mnu.SuspendLayout();
-            view.SuspendLayout();
-            //add menus on forms
-            view.MainMenuStrip = mnu;
-            view.Controls.Add(mnu);
-
-
+            mnu.PerformLayout();
         }
 
+        private void main_menu()
+        {
+            System.Windows.Forms.Button cmdLocalSolo;
+            System.Windows.Forms.Button cmdLocalMulti;
+            System.Windows.Forms.Button cmdNetwork;
+            System.Windows.Forms.Button cmdRules;
+            System.Windows.Forms.Button cmdInfos;
+
+
+            cmdLocalSolo = new System.Windows.Forms.Button();
+            cmdLocalMulti = new System.Windows.Forms.Button();
+            cmdNetwork = new System.Windows.Forms.Button();
+            cmdRules = new System.Windows.Forms.Button();
+            cmdInfos = new System.Windows.Forms.Button();
+            // 
+            // cmdLocalSolo
+            // 
+            cmdLocalSolo.Location = new System.Drawing.Point(0, 25);
+            cmdLocalSolo.Name = "cmdLocalSolo";
+            cmdLocalSolo.Size = new System.Drawing.Size(785, 107);
+            cmdLocalSolo.TabIndex = 0;
+            cmdLocalSolo.Text = "cmdLocalSolo";
+            cmdLocalSolo.UseVisualStyleBackColor = true;
+            cmdLocalSolo.Click += LocalSolo_click;
+            // 
+            // cmdLocalMulti
+            // 
+            cmdLocalMulti.Location = new System.Drawing.Point(0, 132);
+            cmdLocalMulti.Name = "cmdLocalMulti";
+            cmdLocalMulti.Size = new System.Drawing.Size(785, 107);
+            cmdLocalMulti.TabIndex = 2;
+            cmdLocalMulti.Text = "cmdLocalMulti";
+            cmdLocalMulti.UseVisualStyleBackColor = true;
+            cmdLocalMulti.Click += LocalMulti_click;
+            // 
+            // cmdNetwork
+            // 
+            cmdNetwork.Location = new System.Drawing.Point(0, 239);
+            cmdNetwork.Name = "cmdNetwork";
+            cmdNetwork.Size = new System.Drawing.Size(785, 107);
+            cmdNetwork.TabIndex = 3;
+            cmdNetwork.Text = "cmdNetwork";
+            cmdNetwork.UseVisualStyleBackColor = true;
+            cmdNetwork.Click += Network_click;
+            // 
+            // cmdRules
+            // 
+            cmdRules.Location = new System.Drawing.Point(0, 346);
+            cmdRules.Name = "cmdRules";
+            cmdRules.Size = new System.Drawing.Size(785, 107);
+            cmdRules.TabIndex = 4;
+            cmdRules.Text = "cmdRules";
+            cmdRules.UseVisualStyleBackColor = true;
+            cmdRules.Click += Rules_click;
+            // 
+            // cmdInfos
+            // 
+            cmdInfos.Location = new System.Drawing.Point(0, 453);
+            cmdInfos.Name = "cmdInfos";
+            cmdInfos.Size = new System.Drawing.Size(785, 107);
+            cmdInfos.TabIndex = 5;
+            cmdInfos.Text = "cmdInfos";
+            cmdInfos.UseVisualStyleBackColor = true;
+            cmdInfos.Click += Infos_click;
+
+            _view.Controls.Add(cmdLocalSolo);
+            _view.Controls.Add(cmdLocalMulti);
+            _view.Controls.Add(cmdNetwork);
+            _view.Controls.Add(cmdRules);
+            _view.Controls.Add(cmdInfos);
+        }
+        public void Show_interface(View view, int menus=0)
+        {
+            _view = view;
+            topMenu();
+            switch(menus)
+            {
+                case 0:
+                    _viewSize = new Size(785, 560);
+                    main_menu();
+                    break;
+                default:
+                    break;
+            }
+            _view.ClientSize = _viewSize;
+        }
     }
 }
