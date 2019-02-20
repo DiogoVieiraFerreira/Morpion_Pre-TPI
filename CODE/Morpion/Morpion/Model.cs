@@ -18,12 +18,59 @@ namespace Morpion
     {
         private DataBase db = new DataBase("Morpion");
         private View _view;
+        private View _msgBox;
         private Size _viewSize;
+        private string _player01;
+        private string _player02;
         
         private void LocalSolo_click(object sender, EventArgs e)
         {
+            _msgBox = new View("Infos");
+            _msgBox.Size = new Size(200, 150);
+            
 
+            Label lblInfo = new Label();
+            lblInfo.Text = "votre nom:";
+            lblInfo.Name = "lblInfo";
+            lblInfo.Location = new Point(15, 5);
+            _msgBox.Controls.Add(lblInfo);
+
+            TextBox txtUserName = new TextBox();
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(_msgBox.Size.Width - 40, 20);
+            txtUserName.Location = new Point(15, lblInfo.Location.Y+lblInfo.Size.Height);
+            _msgBox.Controls.Add(txtUserName);
+
+            Button cmdOk = new Button();
+            cmdOk.Name = "cmdOk";
+            cmdOk.Text = "Ok";
+            cmdOk.AutoSize = true;
+            cmdOk.Location = new Point(txtUserName.Location.X+txtUserName.Size.Width-cmdOk.Size.Width, txtUserName.Location.Y+txtUserName.Size.Height+5);
+            cmdOk.Click += CmdOk_Click;
+
+            _msgBox.Controls.Add(cmdOk);
+
+            _msgBox.Show();
+            
         }
+
+
+        private void CmdOk_Click(object sender, EventArgs e)
+        {
+            //je dois check si txtUserName.text est vide, mais j'arrive pas à récup son contenu :/ et je sais pas l'envoyer
+            if (_msgBox.Controls.Find("txtUserName", true)[0].Text == "")
+            {
+                MessageBox.Show("Merci de rentrer un nom d'utilisateur", "Nom utilisateur manquant", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                _player01 = _msgBox.Controls.Find("txtUserName", true)[0].Text;
+                _player02 = "Ordinateur";
+                _msgBox.Close();
+                _view.Text += ": Bienvenue " + _player01;
+            }
+        }
+
         private void LocalMulti_click(object sender, EventArgs e)
         {
 
@@ -195,7 +242,7 @@ namespace Morpion
             topMenu();
             switch(menus)
             {
-                case 0:
+                case 0: // main menu
                     _viewSize = new Size(785, 560);
                     main_menu();
                     break;
