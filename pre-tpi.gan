@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><project name="PRE-TPI DVA" company="CPNV" webLink="http://www.cpnv.ch" view-date="2019-01-14" view-index="0" gantt-divider-location="470" resource-divider-location="358" version="2.8.1" locale="fr">
     <description><![CDATA[Planification de travail initiale, la version finale peut varier à certains points.]]></description>
     <view zooming-state="default:6" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="260" order="0"/>
-        <field id="tpd4" name="Date de début" width="127" order="1"/>
-        <field id="tpd5" name="Date de fin" width="79" order="2"/>
+        <field id="tpd3" name="Nom" width="256" order="0"/>
+        <field id="tpd4" name="Date de début" width="128" order="1"/>
+        <field id="tpd5" name="Date de fin" width="82" order="2"/>
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="239" order="0"/>
@@ -65,12 +65,12 @@
             <task id="42" name="Choix Graphique" meeting="false" start="2019-02-08" duration="1" complete="100" expand="true"/>
             <task id="44" name="maquette (visuel)" meeting="false" start="2019-02-08" duration="1" complete="100" expand="true"/>
         </task>
-        <task id="32" name="Programmation (locale)" meeting="false" start="2019-02-11" duration="25" complete="12" expand="true">
+        <task id="32" name="Programmation (locale)" meeting="false" start="2019-02-11" duration="25" complete="25" expand="true">
             <task id="19" name="Script db" meeting="false" start="2019-02-11" duration="1" complete="100" expand="true"/>
             <task id="33" name="GitHUB / Bitbucket" meeting="false" start="2019-02-11" duration="2" complete="100" expand="true"/>
             <task id="55" name="UML" meeting="false" start="2019-02-11" duration="3" complete="100" expand="true"/>
-            <task id="34" name="Création des classes de test" meeting="false" start="2019-02-12" duration="20" complete="10" expand="true"/>
-            <task id="35" name="Création du code" meeting="false" start="2019-02-12" duration="20" complete="10" expand="true"/>
+            <task id="34" name="Création des classes de test" meeting="false" start="2019-02-12" duration="20" complete="36" expand="true"/>
+            <task id="35" name="Création du code" meeting="false" start="2019-02-12" duration="20" complete="35" expand="true"/>
             <task id="36" name="Tester chaque foctionnalité" meeting="false" start="2019-02-21" duration="13" complete="0" expand="true"/>
             <task id="47" name="Documenter les fonctionnalitées" meeting="false" start="2019-02-25" duration="11" complete="0" expand="true"/>
             <task id="48" name="Créer un système de sauvegardes" meeting="false" start="2019-03-12" duration="2" complete="0" expand="true"/>
