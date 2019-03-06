@@ -19,6 +19,7 @@ namespace Morpion
 
         private TextBox _txtPlayer01;
         private TextBox _txtPlayer02;
+       
         /// <summary>
         /// Constructor of control, he call model and ask all data before to execute program
         /// </summary>
@@ -212,6 +213,10 @@ namespace Morpion
 
         private void game_int()
         {
+            _model.GameArray=new string[] { "0","0","0",
+                                            "0","0","0",
+                                            "0","0","0" };
+            _model.WhatPlayer = 1;
             Label lblPlayer01 = new Label();
             Label lblWinP01 = new Label();
             Label lblScoreP01 = new Label();
@@ -298,9 +303,11 @@ namespace Morpion
             for (int i = 0; i < 9; i++)
             {
                 picCases[i] = new PictureBox();
-                picCases[i].Name = "pic" + i.ToString();
+                picCases[i].Name = i.ToString();
                 picCases[i].Size = new Size(90, 90);
                 picCases[i].BackColor = Color.LightGray;
+                picCases[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                picCases[i].Click += UserClick;
                 if (i == 0 || i == 3 || i == 6)
                 {
                     x = 264;
@@ -491,6 +498,44 @@ namespace Morpion
             }
         }
 
+        private void UserClick(object sender, EventArgs e)
+        {
+            ThinkingGame((PictureBox)sender);
+        }
+        private void ThinkingGame(PictureBox pic)
+        {
+            try
+            {
+                int id = int.Parse(pic.Name);
+                if (_model.GameArray[id] == "0")
+                {
+                    if (_model.WhatPlayer == 1)
+                        pic.Image = Morpion.Properties.Resources.cross;
+                    else
+                        pic.Image = Morpion.Properties.Resources.circle;
+                        if (_model.CheckGame(id))
+                        {
+                            throw new Exception("fin de partie, "+_model.ActualPlayer);
+                        }
+                }
+                if (!_model.multi)
+                {
+                    if (_model.WhatPlayer == 2)
+                    {
+                        int IA_id = _model.IA(1);
+                        bool finish = _model.CheckGame(IA_id);
+                        pic = (PictureBox)_view.Controls.Find(IA_id.ToString(), true)[0];
+                        pic.Image = Morpion.Properties.Resources.circle;
+                        if (finish)
+                            throw new Exception("L'ordinateur a gagné, dommage...");
+                    }
+                }
+            }
+            catch (Exception execption)
+            {
+                MessageBox.Show(execption.Message);
+            }
+        }
         private void CmdOk_Click(object sender, EventArgs e)
         {
             popUpUserName();
@@ -516,11 +561,6 @@ namespace Morpion
         private void Infos_click(object sender, EventArgs e)
         {
 
-        }
-
-        private void Controlor_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("ici");
         }
 
         private void End_program()
