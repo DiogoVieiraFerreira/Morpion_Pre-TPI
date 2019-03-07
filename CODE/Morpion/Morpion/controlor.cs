@@ -213,10 +213,12 @@ namespace Morpion
 
         private void game_int()
         {
-            _model.GameArray=new string[] { "0","0","0",
-                                            "0","0","0",
-                                            "0","0","0" };
+
+            _model.GameArray=new int[] { 0,0,0,
+                                         0,0,0,
+                                         0,0,0 };
             _model.WhatPlayer = 1;
+
             Label lblPlayer01 = new Label();
             Label lblWinP01 = new Label();
             Label lblScoreP01 = new Label();
@@ -507,7 +509,7 @@ namespace Morpion
             try
             {
                 int id = int.Parse(pic.Name);
-                if (_model.GameArray[id] == "0")
+                if (_model.GameArray[id] == 0)
                 {
                     if (_model.WhatPlayer == 1)
                         pic.Image = Morpion.Properties.Resources.cross;
@@ -522,7 +524,7 @@ namespace Morpion
                 {
                     if (_model.WhatPlayer == 2)
                     {
-                        int IA_id = _model.IA(1);
+                        int IA_id = _model.IA(2);
                         bool finish = _model.CheckGame(IA_id);
                         pic = (PictureBox)_view.Controls.Find(IA_id.ToString(), true)[0];
                         pic.Image = Morpion.Properties.Resources.circle;
@@ -534,6 +536,9 @@ namespace Morpion
             catch (Exception execption)
             {
                 MessageBox.Show(execption.Message);
+
+                _view.Controls.Clear();
+                game_int();
             }
         }
         private void CmdOk_Click(object sender, EventArgs e)

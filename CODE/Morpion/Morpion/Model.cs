@@ -24,29 +24,27 @@ namespace Morpion
         private string _nameP2;
         private string _actualPlayer;
         private bool _multi;
-        private string[] _gameArray;
+        private int[] _gameArray;
         private int _lastIdPlayed;
-        private string _symbolP1;
-        private string _symbolP2;
         private int _whatPlayer;
 
 
 
         public bool CheckGame(int id)
         {
-            string symbol;
+            int symbol;
             bool result = false;
             
             if(_whatPlayer==1)
             {
                 _actualPlayer = _nameP1;
                 _lastIdPlayed = id;
-                symbol = "X";
+                symbol = 1;
             }
             else
             {
                 _actualPlayer = _nameP1;
-                symbol = "O";
+                symbol = 2;
             }
             _gameArray[id] = symbol;
 
@@ -77,9 +75,9 @@ namespace Morpion
             else
             {
                 bool finish=true;
-                foreach(string value in _gameArray)
+                foreach(int value in _gameArray)
                 {
-                    if(value=="0")
+                    if(value==0)
                     {
                         finish=false;
                         break;
@@ -99,49 +97,162 @@ namespace Morpion
         public int IA(int lvl)
         {
             int id=0;
-            switch(lvl)
+            switch (lvl)
             {
                 case 1:
                     do
                     {
                         Random rnd = new Random();
                         id = rnd.Next(0, 8);
-
-                    } while (_gameArray[id] != "0");
+                    } while (_gameArray[id] != 0);
                     break;
                 case 2:
-                    switch(_lastIdPlayed)
+                    int count = 0;
+                    foreach (int value in _gameArray)
                     {
-                        case 0:
-                            if(_gameArray[1] == "0"|| _gameArray[3] == "0")
+                        if (value != 0)
+                            count++;
+                    }
+                    if (count > 1)
+                    {
+                        int symbolCheck = 3 - _whatPlayer;
+                        bool ok = false;
+                        //if the player can win the next round, we prevent him from doing so
+                        //else, we play or we can win
+                        do
+                        {
+                            symbolCheck = 3 - symbolCheck;
+                            if (_gameArray[0] == symbolCheck && _gameArray[1] == symbolCheck ||
+                                _gameArray[1] == symbolCheck && _gameArray[2] == symbolCheck ||
+                                _gameArray[0] == symbolCheck && _gameArray[2] == symbolCheck)
                             {
-                                Random rnd = new Random();
-                                int[] AllowedValues = new int[] { 1, 3 };
-                                id = AllowedValues[rnd.Next(AllowedValues.Length)];
+                                if (_gameArray[0] == 0 || _gameArray[1] == 0 || _gameArray[2] == 0)
+                                {
+                                    do
+                                    {
+                                        Random rnd = new Random();
+                                        id = rnd.Next(0, 2);
+                                    } while (_gameArray[id] != 0);
+                                    ok = !ok;
+                                }
                             }
-                            break;
-                        case 1:
-                            if (_gameArray[0] == "0" || _gameArray[2] == "0" || _gameArray[4] == "0")
+                            //second line
+                            else if (_gameArray[3] == symbolCheck && _gameArray[4] == symbolCheck ||
+                                     _gameArray[4] == symbolCheck && _gameArray[5] == symbolCheck ||
+                                     _gameArray[3] == symbolCheck && _gameArray[5] == symbolCheck)
                             {
-                                Random rnd = new Random();
-                                int[] AllowedValues = new int[] { 0, 2, 4 };
-                                id = AllowedValues[rnd.Next(AllowedValues.Length)];
+                                if (_gameArray[3] == 0 || _gameArray[4] == 0 || _gameArray[5] == 0)
+                                {
+                                    do
+                                    {
+                                        Random rnd = new Random();
+                                        id = rnd.Next(3, 5);
+                                    } while (_gameArray[id] != 0);
+                                    ok = !ok;
+                                }
                             }
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            break;
-                        case 4:
-                            break;
-                        case 5:
-                            break;
-                        case 6:
-                            break;
-                        case 7:
-                            break;
-                        case 8:
-                            break;
+                            //third line
+                            else if (_gameArray[6] == symbolCheck && _gameArray[7] == symbolCheck ||
+                                     _gameArray[7] == symbolCheck && _gameArray[8] == symbolCheck ||
+                                     _gameArray[6] == symbolCheck && _gameArray[8] == symbolCheck)
+                            {
+                                if (_gameArray[6] == 0 || _gameArray[7] == 0 || _gameArray[8] == 0)
+                                {
+                                    do
+                                    {
+                                        Random rnd = new Random();
+                                        id = rnd.Next(6, 8);
+                                    } while (_gameArray[id] != 0);
+                                    ok = !ok;
+                                }
+                            }
+                            //left diagonal
+                            else if (_gameArray[0] == symbolCheck && _gameArray[4] == symbolCheck ||
+                                     _gameArray[4] == symbolCheck && _gameArray[8] == symbolCheck ||
+                                     _gameArray[0] == symbolCheck && _gameArray[8] == symbolCheck)
+                            {
+                                if (_gameArray[0] == 0 || _gameArray[4] == 0 || _gameArray[8] == 0)
+                                {
+                                    do
+                                    {
+                                        Random rnd = new Random();
+                                        int[] values = new int[] { 0, 4, 8 };
+                                        id = values[rnd.Next(values.Length)]; ;
+                                    } while (_gameArray[id] != 0);
+                                    ok = !ok;
+                                }
+                            }
+                            //Right diagonal
+                            else if (_gameArray[2] == symbolCheck && _gameArray[4] == symbolCheck ||
+                                     _gameArray[4] == symbolCheck && _gameArray[6] == symbolCheck ||
+                                     _gameArray[2] == symbolCheck && _gameArray[6] == symbolCheck)
+                            {
+                                if (_gameArray[2] == 0 || _gameArray[4] == 0 || _gameArray[6] == 0)
+                                {
+                                    do
+                                    {
+                                        Random rnd = new Random();
+                                        int[] values = new int[] { 2, 4, 6 };
+                                        id = values[rnd.Next(values.Length)]; ;
+                                    } while (_gameArray[id] != 0);
+                                    ok = !ok;
+                                }
+                            }
+                            //first column
+                            else if (_gameArray[0] == symbolCheck && _gameArray[3] == symbolCheck ||
+                                     _gameArray[3] == symbolCheck && _gameArray[6] == symbolCheck ||
+                                     _gameArray[0] == symbolCheck && _gameArray[6] == symbolCheck)
+                            {
+                                if (_gameArray[0] == 0 || _gameArray[3] == 0 || _gameArray[6] == 0)
+                                {
+                                    do
+                                    {
+                                        Random rnd = new Random();
+                                        int[] values = new int[] { 0, 3, 6 };
+                                        id = values[rnd.Next(values.Length)]; ;
+                                    } while (_gameArray[id] != 0);
+                                    ok = !ok;
+                                }
+                            }
+                            //second column
+                            else if (_gameArray[1] == symbolCheck && _gameArray[4] == symbolCheck ||
+                                     _gameArray[4] == symbolCheck && _gameArray[7] == symbolCheck ||
+                                     _gameArray[1] == symbolCheck && _gameArray[7] == symbolCheck)
+                            {
+                                if (_gameArray[1] == 0 || _gameArray[4] == 0 || _gameArray[7] == 0)
+                                {
+                                    do
+                                    {
+                                        Random rnd = new Random();
+                                        int[] values = new int[] { 1, 4, 7 };
+                                        id = values[rnd.Next(values.Length)]; ;
+                                    } while (_gameArray[id] != 0);
+                                    ok = !ok;
+                                }
+                            }
+                            //third column
+                            else if (_gameArray[2] == symbolCheck && _gameArray[5] == symbolCheck ||
+                                     _gameArray[5] == symbolCheck && _gameArray[8] == symbolCheck ||
+                                     _gameArray[2] == symbolCheck && _gameArray[8] == symbolCheck)
+                            {
+                                if (_gameArray[2] == 0 || _gameArray[5] == 0 || _gameArray[8] == 0)
+                                {
+                                    do
+                                    {
+                                        Random rnd = new Random();
+                                        int[] values = new int[] { 2, 5, 8 };
+                                        id = values[rnd.Next(values.Length)]; ;
+                                    } while (_gameArray[id] != 0);
+                                    ok = !ok;
+                                }
+                            }
+                            if(symbolCheck==2 && !ok)
+                                id = IA(1);
+                        } while (!ok);
+                    }
+                    else
+                    {
+                        id = IA(1);
                     }
                     break;
                 case 3:
@@ -250,7 +361,7 @@ namespace Morpion
         /// _gameArray's accessor
         /// get or set the plateform's game
         /// </summary>
-        public string[] GameArray
+        public int[] GameArray
         {
             set
             {
