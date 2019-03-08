@@ -14,7 +14,7 @@ namespace Morpion
     /// <summary>
     /// 
     /// </summary>
-    class Model
+    public class Model
     {
         private DataBase db = new DataBase("Morpion");
         private View _view;
@@ -29,7 +29,13 @@ namespace Morpion
         private int _whatPlayer;
 
 
-
+        /// <summary>
+        /// Check state of game
+        /// when user put the last our symbol, return true value
+        /// when equality an exception are generate
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool CheckGame(int id)
         {
             int symbol;
@@ -97,12 +103,12 @@ namespace Morpion
         public int IA(int lvl)
         {
             int id=0;
+            Random rnd = new Random();
             switch (lvl)
             {
                 case 1:
                     do
                     {
-                        Random rnd = new Random();
                         id = rnd.Next(0, 8);
                     } while (_gameArray[id] != 0);
                     break;
@@ -121,133 +127,183 @@ namespace Morpion
                         //else, we play or we can win
                         do
                         {
-                            symbolCheck = 3 - symbolCheck;
-                            if (_gameArray[0] == symbolCheck && _gameArray[1] == symbolCheck ||
-                                _gameArray[1] == symbolCheck && _gameArray[2] == symbolCheck ||
-                                _gameArray[0] == symbolCheck && _gameArray[2] == symbolCheck)
+                            if (((_gameArray[0] == symbolCheck && _gameArray[1] == symbolCheck) ||
+                                 (_gameArray[1] == symbolCheck && _gameArray[2] == symbolCheck) ||
+                                 (_gameArray[0] == symbolCheck && _gameArray[2] == symbolCheck)) &&
+                                 !(_gameArray[0] != 0 && _gameArray[1] != 0 && _gameArray[2] != 0))
                             {
-                                if (_gameArray[0] == 0 || _gameArray[1] == 0 || _gameArray[2] == 0)
+                                if (_gameArray[0] == 0)
                                 {
-                                    do
-                                    {
-                                        Random rnd = new Random();
-                                        id = rnd.Next(0, 2);
-                                    } while (_gameArray[id] != 0);
-                                    ok = !ok;
+                                    id = 0;
                                 }
+                                else if (_gameArray[1] == 0)
+                                {
+                                    id = 1;
+                                }
+                                else if (_gameArray[2] == 0)
+                                {
+                                    id = 2;
+                                }
+                                ok = !ok;
                             }
                             //second line
-                            else if (_gameArray[3] == symbolCheck && _gameArray[4] == symbolCheck ||
-                                     _gameArray[4] == symbolCheck && _gameArray[5] == symbolCheck ||
-                                     _gameArray[3] == symbolCheck && _gameArray[5] == symbolCheck)
+                            else if (((_gameArray[3] == symbolCheck && _gameArray[4] == symbolCheck) ||
+                                      (_gameArray[4] == symbolCheck && _gameArray[5] == symbolCheck) ||
+                                      (_gameArray[3] == symbolCheck && _gameArray[5] == symbolCheck)) &&
+                                      !(_gameArray[3] != 0 && _gameArray[4] != 0 && _gameArray[5] != 0))
                             {
-                                if (_gameArray[3] == 0 || _gameArray[4] == 0 || _gameArray[5] == 0)
+                                if (_gameArray[3] == 0)
                                 {
-                                    do
-                                    {
-                                        Random rnd = new Random();
-                                        id = rnd.Next(3, 5);
-                                    } while (_gameArray[id] != 0);
-                                    ok = !ok;
+                                    id = 3;
                                 }
+                                else if (_gameArray[4] == 0)
+                                {
+                                    id = 4;
+                                }
+                                else if (_gameArray[5] == 0)
+                                {
+                                    id = 5;
+                                }
+                                ok = !ok;
                             }
                             //third line
-                            else if (_gameArray[6] == symbolCheck && _gameArray[7] == symbolCheck ||
-                                     _gameArray[7] == symbolCheck && _gameArray[8] == symbolCheck ||
-                                     _gameArray[6] == symbolCheck && _gameArray[8] == symbolCheck)
+                            else if (((_gameArray[6] == symbolCheck && _gameArray[7] == symbolCheck) ||
+                                      (_gameArray[7] == symbolCheck && _gameArray[8] == symbolCheck) ||
+                                      (_gameArray[6] == symbolCheck && _gameArray[8] == symbolCheck)) &&
+                                      !(_gameArray[6] != 0 && _gameArray[7] != 0 && _gameArray[8] != 0))
                             {
-                                if (_gameArray[6] == 0 || _gameArray[7] == 0 || _gameArray[8] == 0)
+                                if (_gameArray[6] == 0)
                                 {
-                                    do
-                                    {
-                                        Random rnd = new Random();
-                                        id = rnd.Next(6, 8);
-                                    } while (_gameArray[id] != 0);
-                                    ok = !ok;
+                                    id = 6;
                                 }
+                                else if (_gameArray[7] == 0)
+                                {
+                                    id = 7;
+                                }
+                                else if (_gameArray[8] == 0)
+                                {
+                                    id = 8;
+                                }
+                                ok = !ok;
                             }
                             //left diagonal
-                            else if (_gameArray[0] == symbolCheck && _gameArray[4] == symbolCheck ||
-                                     _gameArray[4] == symbolCheck && _gameArray[8] == symbolCheck ||
-                                     _gameArray[0] == symbolCheck && _gameArray[8] == symbolCheck)
+                            else if (((_gameArray[0] == symbolCheck && _gameArray[4] == symbolCheck) ||
+                                      (_gameArray[4] == symbolCheck && _gameArray[8] == symbolCheck) ||
+                                      (_gameArray[0] == symbolCheck && _gameArray[8] == symbolCheck)) &&
+                                      !(_gameArray[0] != 0 && _gameArray[4] != 0 && _gameArray[8] != 0))
                             {
                                 if (_gameArray[0] == 0 || _gameArray[4] == 0 || _gameArray[8] == 0)
                                 {
-                                    do
+                                    if (_gameArray[0] == 0)
                                     {
-                                        Random rnd = new Random();
-                                        int[] values = new int[] { 0, 4, 8 };
-                                        id = values[rnd.Next(values.Length)]; ;
-                                    } while (_gameArray[id] != 0);
+                                        id = 0;
+                                    }
+                                    else if (_gameArray[4] == 0)
+                                    {
+                                        id = 4;
+                                    }
+                                    else if (_gameArray[8] == 0)
+                                    {
+                                        id = 8;
+                                    }
                                     ok = !ok;
                                 }
                             }
                             //Right diagonal
-                            else if (_gameArray[2] == symbolCheck && _gameArray[4] == symbolCheck ||
-                                     _gameArray[4] == symbolCheck && _gameArray[6] == symbolCheck ||
-                                     _gameArray[2] == symbolCheck && _gameArray[6] == symbolCheck)
+                            else if (((_gameArray[2] == symbolCheck && _gameArray[4] == symbolCheck) ||
+                                      (_gameArray[4] == symbolCheck && _gameArray[6] == symbolCheck) ||
+                                      (_gameArray[2] == symbolCheck && _gameArray[6] == symbolCheck)) &&
+                                      !(_gameArray[2] != 0 && _gameArray[4] != 0 && _gameArray[6] != 0))
                             {
                                 if (_gameArray[2] == 0 || _gameArray[4] == 0 || _gameArray[6] == 0)
                                 {
-                                    do
+                                    if (_gameArray[2] == 0)
                                     {
-                                        Random rnd = new Random();
-                                        int[] values = new int[] { 2, 4, 6 };
-                                        id = values[rnd.Next(values.Length)]; ;
-                                    } while (_gameArray[id] != 0);
+                                        id = 2;
+                                    }
+                                    else if (_gameArray[4] == 0)
+                                    {
+                                        id = 4;
+                                    }
+                                    else if (_gameArray[6] == 0)
+                                    {
+                                        id = 6;
+                                    }
                                     ok = !ok;
                                 }
                             }
                             //first column
-                            else if (_gameArray[0] == symbolCheck && _gameArray[3] == symbolCheck ||
-                                     _gameArray[3] == symbolCheck && _gameArray[6] == symbolCheck ||
-                                     _gameArray[0] == symbolCheck && _gameArray[6] == symbolCheck)
+                            else if (((_gameArray[0] == symbolCheck && _gameArray[3] == symbolCheck) ||
+                                      (_gameArray[3] == symbolCheck && _gameArray[6] == symbolCheck) ||
+                                      (_gameArray[0] == symbolCheck && _gameArray[6] == symbolCheck)) &&
+                                      !(_gameArray[0] != 0 && _gameArray[3] != 0 && _gameArray[6] != 0))
                             {
                                 if (_gameArray[0] == 0 || _gameArray[3] == 0 || _gameArray[6] == 0)
                                 {
-                                    do
+                                    if (_gameArray[0] == 0)
                                     {
-                                        Random rnd = new Random();
-                                        int[] values = new int[] { 0, 3, 6 };
-                                        id = values[rnd.Next(values.Length)]; ;
-                                    } while (_gameArray[id] != 0);
+                                        id = 0;
+                                    }
+                                    else if (_gameArray[3] == 0)
+                                    {
+                                        id = 3;
+                                    }
+                                    else if (_gameArray[6] == 0)
+                                    {
+                                        id = 6;
+                                    }
                                     ok = !ok;
                                 }
                             }
                             //second column
-                            else if (_gameArray[1] == symbolCheck && _gameArray[4] == symbolCheck ||
-                                     _gameArray[4] == symbolCheck && _gameArray[7] == symbolCheck ||
-                                     _gameArray[1] == symbolCheck && _gameArray[7] == symbolCheck)
+                            else if (((_gameArray[1] == symbolCheck && _gameArray[4] == symbolCheck) ||
+                                      (_gameArray[4] == symbolCheck && _gameArray[7] == symbolCheck) ||
+                                      (_gameArray[1] == symbolCheck && _gameArray[7] == symbolCheck)) &&
+                                      !(_gameArray[1] != 0 && _gameArray[4] != 0 && _gameArray[7] != 0))
                             {
-                                if (_gameArray[1] == 0 || _gameArray[4] == 0 || _gameArray[7] == 0)
+                                if (_gameArray[1] == 0 )
                                 {
-                                    do
-                                    {
-                                        Random rnd = new Random();
-                                        int[] values = new int[] { 1, 4, 7 };
-                                        id = values[rnd.Next(values.Length)]; ;
-                                    } while (_gameArray[id] != 0);
-                                    ok = !ok;
+                                    id = 1;
                                 }
+                                else if(_gameArray[4] == 0)
+                                {
+                                    id = 4;
+                                }
+                                else if(_gameArray[7] == 0)
+                                {
+                                    id = 7;
+                                }
+                                ok = !ok;
                             }
                             //third column
-                            else if (_gameArray[2] == symbolCheck && _gameArray[5] == symbolCheck ||
-                                     _gameArray[5] == symbolCheck && _gameArray[8] == symbolCheck ||
-                                     _gameArray[2] == symbolCheck && _gameArray[8] == symbolCheck)
+                            else if (((_gameArray[2] == symbolCheck && _gameArray[5] == symbolCheck) ||
+                                      (_gameArray[5] == symbolCheck && _gameArray[8] == symbolCheck) ||
+                                      (_gameArray[2] == symbolCheck && _gameArray[8] == symbolCheck)) &&
+                                      !(_gameArray[2] != 0 && _gameArray[5] != 0 && _gameArray[8] != 0))
                             {
                                 if (_gameArray[2] == 0 || _gameArray[5] == 0 || _gameArray[8] == 0)
                                 {
-                                    do
+                                    if (_gameArray[2] == 0)
                                     {
-                                        Random rnd = new Random();
-                                        int[] values = new int[] { 2, 5, 8 };
-                                        id = values[rnd.Next(values.Length)]; ;
-                                    } while (_gameArray[id] != 0);
+                                        id = 2;
+                                    }
+                                    else if (_gameArray[5] == 0)
+                                    {
+                                        id = 5;
+                                    }
+                                    else if (_gameArray[8] == 0)
+                                    {
+                                        id = 8;
+                                    }
                                     ok = !ok;
                                 }
                             }
                             if(symbolCheck==2 && !ok)
+                            {
                                 id = IA(1);
+                                ok = !ok;
+                            }
+                            symbolCheck = 3 - symbolCheck;
                         } while (!ok);
                     }
                     else
