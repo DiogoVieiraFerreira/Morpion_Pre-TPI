@@ -65,12 +65,12 @@
             <task id="42" name="Choix Graphique" meeting="false" start="2019-02-08" duration="1" complete="100" expand="true"/>
             <task id="44" name="maquette (visuel)" meeting="false" start="2019-02-08" duration="1" complete="100" expand="true"/>
         </task>
-        <task id="32" name="Programmation (locale)" meeting="false" start="2019-02-11" duration="25" complete="25" expand="true">
+        <task id="32" name="Programmation (locale)" meeting="false" start="2019-02-11" duration="25" complete="36" expand="true">
             <task id="19" name="Script db" meeting="false" start="2019-02-11" duration="1" complete="100" expand="true"/>
             <task id="33" name="GitHUB / Bitbucket" meeting="false" start="2019-02-11" duration="2" complete="100" expand="true"/>
             <task id="55" name="UML" meeting="false" start="2019-02-11" duration="3" complete="100" expand="true"/>
             <task id="34" name="Création des classes de test" meeting="false" start="2019-02-12" duration="20" complete="36" expand="true"/>
-            <task id="35" name="Création du code" meeting="false" start="2019-02-12" duration="20" complete="35" expand="true"/>
+            <task id="35" name="Création du code" meeting="false" start="2019-02-12" duration="20" complete="78" expand="true"/>
             <task id="36" name="Tester chaque foctionnalité" meeting="false" start="2019-02-21" duration="13" complete="0" expand="true"/>
             <task id="47" name="Documenter les fonctionnalitées" meeting="false" start="2019-02-25" duration="11" complete="0" expand="true"/>
             <task id="48" name="Créer un système de sauvegardes" meeting="false" start="2019-03-12" duration="2" complete="0" expand="true"/>
