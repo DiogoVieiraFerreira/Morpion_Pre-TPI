@@ -536,7 +536,7 @@ namespace Morpion
             catch (Exception execption)
             {
                 MessageBox.Show(execption.Message);
-
+                
                 _view.Controls.Clear();
                 topMenu();
                 game_int();
