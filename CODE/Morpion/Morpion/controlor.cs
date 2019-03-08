@@ -524,7 +524,7 @@ namespace Morpion
                 {
                     if (_model.WhatPlayer == 2)
                     {
-                        int IA_id = _model.IA(2);
+                        int IA_id = _model.IA(3);
                         bool finish = _model.CheckGame(IA_id);
                         pic = (PictureBox)_view.Controls.Find(IA_id.ToString(), true)[0];
                         pic.Image = Morpion.Properties.Resources.circle;
@@ -538,6 +538,7 @@ namespace Morpion
                 MessageBox.Show(execption.Message);
 
                 _view.Controls.Clear();
+                topMenu();
                 game_int();
             }
         }

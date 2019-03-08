@@ -28,6 +28,181 @@ namespace Morpion
         private int _lastIdPlayed;
         private int _whatPlayer;
 
+        /// <summary>
+        /// check possibilities by symbol and return true bool if ok
+        /// </summary>
+        /// <param name="symbolCheck"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        private int checkPossibilities(int symbolCheck)
+        {
+            int id = 999;
+            if (((_gameArray[0] == symbolCheck && _gameArray[1] == symbolCheck) ||
+                                 (_gameArray[1] == symbolCheck && _gameArray[2] == symbolCheck) ||
+                                 (_gameArray[0] == symbolCheck && _gameArray[2] == symbolCheck)) &&
+                                 !(_gameArray[0] != 0 && _gameArray[1] != 0 && _gameArray[2] != 0))
+            {
+                if (_gameArray[0] == 0)
+                {
+                    id = 0;
+                }
+                else if (_gameArray[1] == 0)
+                {
+                    id = 1;
+                }
+                else if (_gameArray[2] == 0)
+                {
+                    id = 2;
+                }
+            }
+            //second line
+            else if (((_gameArray[3] == symbolCheck && _gameArray[4] == symbolCheck) ||
+                      (_gameArray[4] == symbolCheck && _gameArray[5] == symbolCheck) ||
+                      (_gameArray[3] == symbolCheck && _gameArray[5] == symbolCheck)) &&
+                      !(_gameArray[3] != 0 && _gameArray[4] != 0 && _gameArray[5] != 0))
+            {
+                if (_gameArray[3] == 0)
+                {
+                    id = 3;
+                }
+                else if (_gameArray[4] == 0)
+                {
+                    id = 4;
+                }
+                else if (_gameArray[5] == 0)
+                {
+                    id = 5;
+                }
+            }
+            //third line
+            else if (((_gameArray[6] == symbolCheck && _gameArray[7] == symbolCheck) ||
+                      (_gameArray[7] == symbolCheck && _gameArray[8] == symbolCheck) ||
+                      (_gameArray[6] == symbolCheck && _gameArray[8] == symbolCheck)) &&
+                      !(_gameArray[6] != 0 && _gameArray[7] != 0 && _gameArray[8] != 0))
+            {
+                if (_gameArray[6] == 0)
+                {
+                    id = 6;
+                }
+                else if (_gameArray[7] == 0)
+                {
+                    id = 7;
+                }
+                else if (_gameArray[8] == 0)
+                {
+                    id = 8;
+                }
+            }
+            //left diagonal
+            else if (((_gameArray[0] == symbolCheck && _gameArray[4] == symbolCheck) ||
+                      (_gameArray[4] == symbolCheck && _gameArray[8] == symbolCheck) ||
+                      (_gameArray[0] == symbolCheck && _gameArray[8] == symbolCheck)) &&
+                      !(_gameArray[0] != 0 && _gameArray[4] != 0 && _gameArray[8] != 0))
+            {
+                if (_gameArray[0] == 0 || _gameArray[4] == 0 || _gameArray[8] == 0)
+                {
+                    if (_gameArray[0] == 0)
+                    {
+                        id = 0;
+                    }
+                    else if (_gameArray[4] == 0)
+                    {
+                        id = 4;
+                    }
+                    else if (_gameArray[8] == 0)
+                    {
+                        id = 8;
+                    }
+                }
+            }
+            //Right diagonal
+            else if (((_gameArray[2] == symbolCheck && _gameArray[4] == symbolCheck) ||
+                      (_gameArray[4] == symbolCheck && _gameArray[6] == symbolCheck) ||
+                      (_gameArray[2] == symbolCheck && _gameArray[6] == symbolCheck)) &&
+                      !(_gameArray[2] != 0 && _gameArray[4] != 0 && _gameArray[6] != 0))
+            {
+                if (_gameArray[2] == 0 || _gameArray[4] == 0 || _gameArray[6] == 0)
+                {
+                    if (_gameArray[2] == 0)
+                    {
+                        id = 2;
+                    }
+                    else if (_gameArray[4] == 0)
+                    {
+                        id = 4;
+                    }
+                    else if (_gameArray[6] == 0)
+                    {
+                        id = 6;
+                    }
+                }
+            }
+            //first column
+            else if (((_gameArray[0] == symbolCheck && _gameArray[3] == symbolCheck) ||
+                      (_gameArray[3] == symbolCheck && _gameArray[6] == symbolCheck) ||
+                      (_gameArray[0] == symbolCheck && _gameArray[6] == symbolCheck)) &&
+                      !(_gameArray[0] != 0 && _gameArray[3] != 0 && _gameArray[6] != 0))
+            {
+                if (_gameArray[0] == 0 || _gameArray[3] == 0 || _gameArray[6] == 0)
+                {
+                    if (_gameArray[0] == 0)
+                    {
+                        id = 0;
+                    }
+                    else if (_gameArray[3] == 0)
+                    {
+                        id = 3;
+                    }
+                    else if (_gameArray[6] == 0)
+                    {
+                        id = 6;
+                    }
+                }
+            }
+            //second column
+            else if (((_gameArray[1] == symbolCheck && _gameArray[4] == symbolCheck) ||
+                      (_gameArray[4] == symbolCheck && _gameArray[7] == symbolCheck) ||
+                      (_gameArray[1] == symbolCheck && _gameArray[7] == symbolCheck)) &&
+                      !(_gameArray[1] != 0 && _gameArray[4] != 0 && _gameArray[7] != 0))
+            {
+                if (_gameArray[1] == 0)
+                {
+                    id = 1;
+                }
+                else if (_gameArray[4] == 0)
+                {
+                    id = 4;
+                }
+                else if (_gameArray[7] == 0)
+                {
+                    id = 7;
+                }
+            }
+            //third column
+            else if (((_gameArray[2] == symbolCheck && _gameArray[5] == symbolCheck) ||
+                      (_gameArray[5] == symbolCheck && _gameArray[8] == symbolCheck) ||
+                      (_gameArray[2] == symbolCheck && _gameArray[8] == symbolCheck)) &&
+                      !(_gameArray[2] != 0 && _gameArray[5] != 0 && _gameArray[8] != 0))
+            {
+                if (_gameArray[2] == 0 || _gameArray[5] == 0 || _gameArray[8] == 0)
+                {
+                    if (_gameArray[2] == 0)
+                    {
+                        id = 2;
+                    }
+                    else if (_gameArray[5] == 0)
+                    {
+                        id = 5;
+                    }
+                    else if (_gameArray[8] == 0)
+                    {
+                        id = 8;
+                    }
+                }
+            }
+            return id;
+        }
+
 
         /// <summary>
         /// Check state of game
@@ -113,6 +288,7 @@ namespace Morpion
                     } while (_gameArray[id] != 0);
                     break;
                 case 2:
+                case 3:
                     int count = 0;
                     foreach (int value in _gameArray)
                     {
@@ -125,193 +301,26 @@ namespace Morpion
                         bool ok = false;
                         //if the player can win the next round, we prevent him from doing so
                         //else, we play or we can win
-                        do
-                        {
-                            if (((_gameArray[0] == symbolCheck && _gameArray[1] == symbolCheck) ||
-                                 (_gameArray[1] == symbolCheck && _gameArray[2] == symbolCheck) ||
-                                 (_gameArray[0] == symbolCheck && _gameArray[2] == symbolCheck)) &&
-                                 !(_gameArray[0] != 0 && _gameArray[1] != 0 && _gameArray[2] != 0))
+                        
+                            if (lvl == 3)
+                                symbolCheck = 3 - symbolCheck;
+
+                            id = checkPossibilities(symbolCheck);
+
+                            if (id==999)
                             {
-                                if (_gameArray[0] == 0)
-                                {
-                                    id = 0;
-                                }
-                                else if (_gameArray[1] == 0)
-                                {
-                                    id = 1;
-                                }
-                                else if (_gameArray[2] == 0)
-                                {
-                                    id = 2;
-                                }
-                                ok = !ok;
+                                symbolCheck = 3 - symbolCheck;
+                                id = checkPossibilities(symbolCheck);
                             }
-                            //second line
-                            else if (((_gameArray[3] == symbolCheck && _gameArray[4] == symbolCheck) ||
-                                      (_gameArray[4] == symbolCheck && _gameArray[5] == symbolCheck) ||
-                                      (_gameArray[3] == symbolCheck && _gameArray[5] == symbolCheck)) &&
-                                      !(_gameArray[3] != 0 && _gameArray[4] != 0 && _gameArray[5] != 0))
-                            {
-                                if (_gameArray[3] == 0)
-                                {
-                                    id = 3;
-                                }
-                                else if (_gameArray[4] == 0)
-                                {
-                                    id = 4;
-                                }
-                                else if (_gameArray[5] == 0)
-                                {
-                                    id = 5;
-                                }
-                                ok = !ok;
+                            if (id == 999)
+                            { 
+                               id = IA(1);
                             }
-                            //third line
-                            else if (((_gameArray[6] == symbolCheck && _gameArray[7] == symbolCheck) ||
-                                      (_gameArray[7] == symbolCheck && _gameArray[8] == symbolCheck) ||
-                                      (_gameArray[6] == symbolCheck && _gameArray[8] == symbolCheck)) &&
-                                      !(_gameArray[6] != 0 && _gameArray[7] != 0 && _gameArray[8] != 0))
-                            {
-                                if (_gameArray[6] == 0)
-                                {
-                                    id = 6;
-                                }
-                                else if (_gameArray[7] == 0)
-                                {
-                                    id = 7;
-                                }
-                                else if (_gameArray[8] == 0)
-                                {
-                                    id = 8;
-                                }
-                                ok = !ok;
-                            }
-                            //left diagonal
-                            else if (((_gameArray[0] == symbolCheck && _gameArray[4] == symbolCheck) ||
-                                      (_gameArray[4] == symbolCheck && _gameArray[8] == symbolCheck) ||
-                                      (_gameArray[0] == symbolCheck && _gameArray[8] == symbolCheck)) &&
-                                      !(_gameArray[0] != 0 && _gameArray[4] != 0 && _gameArray[8] != 0))
-                            {
-                                if (_gameArray[0] == 0 || _gameArray[4] == 0 || _gameArray[8] == 0)
-                                {
-                                    if (_gameArray[0] == 0)
-                                    {
-                                        id = 0;
-                                    }
-                                    else if (_gameArray[4] == 0)
-                                    {
-                                        id = 4;
-                                    }
-                                    else if (_gameArray[8] == 0)
-                                    {
-                                        id = 8;
-                                    }
-                                    ok = !ok;
-                                }
-                            }
-                            //Right diagonal
-                            else if (((_gameArray[2] == symbolCheck && _gameArray[4] == symbolCheck) ||
-                                      (_gameArray[4] == symbolCheck && _gameArray[6] == symbolCheck) ||
-                                      (_gameArray[2] == symbolCheck && _gameArray[6] == symbolCheck)) &&
-                                      !(_gameArray[2] != 0 && _gameArray[4] != 0 && _gameArray[6] != 0))
-                            {
-                                if (_gameArray[2] == 0 || _gameArray[4] == 0 || _gameArray[6] == 0)
-                                {
-                                    if (_gameArray[2] == 0)
-                                    {
-                                        id = 2;
-                                    }
-                                    else if (_gameArray[4] == 0)
-                                    {
-                                        id = 4;
-                                    }
-                                    else if (_gameArray[6] == 0)
-                                    {
-                                        id = 6;
-                                    }
-                                    ok = !ok;
-                                }
-                            }
-                            //first column
-                            else if (((_gameArray[0] == symbolCheck && _gameArray[3] == symbolCheck) ||
-                                      (_gameArray[3] == symbolCheck && _gameArray[6] == symbolCheck) ||
-                                      (_gameArray[0] == symbolCheck && _gameArray[6] == symbolCheck)) &&
-                                      !(_gameArray[0] != 0 && _gameArray[3] != 0 && _gameArray[6] != 0))
-                            {
-                                if (_gameArray[0] == 0 || _gameArray[3] == 0 || _gameArray[6] == 0)
-                                {
-                                    if (_gameArray[0] == 0)
-                                    {
-                                        id = 0;
-                                    }
-                                    else if (_gameArray[3] == 0)
-                                    {
-                                        id = 3;
-                                    }
-                                    else if (_gameArray[6] == 0)
-                                    {
-                                        id = 6;
-                                    }
-                                    ok = !ok;
-                                }
-                            }
-                            //second column
-                            else if (((_gameArray[1] == symbolCheck && _gameArray[4] == symbolCheck) ||
-                                      (_gameArray[4] == symbolCheck && _gameArray[7] == symbolCheck) ||
-                                      (_gameArray[1] == symbolCheck && _gameArray[7] == symbolCheck)) &&
-                                      !(_gameArray[1] != 0 && _gameArray[4] != 0 && _gameArray[7] != 0))
-                            {
-                                if (_gameArray[1] == 0 )
-                                {
-                                    id = 1;
-                                }
-                                else if(_gameArray[4] == 0)
-                                {
-                                    id = 4;
-                                }
-                                else if(_gameArray[7] == 0)
-                                {
-                                    id = 7;
-                                }
-                                ok = !ok;
-                            }
-                            //third column
-                            else if (((_gameArray[2] == symbolCheck && _gameArray[5] == symbolCheck) ||
-                                      (_gameArray[5] == symbolCheck && _gameArray[8] == symbolCheck) ||
-                                      (_gameArray[2] == symbolCheck && _gameArray[8] == symbolCheck)) &&
-                                      !(_gameArray[2] != 0 && _gameArray[5] != 0 && _gameArray[8] != 0))
-                            {
-                                if (_gameArray[2] == 0 || _gameArray[5] == 0 || _gameArray[8] == 0)
-                                {
-                                    if (_gameArray[2] == 0)
-                                    {
-                                        id = 2;
-                                    }
-                                    else if (_gameArray[5] == 0)
-                                    {
-                                        id = 5;
-                                    }
-                                    else if (_gameArray[8] == 0)
-                                    {
-                                        id = 8;
-                                    }
-                                    ok = !ok;
-                                }
-                            }
-                            if(symbolCheck==2 && !ok)
-                            {
-                                id = IA(1);
-                                ok = !ok;
-                            }
-                            symbolCheck = 3 - symbolCheck;
-                        } while (!ok);
                     }
                     else
                     {
                         id = IA(1);
                     }
-                    break;
-                case 3:
                     break;
             }
             return id;
