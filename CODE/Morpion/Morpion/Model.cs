@@ -16,7 +16,7 @@ namespace Morpion
     /// </summary>
     public class Model
     {
-        private DataBase db = new DataBase("Morpion");
+        private DataBase _db; 
         private View _view;
         private int _scoreP1;
         private int _scoreP2;
@@ -28,6 +28,12 @@ namespace Morpion
         private int _lastIdPlayed;
         private int _whatPlayer;
 
+        public Model()
+        {
+            _db = new DataBase("Morpion");
+            _scoreP1 = 0;
+            _scoreP2 = 0;
+        }
         /// <summary>
         /// check possibilities by symbol and return true bool if ok
         /// </summary>
@@ -327,6 +333,14 @@ namespace Morpion
         }
 
         /// <summary>
+        /// save score of player(s) in db
+        /// </summary>
+        public void saveGame()
+        {
+            _db.InsertScore(_nameP1, _nameP2, _scoreP1, _scoreP2);
+        }
+
+        /// <summary>
         /// _multi's accessor
         /// it's a multiplayer game?
         /// </summary>
@@ -450,6 +464,16 @@ namespace Morpion
             set
             {
                 _whatPlayer = value;
+            }
+        }
+        /// <summary>
+        /// define limit of scores in db
+        /// </summary>
+        public int dbLimit
+        {
+            set
+            {
+                _db.limit = value;
             }
         }
     }

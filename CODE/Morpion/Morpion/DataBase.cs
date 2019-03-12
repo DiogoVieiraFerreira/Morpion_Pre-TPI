@@ -18,6 +18,7 @@ namespace Morpion
         private SQLiteDataReader _reader;
         private string _sql;
         private string _dbDirLocation;
+        private int _limit;
         #endregion private attributes
 
         #region Constructor
@@ -78,33 +79,39 @@ namespace Morpion
         /// <summary>
         /// Delete the oldest data when the db has more columns than the limit (defenied by parametre)
         /// </summary>
-        /// <param name="limit">limit of columns in db, default is 10</param>
-        private void DeleteScores(int limit = 10)
+        private void DeleteScores()
         {
-            OpenDB();
-            SQLiteCommand command = new SQLiteCommand("select count(idscore) as total from scores", _dbConnection);
-            _reader = command.ExecuteReader();
-
-            int tot = 0;
-            while (_reader.Read())
+            try
             {
-                tot = Int32.Parse(_reader["total"].ToString());
-            }
+                OpenDB();
+                SQLiteCommand command = new SQLiteCommand("select count(idscore) as total from scores", _dbConnection);
+                _reader = command.ExecuteReader();
 
-            command.Dispose();
-            CloseDB();
-            if (tot >= limit)
-            {
-                int over = tot - limit;
-                for (int i=0; i<over; i++)
+                int tot = 0;
+                while (_reader.Read())
                 {
-                    OpenDB();
-                    command = new SQLiteCommand("DELETE FROM Scores WHERE idScore LIKE(SELECT idScore FROM Scores LIMIT 1)", _dbConnection);
-                    command.ExecuteNonQuery();
-                    command.Dispose();
-                    CloseDB();
+                    tot = Int32.Parse(_reader["total"].ToString());
                 }
-            }   
+
+                command.Dispose();
+                CloseDB();
+                if (tot >= _limit)
+                {
+                    int over = tot - _limit;
+                    for (int i=0; i<over; i++)
+                    {
+                        OpenDB();
+                        command = new SQLiteCommand("DELETE FROM Scores WHERE idScore LIKE(SELECT idScore FROM Scores LIMIT 1)", _dbConnection);
+                        command.ExecuteNonQuery();
+                        command.Dispose();
+                        CloseDB();
+                    }
+                }   
+            }
+            catch( Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         #endregion private methods
 
@@ -130,15 +137,25 @@ namespace Morpion
         /// <param name="score02">score of second user</param>
         public void InsertScore(string userName01, string userName02, int score01, int score02)
         {
-            OpenDB();
-            SQLiteCommand command = new SQLiteCommand("INSERT INTO Scores(Player01, Player02, ScoreP01, ScoreP02) VALUES (@param1, @param2, @param3, @param4)", _dbConnection);
-            command.Parameters.Add(new SQLiteParameter("@param1",userName01));
-            command.Parameters.Add(new SQLiteParameter("@param2",userName02));
-            command.Parameters.Add(new SQLiteParameter("@param3",score01));
-            command.Parameters.Add(new SQLiteParameter("@param4",score02));
-            command.ExecuteNonQuery();
-            command.Dispose();
-            CloseDB();
+            try
+            {
+                OpenDB();
+
+                SQLiteCommand command = new SQLiteCommand("INSERT INTO Scores(Player01, Player02, ScoreP01, ScoreP02) VALUES (@Player01,@Player02,@ScoreP01,@ScoreP02)", _dbConnection);
+                command.CommandType = System.Data.CommandType.Text;
+                command.Parameters.Add("@Player01", System.Data.DbType.String).Value= userName01;
+                command.Parameters.Add("@Player02", System.Data.DbType.String).Value= userName02;
+                command.Parameters.Add("@ScoreP01", System.Data.DbType.Int32).Value= score01;
+                command.Parameters.Add("@ScoreP02", System.Data.DbType.Int32).Value= score02;
+                command.ExecuteNonQuery();
+                command.Parameters.Clear();
+                command.Dispose();
+                CloseDB();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
             DeleteScores();
         }
 
@@ -168,6 +185,21 @@ namespace Morpion
             return ScoreList;
         }
         #endregion publics methods
+
+        /// <summary>
+        /// get or set limit values in db
+        /// </summary>
+        public int limit
+        {
+            set
+            {
+                _limit = value;
+            }
+            get
+            {
+                return _limit;
+            }
+        }
         
     }
 }

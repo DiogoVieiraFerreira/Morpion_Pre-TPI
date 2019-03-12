@@ -12,14 +12,14 @@ namespace Morpion
 {
     class Controlor
     {
-
         private Model _model;
         private View _view;
         private View _msgBox;
 
         private TextBox _txtPlayer01;
         private TextBox _txtPlayer02;
-       
+        private int _limit;
+
         /// <summary>
         /// Constructor of control, he call model and ask all data before to execute program
         /// </summary>
@@ -27,18 +27,19 @@ namespace Morpion
         {
             _view = new View("Morpion");
             _model = new Model();
+            _model.dbLimit = 10;
             _model.view = _view;
             _view.SuspendLayout();
             Show_interface();
             _view.ResumeLayout(false);
-            _view.PerformLayout();            
+            _view.PerformLayout();
             End_program();
         }
         /// <summary>
         /// menu 0: welcome page,
         /// menu 1: game interface
         /// </summary>
-        /// <param name="menu"></param>
+        /// <param name="menu">type of interface</param>
         private void Show_interface(int menu = 0)
         {
             _view.Controls.Clear();
@@ -60,7 +61,9 @@ namespace Morpion
             _view.ClientSize = viewSize;
         }
 
-
+        /// <summary>
+        /// display the top menu
+        /// </summary>
         private void topMenu()
         {
 
@@ -97,7 +100,7 @@ namespace Morpion
             // add local menu in mnu
             mnuLocal.BackgroundImageLayout = ImageLayout.None;
             mnuLocal.DropDownItems.AddRange(new ToolStripItem[] {  mnuLocalSolo,
-                                                                                        mnuLocalMulti});
+                                                                   mnuLocalMulti});
             mnuLocal.Name = "mnuLocal";
             mnuLocal.Size = new Size(86, 20);
             mnuLocal.Text = "Partie Locale";
@@ -214,7 +217,7 @@ namespace Morpion
         private void game_int()
         {
 
-            _model.GameArray=new int[] { 0,0,0,
+            _model.GameArray = new int[] { 0,0,0,
                                          0,0,0,
                                          0,0,0 };
             _model.WhatPlayer = 1;
@@ -447,7 +450,7 @@ namespace Morpion
                 _txtPlayer02.Name = _model.nameP2;
                 _txtPlayer02.Size = new Size(_msgBox.Size.Width - 40, 20);
                 _txtPlayer02.Location = new Point(15, lblInfo02.Location.Y + lblInfo02.Size.Height);
-                _txtPlayer02.KeyDown += MsgBoxAskUserName_KeyDown; 
+                _txtPlayer02.KeyDown += MsgBoxAskUserName_KeyDown;
                 _msgBox.Controls.Add(_txtPlayer02);
 
 
@@ -515,10 +518,20 @@ namespace Morpion
                         pic.Image = Morpion.Properties.Resources.cross;
                     else
                         pic.Image = Morpion.Properties.Resources.circle;
-                        if (_model.CheckGame(id))
+
+                    if (_model.CheckGame(id))
+                    {
+                        if (_model.WhatPlayer == 2)
                         {
-                            throw new Exception("fin de partie, "+_model.ActualPlayer);
+                            _model.scoreP1 += 1;
                         }
+                        else
+                        {
+                            _model.scoreP2 += 1;
+                        }
+
+                        throw new Exception("fin de partie, " + _model.ActualPlayer);
+                    }
                 }
                 if (!_model.multi)
                 {
@@ -529,18 +542,42 @@ namespace Morpion
                         pic = (PictureBox)_view.Controls.Find(IA_id.ToString(), true)[0];
                         pic.Image = Morpion.Properties.Resources.circle;
                         if (finish)
+                        {
+                            _model.scoreP2 += 1;
                             throw new Exception("L'ordinateur a gagné, dommage...");
+                        }
                     }
                 }
             }
             catch (Exception execption)
             {
                 MessageBox.Show(execption.Message);
-                
-                _view.Controls.Clear();
-                topMenu();
-                game_int();
+                replay();
             }
+        }
+
+        private void replay()
+        {
+            try
+            {
+                var result = MessageBox.Show("Une autre partie?", "Revanche?", MessageBoxButtons.YesNo);
+                if(result == DialogResult.Yes)
+                {
+                    Show_interface(1);
+                }
+                else
+                {
+                    _model.saveGame();
+                    _model.scoreP1 = 0;
+                    _model.scoreP2 = 0;
+                    Show_interface(0);
+                }
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
         }
         private void CmdOk_Click(object sender, EventArgs e)
         {
@@ -549,11 +586,15 @@ namespace Morpion
 
         private void LocalSolo_click(object sender, EventArgs e)
         {
+            _model.scoreP1 = 0;
+            _model.scoreP2 = 0;
             askUserName(1);
         }
 
         private void LocalMulti_click(object sender, EventArgs e)
         {
+            _model.scoreP1 = 0;
+            _model.scoreP2 = 0;
             askUserName(2);
         }
         private void Network_click(object sender, EventArgs e)
