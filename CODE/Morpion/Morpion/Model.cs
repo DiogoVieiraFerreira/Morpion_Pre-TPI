@@ -16,7 +16,7 @@ namespace Morpion
     /// </summary>
     public class Model
     {
-        private DataBase db = new DataBase("Morpion");
+        private DataBase _db; 
         private View _view;
         private int _scoreP1;
         private int _scoreP2;
@@ -27,7 +27,14 @@ namespace Morpion
         private int[] _gameArray;
         private int _lastIdPlayed;
         private int _whatPlayer;
+        private int _lvlAI;
 
+        public Model()
+        {
+            _db = new DataBase("Morpion");
+            _scoreP1 = 0;
+            _scoreP2 = 0;
+        }
         /// <summary>
         /// check possibilities by symbol and return true bool if ok
         /// </summary>
@@ -272,10 +279,10 @@ namespace Morpion
             return result;
         }
         /// <summary>
-        /// generate IA to play with user
+        /// generate AI to play with user
         /// </summary>
-        /// <param name="lvl">insert the difficult of IA. 1 easy, 2 medium, 3 hard</param>
-        public int IA(int lvl)
+        /// <param name="lvl">insert the difficult of AI. 1 easy, 2 medium, 3 hard</param>
+        public int AI(int lvl)
         {
             int id=0;
             Random rnd = new Random();
@@ -314,16 +321,24 @@ namespace Morpion
                             }
                             if (id == 999)
                             { 
-                               id = IA(1);
+                               id = AI(1);
                             }
                     }
                     else
                     {
-                        id = IA(1);
+                        id = AI(1);
                     }
                     break;
             }
             return id;
+        }
+
+        /// <summary>
+        /// save score of player(s) in db
+        /// </summary>
+        public void saveGame()
+        {
+            _db.InsertScore(_nameP1, _nameP2, _scoreP1, _scoreP2);
         }
 
         /// <summary>
@@ -450,6 +465,30 @@ namespace Morpion
             set
             {
                 _whatPlayer = value;
+            }
+        }
+        /// <summary>
+        /// define limit of scores in db
+        /// </summary>
+        public int dbLimit
+        {
+            set
+            {
+                _db.limit = value;
+            }
+        }
+        /// <summary>
+        /// define the level of AI (Artificial Intelligence)
+        /// </summary>
+        public int lvlAI
+        {
+            set
+            {
+                _lvlAI = value;
+            }
+            get
+            {
+                return _lvlAI;
             }
         }
     }
