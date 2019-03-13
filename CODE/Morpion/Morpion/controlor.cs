@@ -18,7 +18,6 @@ namespace Morpion
 
         private TextBox _txtPlayer01;
         private TextBox _txtPlayer02;
-        private int _limit;
 
         /// <summary>
         /// Constructor of control, he call model and ask all data before to execute program
@@ -26,6 +25,8 @@ namespace Morpion
         public Controlor()
         {
             _view = new View("Morpion");
+            _view.FormBorderStyle = FormBorderStyle.FixedSingle;
+            _view.StartPosition = FormStartPosition.CenterScreen;
             _model = new Model();
             _model.dbLimit = 10;
             _model.view = _view;
@@ -410,6 +411,8 @@ namespace Morpion
         {
             _model.multi = false;
             _msgBox = new View("Infos");
+            _msgBox.FormBorderStyle = FormBorderStyle.FixedSingle;
+            _msgBox.StartPosition = FormStartPosition.CenterScreen;
             _msgBox.Size = new Size(200, 150);
 
 
@@ -475,7 +478,6 @@ namespace Morpion
                     _model.nameP1 = _txtPlayer01.Text;
                     _model.nameP2 = _txtPlayer02.Text;
                     _msgBox.Close();
-                    _view.Text = "Morpion: Bienvenue " + _model.nameP1 + " et " + _model.nameP2;
                     Show_interface(1);
                 }
             }
@@ -490,10 +492,69 @@ namespace Morpion
                     _model.nameP1 = _txtPlayer01.Text;
                     _model.nameP2 = "Ordinateur";
                     _msgBox.Close();
-                    _view.Text = "Morpion: Bienvenue " + _model.nameP1;
+                    askLvlAI();
+                    _msgBox.ShowDialog();
                     Show_interface(1);
                 }
             }
+        }
+        private void askLvlAI()
+        {
+            _msgBox = new View("Niveau de l'IA");
+            _msgBox.Size = new Size(284, 130);
+            _msgBox.FormBorderStyle = FormBorderStyle.None;
+            _msgBox.StartPosition = FormStartPosition.CenterScreen;
+
+
+            Label lblTitle = new Label();
+
+            Button easy = new Button();
+            Button medium = new Button(); 
+            Button hard = new Button();
+            //
+            //lblTitle
+            //
+            lblTitle.Text = "Niveau de l'ordinateur:";
+            lblTitle.Name = "lblTitle";
+            lblTitle.Location = new Point(12, 12);
+            lblTitle.AutoSize = true;
+            _msgBox.Controls.Add(lblTitle);
+            // 
+            // easy
+            // 
+            easy.Location = new System.Drawing.Point(12, 40);
+            easy.Name = "1";
+            easy.Size = new System.Drawing.Size(75, 23);
+            easy.TabIndex = 0;
+            easy.Text = "Facile";
+            easy.Click += CmdlvlAI_Click;
+            _msgBox.Controls.Add(easy);
+            // 
+            // medium
+            // 
+            medium.Location = new System.Drawing.Point(93, 40);
+            medium.Name = "2";
+            medium.Size = new System.Drawing.Size(75, 23);
+            medium.TabIndex = 1;
+            medium.Text = "Moyen";
+            medium.Click += CmdlvlAI_Click;
+            _msgBox.Controls.Add(medium);
+            // 
+            // hard
+            // 
+            hard.Location = new System.Drawing.Point(174, 40);
+            hard.Name = "3";
+            hard.Size = new System.Drawing.Size(75, 23);
+            hard.TabIndex = 2;
+            hard.Text = "Difficile";
+            hard.Click += CmdlvlAI_Click;
+            _msgBox.Controls.Add(hard);
+        }
+        private void CmdlvlAI_Click(object sender, EventArgs e)
+        {
+            int id= int.Parse(((Button)sender).Name);
+            _model.lvlAI=id;
+            _msgBox.Close();
         }
         private void MsgBoxAskUserName_KeyDown(object sender, KeyEventArgs e)
         {
@@ -537,9 +598,9 @@ namespace Morpion
                 {
                     if (_model.WhatPlayer == 2)
                     {
-                        int IA_id = _model.IA(3);
-                        bool finish = _model.CheckGame(IA_id);
-                        pic = (PictureBox)_view.Controls.Find(IA_id.ToString(), true)[0];
+                        int AI_id = _model.AI(2);
+                        bool finish = _model.CheckGame(AI_id);
+                        pic = (PictureBox)_view.Controls.Find(AI_id.ToString(), true)[0];
                         pic.Image = Morpion.Properties.Resources.circle;
                         if (finish)
                         {

@@ -95,17 +95,19 @@ namespace Morpion
 
                 command.Dispose();
                 CloseDB();
-                if (tot >= _limit)
+                if (tot > _limit)
                 {
                     int over = tot - _limit;
-                    for (int i=0; i<over; i++)
+                    OpenDB();
+                    for(int i=over; i>=1 ; i--)
                     {
-                        OpenDB();
-                        command = new SQLiteCommand("DELETE FROM Scores WHERE idScore LIKE(SELECT idScore FROM Scores LIMIT 1)", _dbConnection);
+                        command = new SQLiteCommand(@"DELETE FROM Scores 
+                                                      WHERE idScore = (SELECT idScore FROM Scores LIMIT 1)", _dbConnection);
+
                         command.ExecuteNonQuery();
                         command.Dispose();
-                        CloseDB();
                     }
+                    CloseDB();
                 }   
             }
             catch( Exception ex)

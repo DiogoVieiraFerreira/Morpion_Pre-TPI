@@ -22,8 +22,6 @@ namespace Morpion
             this.Name = name;
             this.Text = text;
         }
-
-        
         
     }
 }

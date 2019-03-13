@@ -27,6 +27,7 @@ namespace Morpion
         private int[] _gameArray;
         private int _lastIdPlayed;
         private int _whatPlayer;
+        private int _lvlAI;
 
         public Model()
         {
@@ -278,10 +279,10 @@ namespace Morpion
             return result;
         }
         /// <summary>
-        /// generate IA to play with user
+        /// generate AI to play with user
         /// </summary>
-        /// <param name="lvl">insert the difficult of IA. 1 easy, 2 medium, 3 hard</param>
-        public int IA(int lvl)
+        /// <param name="lvl">insert the difficult of AI. 1 easy, 2 medium, 3 hard</param>
+        public int AI(int lvl)
         {
             int id=0;
             Random rnd = new Random();
@@ -320,12 +321,12 @@ namespace Morpion
                             }
                             if (id == 999)
                             { 
-                               id = IA(1);
+                               id = AI(1);
                             }
                     }
                     else
                     {
-                        id = IA(1);
+                        id = AI(1);
                     }
                     break;
             }
@@ -474,6 +475,20 @@ namespace Morpion
             set
             {
                 _db.limit = value;
+            }
+        }
+        /// <summary>
+        /// define the level of AI (Artificial Intelligence)
+        /// </summary>
+        public int lvlAI
+        {
+            set
+            {
+                _lvlAI = value;
+            }
+            get
+            {
+                return _lvlAI;
             }
         }
     }
