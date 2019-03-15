@@ -83,7 +83,8 @@ namespace TestMorpion
             for(int i=0; i<11; i++)
                 _db.InsertScore("Diogo", "Ordinateur", i, 11-i);
 
-            Assert.AreEqual(10, _db.ScoreList().Count);
+            _exceptedScoreLst = _db.ScoreList();
+            Assert.AreEqual(10, _exceptedScoreLst.Count);
         }
         #endregion TestMethods
 

@@ -145,7 +145,7 @@ namespace Morpion
 
                 SQLiteCommand command = new SQLiteCommand("INSERT INTO Scores(Player01, Player02, ScoreP01, ScoreP02) VALUES (@Player01,@Player02,@ScoreP01,@ScoreP02)", _dbConnection);
                 command.CommandType = System.Data.CommandType.Text;
-                command.Parameters.Add("@Player01", System.Data.DbType.String).Value= userName01;
+                command.Parameters.Add("@Player01", System.Data.DbType.String).Value= userName01; //insère la valeur de la variable userName01
                 command.Parameters.Add("@Player02", System.Data.DbType.String).Value= userName02;
                 command.Parameters.Add("@ScoreP01", System.Data.DbType.Int32).Value= score01;
                 command.Parameters.Add("@ScoreP02", System.Data.DbType.Int32).Value= score02;
@@ -169,19 +169,17 @@ namespace Morpion
         {
             List<string> ScoreList = new List<string>();
 
-            _sql = "SELECT * FROM Scores";
-            SQLiteCommand command = new SQLiteCommand(_sql, _dbConnection);
-
             OpenDB();
-
+            SQLiteCommand command = new SQLiteCommand("select * from scores", _dbConnection);
             _reader = command.ExecuteReader();
-            command.Dispose();
+            
 
             while (_reader.Read())
             {
                 ScoreList.Add(_reader["Player01"] + " vs " + _reader["Player02"] + "\t" + _reader["ScoreP01"] + " : " + _reader["ScoreP02"]);
             }
 
+            command.Dispose();
             CloseDB();
 
             return ScoreList;

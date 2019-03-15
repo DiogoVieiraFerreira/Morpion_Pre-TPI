@@ -29,6 +29,9 @@ namespace Morpion
         private int _whatPlayer;
         private int _lvlAI;
 
+        /// <summary>
+        /// constructor of model's class
+        /// </summary>
         public Model()
         {
             _db = new DataBase("Morpion");
@@ -38,16 +41,16 @@ namespace Morpion
         /// <summary>
         /// check possibilities by symbol and return true bool if ok
         /// </summary>
-        /// <param name="symbolCheck"></param>
-        /// <param name="id"></param>
+        /// <param name="symbolCheck">number of player</param>
         /// <returns></returns>
-        private int checkPossibilities(int symbolCheck)
+        private int CheckPossibilities(int symbolCheck)
         {
             int id = 999;
+            //first line
             if (((_gameArray[0] == symbolCheck && _gameArray[1] == symbolCheck) ||
-                                 (_gameArray[1] == symbolCheck && _gameArray[2] == symbolCheck) ||
-                                 (_gameArray[0] == symbolCheck && _gameArray[2] == symbolCheck)) &&
-                                 !(_gameArray[0] != 0 && _gameArray[1] != 0 && _gameArray[2] != 0))
+                 (_gameArray[1] == symbolCheck && _gameArray[2] == symbolCheck) ||
+                 (_gameArray[0] == symbolCheck && _gameArray[2] == symbolCheck)) &&
+                 !(_gameArray[0] != 0 && _gameArray[1] != 0 && _gameArray[2] != 0))
             {
                 if (_gameArray[0] == 0)
                 {
@@ -216,7 +219,7 @@ namespace Morpion
         /// when user put the last our symbol, return true value
         /// when equality an exception are generate
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">match a location where player have place his symbol in game array</param>
         /// <returns></returns>
         public bool CheckGame(int id)
         {
@@ -231,7 +234,7 @@ namespace Morpion
             }
             else
             {
-                _actualPlayer = _nameP1;
+                _actualPlayer = _nameP2;
                 symbol = 2;
             }
             _gameArray[id] = symbol;
@@ -272,7 +275,7 @@ namespace Morpion
                     }
                 }
                 if (finish)
-                    throw new Exception("Egalitée");
+                    throw new Exception("Egalité");
             }
 
             _whatPlayer = 3 - _whatPlayer;
@@ -312,12 +315,12 @@ namespace Morpion
                             if (lvl == 3)
                                 symbolCheck = 3 - symbolCheck;
 
-                            id = checkPossibilities(symbolCheck);
+                            id = CheckPossibilities(symbolCheck);
 
                             if (id==999)
                             {
                                 symbolCheck = 3 - symbolCheck;
-                                id = checkPossibilities(symbolCheck);
+                                id = CheckPossibilities(symbolCheck);
                             }
                             if (id == 999)
                             { 
@@ -336,7 +339,7 @@ namespace Morpion
         /// <summary>
         /// save score of player(s) in db
         /// </summary>
-        public void saveGame()
+        public void SaveGame()
         {
             _db.InsertScore(_nameP1, _nameP2, _scoreP1, _scoreP2);
         }
@@ -345,7 +348,7 @@ namespace Morpion
         /// _multi's accessor
         /// it's a multiplayer game?
         /// </summary>
-        public bool multi
+        public bool Multi
         {
             get
             {
@@ -360,7 +363,7 @@ namespace Morpion
         /// _nameP1's accessor
         /// get or set name of player 02
         /// </summary>
-        public string nameP1
+        public string NameP1
         {
             get
             {
@@ -375,7 +378,7 @@ namespace Morpion
         /// _scoreP1's accessor
         /// get or set score of player 01
         /// </summary>
-        public int scoreP1
+        public int ScoreP1
         {
             get
             {
@@ -390,7 +393,7 @@ namespace Morpion
         /// _nameP2's accessor
         /// get or set name of player 02
         /// </summary>
-        public string nameP2
+        public string NameP2
         {
             get
             {
@@ -415,7 +418,7 @@ namespace Morpion
         /// _scoreP2's accessor
         /// get or set score of player 02
         /// </summary>
-        public int scoreP2
+        public int ScoreP2
         {
             get
             {
@@ -429,7 +432,7 @@ namespace Morpion
         /// <summary>
         /// _view's accessor
         /// </summary>
-        public View view
+        public View View
         {
             set
             {
@@ -470,7 +473,7 @@ namespace Morpion
         /// <summary>
         /// define limit of scores in db
         /// </summary>
-        public int dbLimit
+        public int DbLimit
         {
             set
             {
@@ -480,7 +483,7 @@ namespace Morpion
         /// <summary>
         /// define the level of AI (Artificial Intelligence)
         /// </summary>
-        public int lvlAI
+        public int LvlAI
         {
             set
             {
