@@ -26,6 +26,7 @@ namespace TestMorpion
         {
             this._dbName = "Morpion";
             this._db = new DataBase(_dbName);
+            this._db.limit = 10;
             this._expectedDbDirLocation =  AppDomain.CurrentDomain.BaseDirectory + @"\DB\";
             this._expectedDbLocation = _expectedDbDirLocation + _dbName + ".sqlite";
             
@@ -61,6 +62,7 @@ namespace TestMorpion
         {
             //refere to Initialize()
             _exceptedScoreLst = new List<string>();
+
             _exceptedScoreLst = _db.ScoreList();
             int expectedNbScores = _exceptedScoreLst.Count + 1;
 
@@ -83,7 +85,8 @@ namespace TestMorpion
             for(int i=0; i<11; i++)
                 _db.InsertScore("Diogo", "Ordinateur", i, 11-i);
 
-            Assert.AreEqual(10, _db.ScoreList().Count);
+            _exceptedScoreLst = _db.ScoreList();
+            Assert.AreEqual(10, _exceptedScoreLst.Count);
         }
         #endregion TestMethods
 

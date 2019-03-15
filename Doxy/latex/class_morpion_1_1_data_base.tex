@@ -1,0 +1,111 @@
+\hypertarget{class_morpion_1_1_data_base}{}\section{Morpion.\+Data\+Base Class Reference}
+\label{class_morpion_1_1_data_base}\index{Morpion.\+Data\+Base@{Morpion.\+Data\+Base}}
+
+
+The class give access to DB  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_morpion_1_1_data_base_a0d69b39dbf424f7d4105df7a3ec0a586}{Data\+Base} (string db\+Name)
+\begin{DoxyCompactList}\small\item\em Create Database and table scores \end{DoxyCompactList}\item 
+void \hyperlink{class_morpion_1_1_data_base_a08b6bf1e688f66fbde3e818e08503be6}{Clear\+Scores} ()
+\begin{DoxyCompactList}\small\item\em clear all scores \end{DoxyCompactList}\item 
+void \hyperlink{class_morpion_1_1_data_base_ac964919b18e41d29326dd96ff9694d5a}{Insert\+Score} (string user\+Name01, string user\+Name02, int score01, int score02)
+\begin{DoxyCompactList}\small\item\em Add column in database with param values \end{DoxyCompactList}\item 
+List$<$ string $>$ \hyperlink{class_morpion_1_1_data_base_a45bfe0e1b60c377da0b085cb2590b7bf}{Score\+List} ()
+\begin{DoxyCompactList}\small\item\em Select all scores in db and send a list with them \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_morpion_1_1_data_base_ac0104fe497ec69fc184498e3e904b41f}{limit}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em get or set limit values in db \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The class give access to DB 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_morpion_1_1_data_base_a0d69b39dbf424f7d4105df7a3ec0a586}\label{class_morpion_1_1_data_base_a0d69b39dbf424f7d4105df7a3ec0a586}} 
+\index{Morpion\+::\+Data\+Base@{Morpion\+::\+Data\+Base}!Data\+Base@{Data\+Base}}
+\index{Data\+Base@{Data\+Base}!Morpion\+::\+Data\+Base@{Morpion\+::\+Data\+Base}}
+\subsubsection{\texorpdfstring{Data\+Base()}{DataBase()}}
+{\footnotesize\ttfamily Morpion.\+Data\+Base.\+Data\+Base (\begin{DoxyParamCaption}\item[{string}]{db\+Name }\end{DoxyParamCaption})}
+
+
+
+Create Database and table scores 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db\+Name} & name of Database\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_morpion_1_1_data_base_a08b6bf1e688f66fbde3e818e08503be6}\label{class_morpion_1_1_data_base_a08b6bf1e688f66fbde3e818e08503be6}} 
+\index{Morpion\+::\+Data\+Base@{Morpion\+::\+Data\+Base}!Clear\+Scores@{Clear\+Scores}}
+\index{Clear\+Scores@{Clear\+Scores}!Morpion\+::\+Data\+Base@{Morpion\+::\+Data\+Base}}
+\subsubsection{\texorpdfstring{Clear\+Scores()}{ClearScores()}}
+{\footnotesize\ttfamily void Morpion.\+Data\+Base.\+Clear\+Scores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+clear all scores 
+
+\mbox{\Hypertarget{class_morpion_1_1_data_base_ac964919b18e41d29326dd96ff9694d5a}\label{class_morpion_1_1_data_base_ac964919b18e41d29326dd96ff9694d5a}} 
+\index{Morpion\+::\+Data\+Base@{Morpion\+::\+Data\+Base}!Insert\+Score@{Insert\+Score}}
+\index{Insert\+Score@{Insert\+Score}!Morpion\+::\+Data\+Base@{Morpion\+::\+Data\+Base}}
+\subsubsection{\texorpdfstring{Insert\+Score()}{InsertScore()}}
+{\footnotesize\ttfamily void Morpion.\+Data\+Base.\+Insert\+Score (\begin{DoxyParamCaption}\item[{string}]{user\+Name01,  }\item[{string}]{user\+Name02,  }\item[{int}]{score01,  }\item[{int}]{score02 }\end{DoxyParamCaption})}
+
+
+
+Add column in database with param values 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Name01} & name of first user\\
+\hline
+{\em user\+Name02} & name of second user\\
+\hline
+{\em score01} & score of first user\\
+\hline
+{\em score02} & score of second user\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_morpion_1_1_data_base_a45bfe0e1b60c377da0b085cb2590b7bf}\label{class_morpion_1_1_data_base_a45bfe0e1b60c377da0b085cb2590b7bf}} 
+\index{Morpion\+::\+Data\+Base@{Morpion\+::\+Data\+Base}!Score\+List@{Score\+List}}
+\index{Score\+List@{Score\+List}!Morpion\+::\+Data\+Base@{Morpion\+::\+Data\+Base}}
+\subsubsection{\texorpdfstring{Score\+List()}{ScoreList()}}
+{\footnotesize\ttfamily List$<$string$>$ Morpion.\+Data\+Base.\+Score\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Select all scores in db and send a list with them 
+
+\begin{DoxyReturn}{Returns}
+list with all scores
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_morpion_1_1_data_base_ac0104fe497ec69fc184498e3e904b41f}\label{class_morpion_1_1_data_base_ac0104fe497ec69fc184498e3e904b41f}} 
+\index{Morpion\+::\+Data\+Base@{Morpion\+::\+Data\+Base}!limit@{limit}}
+\index{limit@{limit}!Morpion\+::\+Data\+Base@{Morpion\+::\+Data\+Base}}
+\subsubsection{\texorpdfstring{limit}{limit}}
+{\footnotesize\ttfamily int Morpion.\+Data\+Base.\+limit\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+get or set limit values in db 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+O\+D\+E/\+Morpion/\+Morpion/\hyperlink{_data_base_8cs}{Data\+Base.\+cs}\end{DoxyCompactItemize}
