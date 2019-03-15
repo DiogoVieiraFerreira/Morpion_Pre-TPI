@@ -171,14 +171,13 @@ namespace Morpion
 
             OpenDB();
             SQLiteCommand command = new SQLiteCommand("select * from scores", _dbConnection);
+
             _reader = command.ExecuteReader();
             
-
             while (_reader.Read())
             {
                 ScoreList.Add(_reader["Player01"] + " vs " + _reader["Player02"] + "\t" + _reader["ScoreP01"] + " : " + _reader["ScoreP02"]);
             }
-
             command.Dispose();
             CloseDB();
 
