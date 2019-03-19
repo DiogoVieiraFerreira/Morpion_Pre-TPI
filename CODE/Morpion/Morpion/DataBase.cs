@@ -165,10 +165,9 @@ namespace Morpion
         /// Select all scores in db and send a list with them
         /// </summary>
         /// <returns>list with all scores</returns>
-        public List<string> ScoreList()
+        public List<score> ScoreList()
         {
-            List<string> ScoreList = new List<string>();
-
+            List<score> ScoreList = new List<score>();
             OpenDB();
             SQLiteCommand command = new SQLiteCommand("select * from scores", _dbConnection);
 
@@ -176,7 +175,7 @@ namespace Morpion
             
             while (_reader.Read())
             {
-                ScoreList.Add(_reader["Player01"] + " vs " + _reader["Player02"] + "\t" + _reader["ScoreP01"] + " : " + _reader["ScoreP02"]);
+                ScoreList.Add(new score { nameP01 = _reader["Player01"].ToString() , nameP02 = _reader["Player02"].ToString(), scoreP01 = _reader["ScoreP01"].ToString(), scoreP02 = _reader["ScoreP02"].ToString() });
             }
             command.Dispose();
             CloseDB();

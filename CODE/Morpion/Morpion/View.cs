@@ -21,6 +21,7 @@ namespace Morpion
             InitializeComponent();
             this.Name = name;
             this.Text = text;
+            this.MaximizeBox = false;
         }
         
     }

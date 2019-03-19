@@ -343,7 +343,23 @@ namespace Morpion
         {
             _db.InsertScore(_nameP1, _nameP2, _scoreP1, _scoreP2);
         }
-
+        /// <summary>
+        /// send all records on database
+        /// </summary>
+        public List<score> GetScore
+        {
+            get
+            {
+                return _db.ScoreList();
+            }
+        }
+        /// <summary>
+        /// delete all scores in db
+        /// </summary>
+        public void ClearDB()
+        {
+            _db.ClearScores();
+        }
         /// <summary>
         /// _multi's accessor
         /// it's a multiplayer game?

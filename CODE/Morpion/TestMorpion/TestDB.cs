@@ -14,7 +14,7 @@ namespace TestMorpion
         private string _expectedDbDirLocation;
         private string _expectedDbLocation;
         private string _dbName;
-        private List<string> _exceptedScoreLst;
+        private List<score> _exceptedScoreLst;
         #endregion private attributes
 
         #region TestInitialize
@@ -61,7 +61,7 @@ namespace TestMorpion
         public void DataBase_ScoreList_AfterInitialization_ReturnList()
         {
             //refere to Initialize()
-            _exceptedScoreLst = new List<string>();
+            _exceptedScoreLst = new List<score>();
 
             _exceptedScoreLst = _db.ScoreList();
             int expectedNbScores = _exceptedScoreLst.Count + 1;
@@ -79,7 +79,7 @@ namespace TestMorpion
         public void DataBase_ScoreList_AfterInitialization_tenScores()
         {
             //refere to Initialize()
-            _exceptedScoreLst = new List<string>();
+            _exceptedScoreLst = new List<score>();
 
             //insert eleven scores
             for(int i=0; i<11; i++)

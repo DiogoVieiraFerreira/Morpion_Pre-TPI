@@ -69,6 +69,7 @@
     <Compile Include="DataBase.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="NetworkCommunication.cs" />
+    <Compile Include="score.cs" />
     <Compile Include="View.cs">
       <SubType>Form</SubType>
     </Compile>

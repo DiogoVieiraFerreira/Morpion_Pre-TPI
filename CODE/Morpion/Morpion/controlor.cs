@@ -39,6 +39,7 @@ namespace Morpion
         /// <summary>
         /// menu 0: welcome page,
         /// menu 1: game interface
+        /// menu 2: informations interface
         /// </summary>
         /// <param name="menu">type of interface</param>
         private void Show_interface(int menu = 0)
@@ -48,7 +49,7 @@ namespace Morpion
             TopMenu();
             switch (menu)
             {
-                case 0: // main menu
+                case 0:
                     viewSize = new Size(785, 560);
                     Main_menu();
                     break;
@@ -56,7 +57,13 @@ namespace Morpion
                     viewSize = new Size(804, 339);
                     Game_int();
                     break;
+                case 2:
+                    viewSize = new Size(350, 400);
+                    Info_int();
+                    break;
                 default:
+                    viewSize = new Size(785, 560);
+                    Main_menu();
                     break;
             }
             _view.ClientSize = viewSize;
@@ -413,6 +420,128 @@ namespace Morpion
             _view.Controls.Add(separatorP2);
 
         }
+        private void Info_int()
+        {
+            Button cmdClearDB = new Button();
+            Button cmdHome = new Button();
+            ListView lstView = new System.Windows.Forms.ListView();
+            Label lblScores = new Label();
+            Label lblDev = new Label();
+
+                           
+            // 
+            // lblDev
+            // 
+            lblDev.AutoSize = true;
+            lblDev.Location = new System.Drawing.Point(30, 25);
+            lblDev.Name = "lblDev";
+            lblDev.TabIndex = 0;
+            lblDev.Text = "Dévelloppé par Diogo Vieira\nVersion "+ Application.ProductVersion;
+            // 
+            // lblScores
+            // 
+            lblScores.AutoSize = true;
+            lblScores.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblScores.Location = new System.Drawing.Point(lblDev.Location.X, lblDev.Location.Y + lblDev.Height);
+            lblScores.Name = "lblScores";
+            lblScores.TabIndex = 0;
+            lblScores.Text = "Scores";
+            //
+            //columns
+            //
+            lstView.View = System.Windows.Forms.View.Details;
+            ColumnHeader clmPlayer01 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            ColumnHeader clmPlayer02 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            ColumnHeader clmScoreP1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            ColumnHeader clmScoreP2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            // 
+            // listView
+            // 
+            lstView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {  clmPlayer01,
+                                                                                clmPlayer02,
+                                                                                clmScoreP1,
+                                                                                clmScoreP2});
+            lstView.Location = new System.Drawing.Point(30, lblScores.Location.Y+lblScores.Height+10);
+            lstView.Name = "lstView";
+            lstView.Size = new System.Drawing.Size(296, 270);
+            lstView.TabIndex = 0;
+            lstView.UseCompatibleStateImageBehavior = false;
+            lstView.View = System.Windows.Forms.View.Details;
+
+            // 
+            // clmPlayer01
+            // 
+            clmPlayer01.Text = "Nom J1";
+            clmPlayer01.Name = "nameP01";
+            clmPlayer01.Width = 90;
+            // 
+            // clmPlayer02
+            // 
+            clmPlayer02.Text = "Nom J2";
+            clmPlayer02.Name = "nameP02";
+            clmPlayer02.Width = 90;
+            // 
+            // clmScoreP1
+            // 
+            clmScoreP1.Text = "Score J1";
+            clmScoreP1.Name = "scoreP01";
+            clmScoreP1.Width = 55;
+            // 
+            // clmScoreP2
+            // 
+            clmScoreP2.Text = "Score J2";
+            clmScoreP2.Name = "scoreP02";
+            clmScoreP2.Width = 55;
+            // 
+            // cmdClearDB
+            // 
+            cmdClearDB.Location = new Point(lstView.Location.X, lstView.Location.Y + lstView.Height);
+            cmdClearDB.Name = "cmdHome";
+            cmdClearDB.AutoSize = true;
+            cmdClearDB.TabIndex = 0;
+            cmdClearDB.Text = "Effacer les scores";
+            cmdClearDB.UseVisualStyleBackColor = true;
+            cmdClearDB.Click += ClearDB;
+            // 
+            // cmdHome
+            // 
+            cmdHome.Name = "cmdClearDB";
+            cmdHome.AutoSize = true;
+            cmdHome.Location = new Point(lstView.Location.X+lstView.Width-cmdHome.Width-30, lstView.Location.Y + lstView.Height);
+            cmdHome.TabIndex = 0;
+            cmdHome.Text = "Revenir à l'accueil";
+            cmdHome.UseVisualStyleBackColor = true;
+            cmdHome.Click += CmdHome_Click;
+            // 
+            // View
+            // 
+            _view.Controls.Add(lstView);
+            _view.Controls.Add(cmdClearDB);
+            _view.Controls.Add(cmdHome);
+            _view.Controls.Add(lblScores);
+            _view.Controls.Add(lblDev);
+            foreach (score scores in _model.GetScore)
+            {               
+                ListViewItem lvi = new ListViewItem();
+                lvi.Text = scores.nameP01;
+                lvi.SubItems.Add(scores.nameP02);
+                lvi.SubItems.Add(scores.scoreP01);
+                lvi.SubItems.Add(scores.scoreP02);
+                lstView.Items.Add(lvi);
+            }
+
+        }
+
+        private void CmdHome_Click(object sender, EventArgs e)
+        {
+            Show_interface();
+        }
+
+        private void ClearDB(object sender, EventArgs e)
+        {
+            _model.ClearDB();
+        }
+
         /// <summary>
         /// messagebox ask user(s) name(s)
         /// </summary>
@@ -684,11 +813,12 @@ namespace Morpion
         }
         private void Rules_click(object sender, EventArgs e)
         {
-
+            string rules = " Les joueurs cliquent à tour de rôle\n sur une case de la grille et le premier\n qui parvient à aligner trois de ses symboles\n horizontalement, verticalement ou en diagonale\n gagne un point. ";
+            MessageBox.Show(rules, "Règles");
         }
         private void Infos_click(object sender, EventArgs e)
         {
-
+            Show_interface(2);
         }
 
         private void End_program()
