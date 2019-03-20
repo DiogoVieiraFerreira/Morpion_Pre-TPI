@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['networkcommunication',['NetworkCommunication',['../class_morpion_1_1_network_communication.html',1,'Morpion']]]
+  ['score',['score',['../class_morpion_1_1score.html',1,'Morpion']]]
 ];

@@ -72,12 +72,13 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p> 
+<p>containt all data of the game and sends the required data to control  
  <a href="class_morpion_1_1_model.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a459b4901421170316a320d2e7d6408b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a459b4901421170316a320d2e7d6408b4">Model</a> ()</td></tr>
+<tr class="memdesc:a459b4901421170316a320d2e7d6408b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor of model's class  <a href="#a459b4901421170316a320d2e7d6408b4">More...</a><br /></td></tr>
 <tr class="separator:a459b4901421170316a320d2e7d6408b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76f2eb1ec20a4aa78cca17514a0b94e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a76f2eb1ec20a4aa78cca17514a0b94e1">CheckGame</a> (int id)</td></tr>
 <tr class="memdesc:a76f2eb1ec20a4aa78cca17514a0b94e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check state of game when user put the last our symbol, return true value when equality an exception are generate  <a href="#a76f2eb1ec20a4aa78cca17514a0b94e1">More...</a><br /></td></tr>
@@ -85,48 +86,55 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a02dd1ba77ebd6563c86164592b339ed0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a02dd1ba77ebd6563c86164592b339ed0">AI</a> (int lvl)</td></tr>
 <tr class="memdesc:a02dd1ba77ebd6563c86164592b339ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">generate AI to play with user  <a href="#a02dd1ba77ebd6563c86164592b339ed0">More...</a><br /></td></tr>
 <tr class="separator:a02dd1ba77ebd6563c86164592b339ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63707654f2d7d2912d854e5b1f9ced7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a63707654f2d7d2912d854e5b1f9ced7e">saveGame</a> ()</td></tr>
-<tr class="memdesc:a63707654f2d7d2912d854e5b1f9ced7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">save score of player(s) in db  <a href="#a63707654f2d7d2912d854e5b1f9ced7e">More...</a><br /></td></tr>
-<tr class="separator:a63707654f2d7d2912d854e5b1f9ced7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af97f1128b5beaa34f151304c84ee1a80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#af97f1128b5beaa34f151304c84ee1a80">SaveGame</a> ()</td></tr>
+<tr class="memdesc:af97f1128b5beaa34f151304c84ee1a80"><td class="mdescLeft">&#160;</td><td class="mdescRight">save score of player(s) in db  <a href="#af97f1128b5beaa34f151304c84ee1a80">More...</a><br /></td></tr>
+<tr class="separator:af97f1128b5beaa34f151304c84ee1a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5dee79623ee37ae8ccb63bade900dcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#ab5dee79623ee37ae8ccb63bade900dcf">ClearDB</a> ()</td></tr>
+<tr class="memdesc:ab5dee79623ee37ae8ccb63bade900dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all scores in db  <a href="#ab5dee79623ee37ae8ccb63bade900dcf">More...</a><br /></td></tr>
+<tr class="separator:ab5dee79623ee37ae8ccb63bade900dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a2374180fb8d3bedd6aed97fb58fab4d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a2374180fb8d3bedd6aed97fb58fab4d1">multi</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a2374180fb8d3bedd6aed97fb58fab4d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">_multi's accessor it's a multiplayer game?  <a href="#a2374180fb8d3bedd6aed97fb58fab4d1">More...</a><br /></td></tr>
-<tr class="separator:a2374180fb8d3bedd6aed97fb58fab4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a669ba19f89288e27a3d6d14a09c5d120"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a669ba19f89288e27a3d6d14a09c5d120">nameP1</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a669ba19f89288e27a3d6d14a09c5d120"><td class="mdescLeft">&#160;</td><td class="mdescRight">_nameP1's accessor get or set name of player 02  <a href="#a669ba19f89288e27a3d6d14a09c5d120">More...</a><br /></td></tr>
-<tr class="separator:a669ba19f89288e27a3d6d14a09c5d120"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a3d4b691a3a8c7731a07c83aeba3dd1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a3a3d4b691a3a8c7731a07c83aeba3dd1">scoreP1</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a3a3d4b691a3a8c7731a07c83aeba3dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">_scoreP1's accessor get or set score of player 01  <a href="#a3a3d4b691a3a8c7731a07c83aeba3dd1">More...</a><br /></td></tr>
-<tr class="separator:a3a3d4b691a3a8c7731a07c83aeba3dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bf5f2b2a26a3220076fdf45fb81a871"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a8bf5f2b2a26a3220076fdf45fb81a871">nameP2</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a8bf5f2b2a26a3220076fdf45fb81a871"><td class="mdescLeft">&#160;</td><td class="mdescRight">_nameP2's accessor get or set name of player 02  <a href="#a8bf5f2b2a26a3220076fdf45fb81a871">More...</a><br /></td></tr>
-<tr class="separator:a8bf5f2b2a26a3220076fdf45fb81a871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a088eacfea472a460a1b6ec1e85f3bc8a"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_morpion_1_1score.html">score</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a088eacfea472a460a1b6ec1e85f3bc8a">GetScore</a><code> [get]</code></td></tr>
+<tr class="memdesc:a088eacfea472a460a1b6ec1e85f3bc8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">send all records on database  <a href="#a088eacfea472a460a1b6ec1e85f3bc8a">More...</a><br /></td></tr>
+<tr class="separator:a088eacfea472a460a1b6ec1e85f3bc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47fdf7d505cd7dd8f43b73bd7ac2feb4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a47fdf7d505cd7dd8f43b73bd7ac2feb4">Multi</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a47fdf7d505cd7dd8f43b73bd7ac2feb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">_multi's accessor it's a multiplayer game?  <a href="#a47fdf7d505cd7dd8f43b73bd7ac2feb4">More...</a><br /></td></tr>
+<tr class="separator:a47fdf7d505cd7dd8f43b73bd7ac2feb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95982016831a025998f12b630550d009"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a95982016831a025998f12b630550d009">NameP1</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a95982016831a025998f12b630550d009"><td class="mdescLeft">&#160;</td><td class="mdescRight">_nameP1's accessor get or set name of player 02  <a href="#a95982016831a025998f12b630550d009">More...</a><br /></td></tr>
+<tr class="separator:a95982016831a025998f12b630550d009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac07840451cf10dfa2bff76768425963b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#ac07840451cf10dfa2bff76768425963b">ScoreP1</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac07840451cf10dfa2bff76768425963b"><td class="mdescLeft">&#160;</td><td class="mdescRight">_scoreP1's accessor get or set score of player 01  <a href="#ac07840451cf10dfa2bff76768425963b">More...</a><br /></td></tr>
+<tr class="separator:ac07840451cf10dfa2bff76768425963b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54eefe46fd6d10d15f8b34cf2ee943e6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a54eefe46fd6d10d15f8b34cf2ee943e6">NameP2</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a54eefe46fd6d10d15f8b34cf2ee943e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">_nameP2's accessor get or set name of player 02  <a href="#a54eefe46fd6d10d15f8b34cf2ee943e6">More...</a><br /></td></tr>
+<tr class="separator:a54eefe46fd6d10d15f8b34cf2ee943e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc7a7e85bab1d3a90418792a1e8078cf"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#adc7a7e85bab1d3a90418792a1e8078cf">ActualPlayer</a><code> [get]</code></td></tr>
 <tr class="memdesc:adc7a7e85bab1d3a90418792a1e8078cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">get name current player  <a href="#adc7a7e85bab1d3a90418792a1e8078cf">More...</a><br /></td></tr>
 <tr class="separator:adc7a7e85bab1d3a90418792a1e8078cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66ae61d511963f63b55cc6bb7d19a795"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a66ae61d511963f63b55cc6bb7d19a795">scoreP2</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a66ae61d511963f63b55cc6bb7d19a795"><td class="mdescLeft">&#160;</td><td class="mdescRight">_scoreP2's accessor get or set score of player 02  <a href="#a66ae61d511963f63b55cc6bb7d19a795">More...</a><br /></td></tr>
-<tr class="separator:a66ae61d511963f63b55cc6bb7d19a795"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a6035073f5bde0f41fc053451964eb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_morpion_1_1_view.html">View</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a1a6035073f5bde0f41fc053451964eb1">view</a><code> [set]</code></td></tr>
-<tr class="memdesc:a1a6035073f5bde0f41fc053451964eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">_view's accessor  <a href="#a1a6035073f5bde0f41fc053451964eb1">More...</a><br /></td></tr>
-<tr class="separator:a1a6035073f5bde0f41fc053451964eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c9fac9656289625158e863d2b7850ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a5c9fac9656289625158e863d2b7850ff">ScoreP2</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5c9fac9656289625158e863d2b7850ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">_scoreP2's accessor get or set score of player 02  <a href="#a5c9fac9656289625158e863d2b7850ff">More...</a><br /></td></tr>
+<tr class="separator:a5c9fac9656289625158e863d2b7850ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e23eaa776d26da2b6ef98aa5fb8db88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_morpion_1_1_view.html">View</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a9e23eaa776d26da2b6ef98aa5fb8db88">View</a><code> [set]</code></td></tr>
+<tr class="memdesc:a9e23eaa776d26da2b6ef98aa5fb8db88"><td class="mdescLeft">&#160;</td><td class="mdescRight">_view's accessor  <a href="#a9e23eaa776d26da2b6ef98aa5fb8db88">More...</a><br /></td></tr>
+<tr class="separator:a9e23eaa776d26da2b6ef98aa5fb8db88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a565b0372c7f7833b244c03721f7eebd6"><td class="memItemLeft" align="right" valign="top">int []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a565b0372c7f7833b244c03721f7eebd6">GameArray</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a565b0372c7f7833b244c03721f7eebd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">_gameArray's accessor get or set the plateform's game  <a href="#a565b0372c7f7833b244c03721f7eebd6">More...</a><br /></td></tr>
 <tr class="separator:a565b0372c7f7833b244c03721f7eebd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56f84098c9bde669925d9a6850aaf061"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a56f84098c9bde669925d9a6850aaf061">WhatPlayer</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a56f84098c9bde669925d9a6850aaf061"><td class="mdescLeft">&#160;</td><td class="mdescRight">_wahtPlayer's accessor return number of player, 1 or 2  <a href="#a56f84098c9bde669925d9a6850aaf061">More...</a><br /></td></tr>
 <tr class="separator:a56f84098c9bde669925d9a6850aaf061"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae443f2333536e0ec65b288d05c9d4cbc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#ae443f2333536e0ec65b288d05c9d4cbc">dbLimit</a><code> [set]</code></td></tr>
-<tr class="memdesc:ae443f2333536e0ec65b288d05c9d4cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">define limit of scores in db  <a href="#ae443f2333536e0ec65b288d05c9d4cbc">More...</a><br /></td></tr>
-<tr class="separator:ae443f2333536e0ec65b288d05c9d4cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b6c2e61ebdbf93aa74d1348afbd9e12"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a6b6c2e61ebdbf93aa74d1348afbd9e12">lvlAI</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6b6c2e61ebdbf93aa74d1348afbd9e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">define the level of AI (Artificial Intelligence)  <a href="#a6b6c2e61ebdbf93aa74d1348afbd9e12">More...</a><br /></td></tr>
-<tr class="separator:a6b6c2e61ebdbf93aa74d1348afbd9e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a111fd09fe1b8cfd2beada02951f6fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a9a111fd09fe1b8cfd2beada02951f6fa">DbLimit</a><code> [set]</code></td></tr>
+<tr class="memdesc:a9a111fd09fe1b8cfd2beada02951f6fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">define limit of scores in db  <a href="#a9a111fd09fe1b8cfd2beada02951f6fa">More...</a><br /></td></tr>
+<tr class="separator:a9a111fd09fe1b8cfd2beada02951f6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d714c546cbe2f67a4cdb04c0c32f1f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_model.html#a99d714c546cbe2f67a4cdb04c0c32f1f">LvlAI</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a99d714c546cbe2f67a4cdb04c0c32f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">define the level of AI (Artificial Intelligence)  <a href="#a99d714c546cbe2f67a4cdb04c0c32f1f">More...</a><br /></td></tr>
+<tr class="separator:a99d714c546cbe2f67a4cdb04c0c32f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"><p>containt all data of the game and sends the required data to control </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a459b4901421170316a320d2e7d6408b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a459b4901421170316a320d2e7d6408b4">&#9670;&nbsp;</a></span>Model()</h2>
 
@@ -141,6 +149,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>constructor of model's class </p>
 
 </div>
 </div>
@@ -190,7 +200,7 @@ Properties</h2></td></tr>
 <p>Check state of game when user put the last our symbol, return true value when equality an exception are generate </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td></td></tr>
+    <tr><td class="paramname">id</td><td>match a location where player have place his symbol in game array</td></tr>
   </table>
   </dd>
 </dl>
@@ -198,14 +208,33 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a63707654f2d7d2912d854e5b1f9ced7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63707654f2d7d2912d854e5b1f9ced7e">&#9670;&nbsp;</a></span>saveGame()</h2>
+<a id="ab5dee79623ee37ae8ccb63bade900dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5dee79623ee37ae8ccb63bade900dcf">&#9670;&nbsp;</a></span>ClearDB()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Morpion.Model.saveGame </td>
+          <td class="memname">void Morpion.Model.ClearDB </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>delete all scores in db </p>
+
+</div>
+</div>
+<a id="af97f1128b5beaa34f151304c84ee1a80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af97f1128b5beaa34f151304c84ee1a80">&#9670;&nbsp;</a></span>SaveGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Morpion.Model.SaveGame </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -242,8 +271,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="ae443f2333536e0ec65b288d05c9d4cbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae443f2333536e0ec65b288d05c9d4cbc">&#9670;&nbsp;</a></span>dbLimit</h2>
+<a id="a9a111fd09fe1b8cfd2beada02951f6fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a111fd09fe1b8cfd2beada02951f6fa">&#9670;&nbsp;</a></span>DbLimit</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,7 +281,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Morpion.Model.dbLimit</td>
+          <td class="memname">int Morpion.Model.DbLimit</td>
         </tr>
       </table>
   </td>
@@ -290,8 +319,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a6b6c2e61ebdbf93aa74d1348afbd9e12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b6c2e61ebdbf93aa74d1348afbd9e12">&#9670;&nbsp;</a></span>lvlAI</h2>
+<a id="a088eacfea472a460a1b6ec1e85f3bc8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a088eacfea472a460a1b6ec1e85f3bc8a">&#9670;&nbsp;</a></span>GetScore</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -300,7 +329,31 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Morpion.Model.lvlAI</td>
+          <td class="memname">List&lt;<a class="el" href="class_morpion_1_1score.html">score</a>&gt; Morpion.Model.GetScore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>send all records on database </p>
+
+</div>
+</div>
+<a id="a99d714c546cbe2f67a4cdb04c0c32f1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99d714c546cbe2f67a4cdb04c0c32f1f">&#9670;&nbsp;</a></span>LvlAI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Morpion.Model.LvlAI</td>
         </tr>
       </table>
   </td>
@@ -314,8 +367,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a2374180fb8d3bedd6aed97fb58fab4d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2374180fb8d3bedd6aed97fb58fab4d1">&#9670;&nbsp;</a></span>multi</h2>
+<a id="a47fdf7d505cd7dd8f43b73bd7ac2feb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47fdf7d505cd7dd8f43b73bd7ac2feb4">&#9670;&nbsp;</a></span>Multi</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -324,7 +377,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Morpion.Model.multi</td>
+          <td class="memname">bool Morpion.Model.Multi</td>
         </tr>
       </table>
   </td>
@@ -338,8 +391,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a669ba19f89288e27a3d6d14a09c5d120"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a669ba19f89288e27a3d6d14a09c5d120">&#9670;&nbsp;</a></span>nameP1</h2>
+<a id="a95982016831a025998f12b630550d009"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95982016831a025998f12b630550d009">&#9670;&nbsp;</a></span>NameP1</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -348,7 +401,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string Morpion.Model.nameP1</td>
+          <td class="memname">string Morpion.Model.NameP1</td>
         </tr>
       </table>
   </td>
@@ -362,8 +415,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a8bf5f2b2a26a3220076fdf45fb81a871"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bf5f2b2a26a3220076fdf45fb81a871">&#9670;&nbsp;</a></span>nameP2</h2>
+<a id="a54eefe46fd6d10d15f8b34cf2ee943e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54eefe46fd6d10d15f8b34cf2ee943e6">&#9670;&nbsp;</a></span>NameP2</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -372,7 +425,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string Morpion.Model.nameP2</td>
+          <td class="memname">string Morpion.Model.NameP2</td>
         </tr>
       </table>
   </td>
@@ -386,8 +439,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a3a3d4b691a3a8c7731a07c83aeba3dd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a3d4b691a3a8c7731a07c83aeba3dd1">&#9670;&nbsp;</a></span>scoreP1</h2>
+<a id="ac07840451cf10dfa2bff76768425963b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac07840451cf10dfa2bff76768425963b">&#9670;&nbsp;</a></span>ScoreP1</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -396,7 +449,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Morpion.Model.scoreP1</td>
+          <td class="memname">int Morpion.Model.ScoreP1</td>
         </tr>
       </table>
   </td>
@@ -410,8 +463,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a66ae61d511963f63b55cc6bb7d19a795"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66ae61d511963f63b55cc6bb7d19a795">&#9670;&nbsp;</a></span>scoreP2</h2>
+<a id="a5c9fac9656289625158e863d2b7850ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c9fac9656289625158e863d2b7850ff">&#9670;&nbsp;</a></span>ScoreP2</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -420,7 +473,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Morpion.Model.scoreP2</td>
+          <td class="memname">int Morpion.Model.ScoreP2</td>
         </tr>
       </table>
   </td>
@@ -434,8 +487,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a1a6035073f5bde0f41fc053451964eb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a6035073f5bde0f41fc053451964eb1">&#9670;&nbsp;</a></span>view</h2>
+<a id="a9e23eaa776d26da2b6ef98aa5fb8db88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e23eaa776d26da2b6ef98aa5fb8db88">&#9670;&nbsp;</a></span>View</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -444,7 +497,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_morpion_1_1_view.html">View</a> Morpion.Model.view</td>
+          <td class="memname"><a class="el" href="class_morpion_1_1_view.html">View</a> Morpion.Model.View</td>
         </tr>
       </table>
   </td>
@@ -483,7 +536,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>CODE/Morpion/Morpion/<a class="el" href="_model_8cs.html">Model.cs</a></li>
+<li>C:/Users/Diogo.VIEIRA-FERREIR/OneDrive - CPNV/pre-tpi/Morpion_Pre-TPI/CODE/Morpion/Morpion/<a class="el" href="_model_8cs.html">Model.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -55,7 +55,7 @@ namespace TestMorpion
         }
 
         /// <summary>
-        /// Check the database file has been created
+        /// count number of scores
         /// </summary>
         [TestMethod]
         public void DataBase_ScoreList_AfterInitialization_ReturnList()

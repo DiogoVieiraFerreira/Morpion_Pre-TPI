@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['model',['Model',['../class_morpion_1_1_model.html',1,'Morpion']]]
+  ['networkcommunication',['NetworkCommunication',['../class_morpion_1_1_network_communication.html',1,'Morpion']]]
 ];

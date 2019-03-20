@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace Morpion
 {
     /// <summary>
-    /// 
+    /// containt all data of the game and sends the required data to control 
     /// </summary>
     public class Model
     {
@@ -291,24 +291,25 @@ namespace Morpion
             Random rnd = new Random();
             switch (lvl)
             {
+                //easy AI, random placements
                 case 1:
                     do
                     {
                         id = rnd.Next(0, 8);
                     } while (_gameArray[id] != 0);
                     break;
-                case 2:
-                case 3:
+                case 2: //medium AI, block user placements before to try win
+                case 3: //hard AI, try win before to block user placements
                     int count = 0;
                     foreach (int value in _gameArray)
-                    {
+                    { 
+                        //check equality game
                         if (value != 0)
                             count++;
                     }
                     if (count > 1)
                     {
                         int symbolCheck = 3 - _whatPlayer;
-                        bool ok = false;
                         //if the player can win the next round, we prevent him from doing so
                         //else, we play or we can win
                         

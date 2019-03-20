@@ -10,6 +10,11 @@ using System.Windows.Forms;
 
 namespace Morpion
 {
+    /// <summary>
+    /// Controlor manage the application.
+    /// To access data, controlor call model and ask specific data.
+    /// when it has data, he send to view.
+    /// </summary>
     class Controlor
     {
         private Model _model;
@@ -141,7 +146,7 @@ namespace Morpion
             mnuInfos.Name = "mnuInfos";
             mnuInfos.Size = new Size(87, 20);
             mnuInfos.Text = "Informations";
-            mnuNetwork.Click += Infos_click;
+            mnuInfos.Click += Infos_click;
 
             //menu strip on the top of form and add it on the form
             _view.Controls.Add(mnu);
@@ -520,6 +525,8 @@ namespace Morpion
             _view.Controls.Add(cmdHome);
             _view.Controls.Add(lblScores);
             _view.Controls.Add(lblDev);
+
+            //show scores to user
             foreach (score scores in _model.GetScore)
             {               
                 ListViewItem lvi = new ListViewItem();
@@ -531,12 +538,12 @@ namespace Morpion
             }
 
         }
-
+        
         private void CmdHome_Click(object sender, EventArgs e)
         {
             Show_interface();
         }
-
+        
         private void ClearDB(object sender, EventArgs e)
         {
             _model.ClearDB();
@@ -554,13 +561,20 @@ namespace Morpion
             _msgBox.StartPosition = FormStartPosition.CenterScreen;
             _msgBox.Size = new Size(200, 150);
 
-
+            //
+            // lblInfo01
+            // label show "username:"
+            //
             Label lblInfo01 = new Label();
             lblInfo01.Text = "votre nom:";
             lblInfo01.Name = "lblInfo";
             lblInfo01.Location = new Point(15, 5);
             _msgBox.Controls.Add(lblInfo01);
 
+            //
+            // _txtPlayer01
+            // containt the name of first user
+            //
             _txtPlayer01 = new TextBox();
             _txtPlayer01.Name = _model.NameP1;
             _txtPlayer01.Size = new Size(_msgBox.Size.Width - 40, 20);
@@ -569,6 +583,10 @@ namespace Morpion
             _txtPlayer01.TabIndex = 1;
             _msgBox.Controls.Add(_txtPlayer01);
 
+            //
+            // cmdOk
+            // send to cmdOl_click method
+            //
             Button cmdOk = new Button();
             cmdOk.Name = "cmdOk";
             cmdOk.Text = "Ok";
@@ -578,18 +596,25 @@ namespace Morpion
             cmdOk.TabIndex = 3;
             _msgBox.Controls.Add(cmdOk);
 
-
+            //multiplayer?
             if (oneOrTwoPlayers == 2)
             {
                 _model.Multi = true;
                 _msgBox.Size = new Size(200, 170);
-
+                //
+                // lblInfo01
+                // label show "username 02:"
+                //
                 Label lblInfo02 = new Label();
                 lblInfo02.Text = "nom joueur 02:";
                 lblInfo02.Name = "lblInfo02";
                 lblInfo02.Location = new Point(15, _txtPlayer01.Location.Y + _txtPlayer01.Size.Height);
                 _msgBox.Controls.Add(lblInfo02);
 
+                //
+                // _txtPlayer02
+                // containt the name of second user
+                //
                 _txtPlayer02 = new TextBox();
                 _txtPlayer02.Name = _model.NameP2;
                 _txtPlayer02.Size = new Size(_msgBox.Size.Width - 40, 20);
@@ -598,11 +623,11 @@ namespace Morpion
                 _txtPlayer02.TabIndex = 2;
                 _msgBox.Controls.Add(_txtPlayer02);
 
-
+                //change the location of cmdOK
                 cmdOk.Location = new Point(_txtPlayer02.Location.X + _txtPlayer02.Size.Width - cmdOk.Size.Width, _txtPlayer02.Location.Y + _txtPlayer02.Size.Height + 5);
             }
-
-            _msgBox.Show();
+            //show the view, user have to close the view to access other views
+            _msgBox.ShowDialog();
 
         }
 
@@ -619,9 +644,11 @@ namespace Morpion
                 }
                 else
                 {
+                    //set usernames in model
                     _model.NameP1 = _txtPlayer01.Text;
                     _model.NameP2 = _txtPlayer02.Text;
                     _msgBox.Close();
+                    //show game
                     Show_interface(1);
                 }
             }
@@ -633,15 +660,20 @@ namespace Morpion
                 }
                 else
                 {
+                    //set usernames in model
                     _model.NameP1 = _txtPlayer01.Text;
                     _model.NameP2 = "Ordinateur";
                     _msgBox.Close();
                     AskLvlAI();
                     _msgBox.ShowDialog();
+                    //show game
                     Show_interface(1);
                 }
             }
         }
+        /// <summary>
+        /// pop to ask level of AI
+        /// </summary>
         private void AskLvlAI()
         {
             _msgBox = new View("Niveau de l'IA");
@@ -665,6 +697,7 @@ namespace Morpion
             _msgBox.Controls.Add(lblTitle);
             // 
             // easy
+            // send 1 to CmdlvlAI_Click method
             // 
             easy.Location = new System.Drawing.Point(12, 40);
             easy.Name = "1";
@@ -675,6 +708,7 @@ namespace Morpion
             _msgBox.Controls.Add(easy);
             // 
             // medium
+            // send 2 to CmdlvlAI_Click method
             // 
             medium.Location = new System.Drawing.Point(93, 40);
             medium.Name = "2";
@@ -685,6 +719,7 @@ namespace Morpion
             _msgBox.Controls.Add(medium);
             // 
             // hard
+            // send 3 to CmdlvlAI_Click method
             // 
             hard.Location = new System.Drawing.Point(174, 40);
             hard.Name = "3";
@@ -694,9 +729,15 @@ namespace Morpion
             hard.Click += CmdlvlAI_Click;
             _msgBox.Controls.Add(hard);
         }
+        /// <summary>
+        /// set AI level
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CmdlvlAI_Click(object sender, EventArgs e)
         {
             int id= int.Parse(((Button)sender).Name);
+            //set AI level
             _model.LvlAI=id;
             _msgBox.Close();
         }
@@ -707,7 +748,11 @@ namespace Morpion
                 PopUpUserName();
             }
         }
-
+        /// <summary>
+        /// send the pictureBox where user's click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UserClick(object sender, EventArgs e)
         {
             ThinkingGame((PictureBox)sender);
@@ -765,11 +810,14 @@ namespace Morpion
                 Replay();
             }
         }
-
+        /// <summary>
+        /// view to ask rematch to user
+        /// </summary>
         private void Replay()
         {
             try
             {
+                //get result of player choose 
                 var result = MessageBox.Show("Une autre partie?", "Revanche?", MessageBoxButtons.YesNo);
                 if(result == DialogResult.Yes)
                 {
@@ -777,10 +825,11 @@ namespace Morpion
                 }
                 else
                 {
+                    //save and reset data to show home interface
                     _model.SaveGame();
                     _model.ScoreP1 = 0;
                     _model.ScoreP2 = 0;
-                    Show_interface(0);
+                    Show_interface();
                 }
             }
             catch(Exception exception)
@@ -813,16 +862,19 @@ namespace Morpion
         }
         private void Rules_click(object sender, EventArgs e)
         {
+            //show pop-up with rules
             string rules = " Les joueurs cliquent à tour de rôle\n sur une case de la grille et le premier\n qui parvient à aligner trois de ses symboles\n horizontalement, verticalement ou en diagonale\n gagne un point. ";
             MessageBox.Show(rules, "Règles");
         }
         private void Infos_click(object sender, EventArgs e)
         {
+            //show information interface
             Show_interface(2);
         }
 
         private void End_program()
         {
+            //start application
             Application.Run(_view);
         }
 

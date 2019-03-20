@@ -83,6 +83,7 @@ namespace Morpion
         {
             try
             {
+                //count all id in database
                 OpenDB();
                 SQLiteCommand command = new SQLiteCommand("select count(idscore) as total from scores", _dbConnection);
                 _reader = command.ExecuteReader();
@@ -95,6 +96,7 @@ namespace Morpion
 
                 command.Dispose();
                 CloseDB();
+                //erases excess scores 
                 if (tot > _limit)
                 {
                     int over = tot - _limit;
