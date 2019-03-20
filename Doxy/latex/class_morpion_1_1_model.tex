@@ -2,49 +2,53 @@
 \label{class_morpion_1_1_model}\index{Morpion.\+Model@{Morpion.\+Model}}
 
 
- 
+containt all data of the game and sends the required data to control  
 
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_morpion_1_1_model_a459b4901421170316a320d2e7d6408b4}{Model} ()
-\item 
+\begin{DoxyCompactList}\small\item\em constructor of model\textquotesingle{}s class \end{DoxyCompactList}\item 
 bool \hyperlink{class_morpion_1_1_model_a76f2eb1ec20a4aa78cca17514a0b94e1}{Check\+Game} (int id)
 \begin{DoxyCompactList}\small\item\em Check state of game when user put the last our symbol, return true value when equality an exception are generate \end{DoxyCompactList}\item 
 int \hyperlink{class_morpion_1_1_model_a02dd1ba77ebd6563c86164592b339ed0}{AI} (int lvl)
 \begin{DoxyCompactList}\small\item\em generate AI to play with user \end{DoxyCompactList}\item 
-void \hyperlink{class_morpion_1_1_model_a63707654f2d7d2912d854e5b1f9ced7e}{save\+Game} ()
-\begin{DoxyCompactList}\small\item\em save score of player(s) in db \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{class_morpion_1_1_model_af97f1128b5beaa34f151304c84ee1a80}{Save\+Game} ()
+\begin{DoxyCompactList}\small\item\em save score of player(s) in db \end{DoxyCompactList}\item 
+void \hyperlink{class_morpion_1_1_model_ab5dee79623ee37ae8ccb63bade900dcf}{Clear\+DB} ()
+\begin{DoxyCompactList}\small\item\em delete all scores in db \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{class_morpion_1_1_model_a2374180fb8d3bedd6aed97fb58fab4d1}{multi}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+List$<$ \hyperlink{class_morpion_1_1score}{score} $>$ \hyperlink{class_morpion_1_1_model_a088eacfea472a460a1b6ec1e85f3bc8a}{Get\+Score}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em send all records on database \end{DoxyCompactList}\item 
+bool \hyperlink{class_morpion_1_1_model_a47fdf7d505cd7dd8f43b73bd7ac2feb4}{Multi}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em \+\_\+multi\textquotesingle{}s accessor it\textquotesingle{}s a multiplayer game? \end{DoxyCompactList}\item 
-string \hyperlink{class_morpion_1_1_model_a669ba19f89288e27a3d6d14a09c5d120}{name\+P1}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \hyperlink{class_morpion_1_1_model_a95982016831a025998f12b630550d009}{Name\+P1}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em \+\_\+name\+P1\textquotesingle{}s accessor get or set name of player 02 \end{DoxyCompactList}\item 
-int \hyperlink{class_morpion_1_1_model_a3a3d4b691a3a8c7731a07c83aeba3dd1}{score\+P1}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+int \hyperlink{class_morpion_1_1_model_ac07840451cf10dfa2bff76768425963b}{Score\+P1}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em \+\_\+score\+P1\textquotesingle{}s accessor get or set score of player 01 \end{DoxyCompactList}\item 
-string \hyperlink{class_morpion_1_1_model_a8bf5f2b2a26a3220076fdf45fb81a871}{name\+P2}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \hyperlink{class_morpion_1_1_model_a54eefe46fd6d10d15f8b34cf2ee943e6}{Name\+P2}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em \+\_\+name\+P2\textquotesingle{}s accessor get or set name of player 02 \end{DoxyCompactList}\item 
 string \hyperlink{class_morpion_1_1_model_adc7a7e85bab1d3a90418792a1e8078cf}{Actual\+Player}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em get name current player \end{DoxyCompactList}\item 
-int \hyperlink{class_morpion_1_1_model_a66ae61d511963f63b55cc6bb7d19a795}{score\+P2}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+int \hyperlink{class_morpion_1_1_model_a5c9fac9656289625158e863d2b7850ff}{Score\+P2}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em \+\_\+score\+P2\textquotesingle{}s accessor get or set score of player 02 \end{DoxyCompactList}\item 
-\hyperlink{class_morpion_1_1_view}{View} \hyperlink{class_morpion_1_1_model_a1a6035073f5bde0f41fc053451964eb1}{view}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
+\hyperlink{class_morpion_1_1_view}{View} \hyperlink{class_morpion_1_1_model_a9e23eaa776d26da2b6ef98aa5fb8db88}{View}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em \+\_\+view\textquotesingle{}s accessor \end{DoxyCompactList}\item 
 int \mbox{[}$\,$\mbox{]} \hyperlink{class_morpion_1_1_model_a565b0372c7f7833b244c03721f7eebd6}{Game\+Array}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em \+\_\+game\+Array\textquotesingle{}s accessor get or set the plateform\textquotesingle{}s game \end{DoxyCompactList}\item 
 int \hyperlink{class_morpion_1_1_model_a56f84098c9bde669925d9a6850aaf061}{What\+Player}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em \+\_\+waht\+Player\textquotesingle{}s accessor return number of player, 1 or 2 \end{DoxyCompactList}\item 
-int \hyperlink{class_morpion_1_1_model_ae443f2333536e0ec65b288d05c9d4cbc}{db\+Limit}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
+int \hyperlink{class_morpion_1_1_model_a9a111fd09fe1b8cfd2beada02951f6fa}{Db\+Limit}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em define limit of scores in db \end{DoxyCompactList}\item 
-int \hyperlink{class_morpion_1_1_model_a6b6c2e61ebdbf93aa74d1348afbd9e12}{lvl\+AI}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+int \hyperlink{class_morpion_1_1_model_a99d714c546cbe2f67a4cdb04c0c32f1f}{Lvl\+AI}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em define the level of AI (Artificial Intelligence) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-
+containt all data of the game and sends the required data to control 
 
 
 
@@ -54,6 +58,10 @@ int \hyperlink{class_morpion_1_1_model_a6b6c2e61ebdbf93aa74d1348afbd9e12}{lvl\+A
 \index{Model@{Model}!Morpion\+::\+Model@{Morpion\+::\+Model}}
 \subsubsection{\texorpdfstring{Model()}{Model()}}
 {\footnotesize\ttfamily Morpion.\+Model.\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+constructor of model\textquotesingle{}s class 
 
 
 
@@ -85,17 +93,27 @@ Check state of game when user put the last our symbol, return true value when eq
 
 
 \begin{DoxyParams}{Parameters}
-{\em id} & \\
+{\em id} & match a location where player have place his symbol in game array\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_morpion_1_1_model_a63707654f2d7d2912d854e5b1f9ced7e}\label{class_morpion_1_1_model_a63707654f2d7d2912d854e5b1f9ced7e}} 
-\index{Morpion\+::\+Model@{Morpion\+::\+Model}!save\+Game@{save\+Game}}
-\index{save\+Game@{save\+Game}!Morpion\+::\+Model@{Morpion\+::\+Model}}
-\subsubsection{\texorpdfstring{save\+Game()}{saveGame()}}
-{\footnotesize\ttfamily void Morpion.\+Model.\+save\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_morpion_1_1_model_ab5dee79623ee37ae8ccb63bade900dcf}\label{class_morpion_1_1_model_ab5dee79623ee37ae8ccb63bade900dcf}} 
+\index{Morpion\+::\+Model@{Morpion\+::\+Model}!Clear\+DB@{Clear\+DB}}
+\index{Clear\+DB@{Clear\+DB}!Morpion\+::\+Model@{Morpion\+::\+Model}}
+\subsubsection{\texorpdfstring{Clear\+D\+B()}{ClearDB()}}
+{\footnotesize\ttfamily void Morpion.\+Model.\+Clear\+DB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+delete all scores in db 
+
+\mbox{\Hypertarget{class_morpion_1_1_model_af97f1128b5beaa34f151304c84ee1a80}\label{class_morpion_1_1_model_af97f1128b5beaa34f151304c84ee1a80}} 
+\index{Morpion\+::\+Model@{Morpion\+::\+Model}!Save\+Game@{Save\+Game}}
+\index{Save\+Game@{Save\+Game}!Morpion\+::\+Model@{Morpion\+::\+Model}}
+\subsubsection{\texorpdfstring{Save\+Game()}{SaveGame()}}
+{\footnotesize\ttfamily void Morpion.\+Model.\+Save\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -114,11 +132,11 @@ save score of player(s) in db
 
 get name current player 
 
-\mbox{\Hypertarget{class_morpion_1_1_model_ae443f2333536e0ec65b288d05c9d4cbc}\label{class_morpion_1_1_model_ae443f2333536e0ec65b288d05c9d4cbc}} 
-\index{Morpion\+::\+Model@{Morpion\+::\+Model}!db\+Limit@{db\+Limit}}
-\index{db\+Limit@{db\+Limit}!Morpion\+::\+Model@{Morpion\+::\+Model}}
-\subsubsection{\texorpdfstring{db\+Limit}{dbLimit}}
-{\footnotesize\ttfamily int Morpion.\+Model.\+db\+Limit\hspace{0.3cm}{\ttfamily [set]}}
+\mbox{\Hypertarget{class_morpion_1_1_model_a9a111fd09fe1b8cfd2beada02951f6fa}\label{class_morpion_1_1_model_a9a111fd09fe1b8cfd2beada02951f6fa}} 
+\index{Morpion\+::\+Model@{Morpion\+::\+Model}!Db\+Limit@{Db\+Limit}}
+\index{Db\+Limit@{Db\+Limit}!Morpion\+::\+Model@{Morpion\+::\+Model}}
+\subsubsection{\texorpdfstring{Db\+Limit}{DbLimit}}
+{\footnotesize\ttfamily int Morpion.\+Model.\+Db\+Limit\hspace{0.3cm}{\ttfamily [set]}}
 
 
 
@@ -134,71 +152,81 @@ define limit of scores in db
 
 \+\_\+game\+Array\textquotesingle{}s accessor get or set the plateform\textquotesingle{}s game 
 
-\mbox{\Hypertarget{class_morpion_1_1_model_a6b6c2e61ebdbf93aa74d1348afbd9e12}\label{class_morpion_1_1_model_a6b6c2e61ebdbf93aa74d1348afbd9e12}} 
-\index{Morpion\+::\+Model@{Morpion\+::\+Model}!lvl\+AI@{lvl\+AI}}
-\index{lvl\+AI@{lvl\+AI}!Morpion\+::\+Model@{Morpion\+::\+Model}}
-\subsubsection{\texorpdfstring{lvl\+AI}{lvlAI}}
-{\footnotesize\ttfamily int Morpion.\+Model.\+lvl\+AI\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+\mbox{\Hypertarget{class_morpion_1_1_model_a088eacfea472a460a1b6ec1e85f3bc8a}\label{class_morpion_1_1_model_a088eacfea472a460a1b6ec1e85f3bc8a}} 
+\index{Morpion\+::\+Model@{Morpion\+::\+Model}!Get\+Score@{Get\+Score}}
+\index{Get\+Score@{Get\+Score}!Morpion\+::\+Model@{Morpion\+::\+Model}}
+\subsubsection{\texorpdfstring{Get\+Score}{GetScore}}
+{\footnotesize\ttfamily List$<$\hyperlink{class_morpion_1_1score}{score}$>$ Morpion.\+Model.\+Get\+Score\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+send all records on database 
+
+\mbox{\Hypertarget{class_morpion_1_1_model_a99d714c546cbe2f67a4cdb04c0c32f1f}\label{class_morpion_1_1_model_a99d714c546cbe2f67a4cdb04c0c32f1f}} 
+\index{Morpion\+::\+Model@{Morpion\+::\+Model}!Lvl\+AI@{Lvl\+AI}}
+\index{Lvl\+AI@{Lvl\+AI}!Morpion\+::\+Model@{Morpion\+::\+Model}}
+\subsubsection{\texorpdfstring{Lvl\+AI}{LvlAI}}
+{\footnotesize\ttfamily int Morpion.\+Model.\+Lvl\+AI\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
 define the level of AI (Artificial Intelligence) 
 
-\mbox{\Hypertarget{class_morpion_1_1_model_a2374180fb8d3bedd6aed97fb58fab4d1}\label{class_morpion_1_1_model_a2374180fb8d3bedd6aed97fb58fab4d1}} 
-\index{Morpion\+::\+Model@{Morpion\+::\+Model}!multi@{multi}}
-\index{multi@{multi}!Morpion\+::\+Model@{Morpion\+::\+Model}}
-\subsubsection{\texorpdfstring{multi}{multi}}
-{\footnotesize\ttfamily bool Morpion.\+Model.\+multi\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+\mbox{\Hypertarget{class_morpion_1_1_model_a47fdf7d505cd7dd8f43b73bd7ac2feb4}\label{class_morpion_1_1_model_a47fdf7d505cd7dd8f43b73bd7ac2feb4}} 
+\index{Morpion\+::\+Model@{Morpion\+::\+Model}!Multi@{Multi}}
+\index{Multi@{Multi}!Morpion\+::\+Model@{Morpion\+::\+Model}}
+\subsubsection{\texorpdfstring{Multi}{Multi}}
+{\footnotesize\ttfamily bool Morpion.\+Model.\+Multi\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
 \+\_\+multi\textquotesingle{}s accessor it\textquotesingle{}s a multiplayer game? 
 
-\mbox{\Hypertarget{class_morpion_1_1_model_a669ba19f89288e27a3d6d14a09c5d120}\label{class_morpion_1_1_model_a669ba19f89288e27a3d6d14a09c5d120}} 
-\index{Morpion\+::\+Model@{Morpion\+::\+Model}!name\+P1@{name\+P1}}
-\index{name\+P1@{name\+P1}!Morpion\+::\+Model@{Morpion\+::\+Model}}
-\subsubsection{\texorpdfstring{name\+P1}{nameP1}}
-{\footnotesize\ttfamily string Morpion.\+Model.\+name\+P1\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+\mbox{\Hypertarget{class_morpion_1_1_model_a95982016831a025998f12b630550d009}\label{class_morpion_1_1_model_a95982016831a025998f12b630550d009}} 
+\index{Morpion\+::\+Model@{Morpion\+::\+Model}!Name\+P1@{Name\+P1}}
+\index{Name\+P1@{Name\+P1}!Morpion\+::\+Model@{Morpion\+::\+Model}}
+\subsubsection{\texorpdfstring{Name\+P1}{NameP1}}
+{\footnotesize\ttfamily string Morpion.\+Model.\+Name\+P1\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
 \+\_\+name\+P1\textquotesingle{}s accessor get or set name of player 02 
 
-\mbox{\Hypertarget{class_morpion_1_1_model_a8bf5f2b2a26a3220076fdf45fb81a871}\label{class_morpion_1_1_model_a8bf5f2b2a26a3220076fdf45fb81a871}} 
-\index{Morpion\+::\+Model@{Morpion\+::\+Model}!name\+P2@{name\+P2}}
-\index{name\+P2@{name\+P2}!Morpion\+::\+Model@{Morpion\+::\+Model}}
-\subsubsection{\texorpdfstring{name\+P2}{nameP2}}
-{\footnotesize\ttfamily string Morpion.\+Model.\+name\+P2\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+\mbox{\Hypertarget{class_morpion_1_1_model_a54eefe46fd6d10d15f8b34cf2ee943e6}\label{class_morpion_1_1_model_a54eefe46fd6d10d15f8b34cf2ee943e6}} 
+\index{Morpion\+::\+Model@{Morpion\+::\+Model}!Name\+P2@{Name\+P2}}
+\index{Name\+P2@{Name\+P2}!Morpion\+::\+Model@{Morpion\+::\+Model}}
+\subsubsection{\texorpdfstring{Name\+P2}{NameP2}}
+{\footnotesize\ttfamily string Morpion.\+Model.\+Name\+P2\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
 \+\_\+name\+P2\textquotesingle{}s accessor get or set name of player 02 
 
-\mbox{\Hypertarget{class_morpion_1_1_model_a3a3d4b691a3a8c7731a07c83aeba3dd1}\label{class_morpion_1_1_model_a3a3d4b691a3a8c7731a07c83aeba3dd1}} 
-\index{Morpion\+::\+Model@{Morpion\+::\+Model}!score\+P1@{score\+P1}}
-\index{score\+P1@{score\+P1}!Morpion\+::\+Model@{Morpion\+::\+Model}}
-\subsubsection{\texorpdfstring{score\+P1}{scoreP1}}
-{\footnotesize\ttfamily int Morpion.\+Model.\+score\+P1\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+\mbox{\Hypertarget{class_morpion_1_1_model_ac07840451cf10dfa2bff76768425963b}\label{class_morpion_1_1_model_ac07840451cf10dfa2bff76768425963b}} 
+\index{Morpion\+::\+Model@{Morpion\+::\+Model}!Score\+P1@{Score\+P1}}
+\index{Score\+P1@{Score\+P1}!Morpion\+::\+Model@{Morpion\+::\+Model}}
+\subsubsection{\texorpdfstring{Score\+P1}{ScoreP1}}
+{\footnotesize\ttfamily int Morpion.\+Model.\+Score\+P1\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
 \+\_\+score\+P1\textquotesingle{}s accessor get or set score of player 01 
 
-\mbox{\Hypertarget{class_morpion_1_1_model_a66ae61d511963f63b55cc6bb7d19a795}\label{class_morpion_1_1_model_a66ae61d511963f63b55cc6bb7d19a795}} 
-\index{Morpion\+::\+Model@{Morpion\+::\+Model}!score\+P2@{score\+P2}}
-\index{score\+P2@{score\+P2}!Morpion\+::\+Model@{Morpion\+::\+Model}}
-\subsubsection{\texorpdfstring{score\+P2}{scoreP2}}
-{\footnotesize\ttfamily int Morpion.\+Model.\+score\+P2\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+\mbox{\Hypertarget{class_morpion_1_1_model_a5c9fac9656289625158e863d2b7850ff}\label{class_morpion_1_1_model_a5c9fac9656289625158e863d2b7850ff}} 
+\index{Morpion\+::\+Model@{Morpion\+::\+Model}!Score\+P2@{Score\+P2}}
+\index{Score\+P2@{Score\+P2}!Morpion\+::\+Model@{Morpion\+::\+Model}}
+\subsubsection{\texorpdfstring{Score\+P2}{ScoreP2}}
+{\footnotesize\ttfamily int Morpion.\+Model.\+Score\+P2\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
 \+\_\+score\+P2\textquotesingle{}s accessor get or set score of player 02 
 
-\mbox{\Hypertarget{class_morpion_1_1_model_a1a6035073f5bde0f41fc053451964eb1}\label{class_morpion_1_1_model_a1a6035073f5bde0f41fc053451964eb1}} 
-\index{Morpion\+::\+Model@{Morpion\+::\+Model}!view@{view}}
-\index{view@{view}!Morpion\+::\+Model@{Morpion\+::\+Model}}
-\subsubsection{\texorpdfstring{view}{view}}
-{\footnotesize\ttfamily \hyperlink{class_morpion_1_1_view}{View} Morpion.\+Model.\+view\hspace{0.3cm}{\ttfamily [set]}}
+\mbox{\Hypertarget{class_morpion_1_1_model_a9e23eaa776d26da2b6ef98aa5fb8db88}\label{class_morpion_1_1_model_a9e23eaa776d26da2b6ef98aa5fb8db88}} 
+\index{Morpion\+::\+Model@{Morpion\+::\+Model}!View@{View}}
+\index{View@{View}!Morpion\+::\+Model@{Morpion\+::\+Model}}
+\subsubsection{\texorpdfstring{View}{View}}
+{\footnotesize\ttfamily \hyperlink{class_morpion_1_1_view}{View} Morpion.\+Model.\+View\hspace{0.3cm}{\ttfamily [set]}}
 
 
 
@@ -218,4 +246,4 @@ define the level of AI (Artificial Intelligence)
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+O\+D\+E/\+Morpion/\+Morpion/\hyperlink{_model_8cs}{Model.\+cs}\end{DoxyCompactItemize}
+C\+:/\+Users/\+Diogo.\+V\+I\+E\+I\+R\+A-\/\+F\+E\+R\+R\+E\+I\+R/\+One\+Drive -\/ C\+P\+N\+V/pre-\/tpi/\+Morpion\+\_\+\+Pre-\/\+T\+P\+I/\+C\+O\+D\+E/\+Morpion/\+Morpion/\hyperlink{_model_8cs}{Model.\+cs}\end{DoxyCompactItemize}

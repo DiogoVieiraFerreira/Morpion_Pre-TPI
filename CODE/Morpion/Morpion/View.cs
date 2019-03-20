@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace Morpion
 {
+    /// <summary>
+    /// The form Contain all views of game
+    /// </summary>
     public partial class View : Form
     {
 
         /// <summary>
-        /// The form Contain all views of game
+        /// Define the name and the texte of form and disable the
+        /// maximize box.
         /// </summary>
         public View(string text = "View", string name = "frmView")
         {

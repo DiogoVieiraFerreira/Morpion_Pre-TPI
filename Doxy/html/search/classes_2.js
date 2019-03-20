@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gametest',['GameTest',['../class_test_morpion_1_1_game_test.html',1,'TestMorpion']]]
+  ['model',['Model',['../class_morpion_1_1_model.html',1,'Morpion']]]
 ];

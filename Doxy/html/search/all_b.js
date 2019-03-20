@@ -5,5 +5,7 @@ var searchData=
   ['temporarygeneratedfile_5fe7a71f73_2d0f8d_2d4b9b_2db56e_2d8e70b10bc5d3_2ecs',['TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs',['../_morpion_2obj_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs.html',1,'(Global Namespace)'],['../_test_morpion_2obj_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs.html',1,'(Global Namespace)']]],
   ['testdb',['TestDB',['../class_test_morpion_1_1_test_d_b.html',1,'TestMorpion']]],
   ['testdb_2ecs',['TestDB.cs',['../_test_d_b_8cs.html',1,'']]],
+  ['testmodel',['TestModel',['../class_test_morpion_1_1_test_model.html',1,'TestMorpion']]],
+  ['testmodel_2ecs',['TestModel.cs',['../_test_model_8cs.html',1,'']]],
   ['testmorpion',['TestMorpion',['../namespace_test_morpion.html',1,'']]]
 ];

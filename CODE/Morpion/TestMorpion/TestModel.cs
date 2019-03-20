@@ -8,7 +8,7 @@ using Morpion;
 namespace TestMorpion
 {
     [TestClass]
-    public class GameTest
+    public class TestModel
     {
 
         #region private attributes
