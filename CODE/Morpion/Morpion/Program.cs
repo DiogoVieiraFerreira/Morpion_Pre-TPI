@@ -14,7 +14,7 @@ namespace Morpion
         [STAThread]
         static void Main()
         {
-            Controlor controlor = new Controlor();
+            Controller controlor = new Controller();
         }
     }
 }
