@@ -1,11 +1,16 @@
 var searchData=
 [
-  ['database',['DataBase',['../class_morpion_1_1_data_base.html',1,'Morpion.DataBase'],['../class_morpion_1_1_data_base.html#a0d69b39dbf424f7d4105df7a3ec0a586',1,'Morpion.DataBase.DataBase()']]],
-  ['database_2ecs',['DataBase.cs',['../_data_base_8cs.html',1,'']]],
-  ['database_5fconstructor_5fafterinitialization_5fdatabasedirexists',['DataBase_Constructor_AfterInitialization_DatabaseDirExists',['../class_test_morpion_1_1_test_d_b.html#af72bbca8de5f0132a979983e1a562e9b',1,'TestMorpion::TestDB']]],
-  ['database_5fconstructor_5fafterinitialization_5fdatabaseexists',['DataBase_Constructor_AfterInitialization_DatabaseExists',['../class_test_morpion_1_1_test_d_b.html#a19357f8672f88f76e209925f311bbeb2',1,'TestMorpion::TestDB']]],
-  ['database_5fscorelist_5fafterinitialization_5freturnlist',['DataBase_ScoreList_AfterInitialization_ReturnList',['../class_test_morpion_1_1_test_d_b.html#aa0e09de9242070ffcdf4db726d75e611',1,'TestMorpion::TestDB']]],
-  ['database_5fscorelist_5fafterinitialization_5ftenscores',['DataBase_ScoreList_AfterInitialization_tenScores',['../class_test_morpion_1_1_test_d_b.html#a0b5f789271b53818bc9b546e14e9346f',1,'TestMorpion::TestDB']]],
-  ['dblimit',['DbLimit',['../class_morpion_1_1_model.html#a9a111fd09fe1b8cfd2beada02951f6fa',1,'Morpion::Model']]],
-  ['dispose',['Dispose',['../class_morpion_1_1_view.html#a3c537c54a79236b4cfd9e78415dd48f5',1,'Morpion::View']]]
+  ['checkgame',['CheckGame',['../class_morpion_1_1_model.html#a76f2eb1ec20a4aa78cca17514a0b94e1',1,'Morpion::Model']]],
+  ['checkpossibilities',['CheckPossibilities',['../class_morpion_1_1_model.html#acbb3ed43d69b223d954737ce07bd9576',1,'Morpion::Model']]],
+  ['cleanup',['Cleanup',['../class_test_morpion_1_1_test_d_b.html#abcd0e22acda3b5e66e9ecf5e2bc674cc',1,'TestMorpion::TestDB']]],
+  ['cleardb',['ClearDB',['../class_morpion_1_1_controller.html#a71722968fb78cb65ea03daed90112cad',1,'Morpion.Controller.ClearDB()'],['../class_morpion_1_1_model.html#ab5dee79623ee37ae8ccb63bade900dcf',1,'Morpion.Model.ClearDB()']]],
+  ['clearscores',['ClearScores',['../class_morpion_1_1_data_base.html#a08b6bf1e688f66fbde3e818e08503be6',1,'Morpion::DataBase']]],
+  ['closedb',['CloseDB',['../class_morpion_1_1_data_base.html#ab9cd23066fc84d08deb3ed1df4630df4',1,'Morpion::DataBase']]],
+  ['cmdhome_5fclick',['CmdHome_Click',['../class_morpion_1_1_controller.html#a8527f6ff4a45083f12b19778774eafab',1,'Morpion::Controller']]],
+  ['cmdlvlai_5fclick',['CmdlvlAI_Click',['../class_morpion_1_1_controller.html#a0400e4d6350da11e7406f16eb5236da1',1,'Morpion::Controller']]],
+  ['cmdok_5fclick',['CmdOk_Click',['../class_morpion_1_1_controller.html#a703095d0a0881af45de6740ee04eff9a',1,'Morpion::Controller']]],
+  ['components',['components',['../class_morpion_1_1_view.html#a83ddd4172d1d283e53835950910ca746',1,'Morpion::View']]],
+  ['controller',['Controller',['../class_morpion_1_1_controller.html',1,'Morpion.Controller'],['../class_morpion_1_1_controller.html#ab219d11b02727818cd771c917e9294ee',1,'Morpion.Controller.Controller()']]],
+  ['controller_2ecs',['Controller.cs',['../_controller_8cs.html',1,'']]],
+  ['createtable',['CreateTable',['../class_morpion_1_1_data_base.html#a1f2159db9c75aefe5ce951f1bc5e2735',1,'Morpion::DataBase']]]
 ];

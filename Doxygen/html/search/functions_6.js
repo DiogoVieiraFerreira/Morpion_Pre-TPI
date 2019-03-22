@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['view',['View',['../class_morpion_1_1_view.html#ab8a0a6c6141f31f7e175ba5ad49140c3',1,'Morpion::View']]]
+  ['localmulti_5fclick',['LocalMulti_click',['../class_morpion_1_1_controller.html#a4e66bc421cc8c6743cefb9295e25f36c',1,'Morpion::Controller']]],
+  ['localsolo_5fclick',['LocalSolo_click',['../class_morpion_1_1_controller.html#abd542588155aad5931ff7bd30ce77990',1,'Morpion::Controller']]]
 ];

@@ -66,6 +66,8 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_morpion_1_1_data_base-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Morpion.DataBase Class Reference</div>  </div>
@@ -95,6 +97,34 @@ Properties</h2></td></tr>
 <tr class="memitem:ac0104fe497ec69fc184498e3e904b41f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_data_base.html#ac0104fe497ec69fc184498e3e904b41f">limit</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:ac0104fe497ec69fc184498e3e904b41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get or set limit values in db  <a href="#ac0104fe497ec69fc184498e3e904b41f">More...</a><br /></td></tr>
 <tr class="separator:ac0104fe497ec69fc184498e3e904b41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ad8ad335d3cca788f793a83f22fa9ca91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_data_base.html#ad8ad335d3cca788f793a83f22fa9ca91">OpenDB</a> ()</td></tr>
+<tr class="memdesc:ad8ad335d3cca788f793a83f22fa9ca91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open DB for use this  <a href="#ad8ad335d3cca788f793a83f22fa9ca91">More...</a><br /></td></tr>
+<tr class="separator:ad8ad335d3cca788f793a83f22fa9ca91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9cd23066fc84d08deb3ed1df4630df4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_data_base.html#ab9cd23066fc84d08deb3ed1df4630df4">CloseDB</a> ()</td></tr>
+<tr class="memdesc:ab9cd23066fc84d08deb3ed1df4630df4"><td class="mdescLeft">&#160;</td><td class="mdescRight">close DB  <a href="#ab9cd23066fc84d08deb3ed1df4630df4">More...</a><br /></td></tr>
+<tr class="separator:ab9cd23066fc84d08deb3ed1df4630df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f2159db9c75aefe5ce951f1bc5e2735"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_data_base.html#a1f2159db9c75aefe5ce951f1bc5e2735">CreateTable</a> (string query)</td></tr>
+<tr class="memdesc:a1f2159db9c75aefe5ce951f1bc5e2735"><td class="mdescLeft">&#160;</td><td class="mdescRight">create Table  <a href="#a1f2159db9c75aefe5ce951f1bc5e2735">More...</a><br /></td></tr>
+<tr class="separator:a1f2159db9c75aefe5ce951f1bc5e2735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6d919345ec0f8d30d4729e8dc568e2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_data_base.html#ab6d919345ec0f8d30d4729e8dc568e2b">DeleteScores</a> ()</td></tr>
+<tr class="memdesc:ab6d919345ec0f8d30d4729e8dc568e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the oldest data when the db has more columns than the limit (defenied by parametre)  <a href="#ab6d919345ec0f8d30d4729e8dc568e2b">More...</a><br /></td></tr>
+<tr class="separator:ab6d919345ec0f8d30d4729e8dc568e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac44da208470b357fd5b7da6b59be7d66"><td class="memItemLeft" align="right" valign="top">SQLiteConnection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_data_base.html#ac44da208470b357fd5b7da6b59be7d66">_dbConnection</a></td></tr>
+<tr class="separator:ac44da208470b357fd5b7da6b59be7d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9113a5cdfea713d66a97f50a57a0fb83"><td class="memItemLeft" align="right" valign="top">SQLiteDataReader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_data_base.html#a9113a5cdfea713d66a97f50a57a0fb83">_reader</a></td></tr>
+<tr class="separator:a9113a5cdfea713d66a97f50a57a0fb83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38203103bd6e77f47c216b96d58d0c38"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_data_base.html#a38203103bd6e77f47c216b96d58d0c38">_sql</a></td></tr>
+<tr class="separator:a38203103bd6e77f47c216b96d58d0c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31fef941f4a1681168ada19b8752e23f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_data_base.html#a31fef941f4a1681168ada19b8752e23f">_dbDirLocation</a></td></tr>
+<tr class="separator:a31fef941f4a1681168ada19b8752e23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3835b4e4e4dd6c2917e9f173ce9cf9d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_morpion_1_1_data_base.html#a3835b4e4e4dd6c2917e9f173ce9cf9d0">_limit</a></td></tr>
+<tr class="separator:a3835b4e4e4dd6c2917e9f173ce9cf9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The class give access to DB </p>
@@ -142,6 +172,94 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>clear all scores </p>
+
+</div>
+</div>
+<a id="ab9cd23066fc84d08deb3ed1df4630df4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9cd23066fc84d08deb3ed1df4630df4">&#9670;&nbsp;</a></span>CloseDB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Morpion.DataBase.CloseDB </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>close DB </p>
+
+</div>
+</div>
+<a id="a1f2159db9c75aefe5ce951f1bc5e2735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f2159db9c75aefe5ce951f1bc5e2735">&#9670;&nbsp;</a></span>CreateTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Morpion.DataBase.CreateTable </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>query</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create Table </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab6d919345ec0f8d30d4729e8dc568e2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6d919345ec0f8d30d4729e8dc568e2b">&#9670;&nbsp;</a></span>DeleteScores()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Morpion.DataBase.DeleteScores </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Delete the oldest data when the db has more columns than the limit (defenied by parametre) </p>
 
 </div>
 </div>
@@ -196,6 +314,33 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="ad8ad335d3cca788f793a83f22fa9ca91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8ad335d3cca788f793a83f22fa9ca91">&#9670;&nbsp;</a></span>OpenDB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Morpion.DataBase.OpenDB </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Open DB for use this </p>
+
+</div>
+</div>
 <a id="a2a5074579eb5d2bb7c67cf2a8ec6e6ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a5074579eb5d2bb7c67cf2a8ec6e6ec">&#9670;&nbsp;</a></span>ScoreList()</h2>
 
@@ -213,6 +358,117 @@ Properties</h2></td></tr>
 
 <p>Select all scores in db and send a list with them </p>
 <dl class="section return"><dt>Returns</dt><dd>list with all scores</dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ac44da208470b357fd5b7da6b59be7d66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac44da208470b357fd5b7da6b59be7d66">&#9670;&nbsp;</a></span>_dbConnection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SQLiteConnection Morpion.DataBase._dbConnection</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31fef941f4a1681168ada19b8752e23f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31fef941f4a1681168ada19b8752e23f">&#9670;&nbsp;</a></span>_dbDirLocation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Morpion.DataBase._dbDirLocation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3835b4e4e4dd6c2917e9f173ce9cf9d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3835b4e4e4dd6c2917e9f173ce9cf9d0">&#9670;&nbsp;</a></span>_limit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Morpion.DataBase._limit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9113a5cdfea713d66a97f50a57a0fb83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9113a5cdfea713d66a97f50a57a0fb83">&#9670;&nbsp;</a></span>_reader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SQLiteDataReader Morpion.DataBase._reader</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38203103bd6e77f47c216b96d58d0c38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38203103bd6e77f47c216b96d58d0c38">&#9670;&nbsp;</a></span>_sql</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Morpion.DataBase._sql</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -242,7 +498,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/Diogo.VIEIRA-FERREIR/OneDrive - CPNV/pre-tpi/Morpion_Pre-TPI/CODE/Morpion/Morpion/<a class="el" href="_data_base_8cs.html">DataBase.cs</a></li>
+<li>CODE/Morpion/Morpion/<a class="el" href="_data_base_8cs.html">DataBase.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
