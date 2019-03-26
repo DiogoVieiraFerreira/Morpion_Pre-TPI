@@ -191,7 +191,7 @@ namespace Morpion
             cmdLocalMulti.Name = "cmdLocalMulti";
             cmdLocalMulti.Size = new Size(785, 107);
             cmdLocalMulti.TabIndex = 2;
-            cmdLocalMulti.Text = "Multiojoueur";
+            cmdLocalMulti.Text = "Multijoueur";
             cmdLocalMulti.UseVisualStyleBackColor = true;
             cmdLocalMulti.Click += LocalMulti_click;
             // 
@@ -861,7 +861,7 @@ namespace Morpion
         }
         private void Network_click(object sender, EventArgs e)
         {
-            MessageBox.Show("En cours de développement.", "Partie en réseau");
+            MessageBox.Show("Bientôt disponible.", "Partie en réseau");
             //_thReader = new Thread(_model.NetworkReader);
             //_model.NetworkSender("localhost", "test");
         }
