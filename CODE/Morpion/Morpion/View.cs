@@ -26,6 +26,7 @@ namespace Morpion
             this.Name = name;
             this.Text = text;
             this.MaximizeBox = false;
+            this.Icon = Morpion.Properties.Resources.morpion;
         }
         
     }
