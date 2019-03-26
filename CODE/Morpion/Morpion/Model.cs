@@ -18,6 +18,7 @@ namespace Morpion
     {
         private DataBase _db; 
         private View _view;
+        private NetworkCommunication _ntw;
         private int _scoreP1;
         private int _scoreP2;
         private string _nameP1;
@@ -37,6 +38,7 @@ namespace Morpion
             _db = new DataBase("Morpion");
             _scoreP1 = 0;
             _scoreP2 = 0;
+            _ntw = new NetworkCommunication();
         }
         /// <summary>
         /// check possibilities by symbol and return true bool if ok
@@ -360,6 +362,22 @@ namespace Morpion
         public void ClearDB()
         {
             _db.ClearScores();
+        }
+        /// <summary>
+        /// read all data
+        /// </summary>
+        public void NetworkReader()
+        {
+            _ntw.SocketReader();
+        }
+        /// <summary>
+        /// send the last turn
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <param name="msg"></param>
+        public void NetworkSender(string ip, string msg)
+        {
+            _ntw.SocketSender(ip,msg);
         }
         /// <summary>
         /// _multi's accessor

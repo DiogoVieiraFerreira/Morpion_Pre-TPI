@@ -184,6 +184,18 @@
             delete all scores in db
             </summary>
         </member>
+        <member name="M:Morpion.Model.NetworkReader">
+            <summary>
+            read all data
+            </summary>
+        </member>
+        <member name="M:Morpion.Model.NetworkSender(System.String,System.String)">
+            <summary>
+            send the last turn
+            </summary>
+            <param name="ip"></param>
+            <param name="msg"></param>
+        </member>
         <member name="P:Morpion.Model.Multi">
             <summary>
             _multi's accessor

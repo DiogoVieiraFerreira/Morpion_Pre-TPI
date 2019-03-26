@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Morpion
 {
@@ -17,6 +18,7 @@ namespace Morpion
     /// </summary>
     class Controller
     {
+        private Thread _thReader;
         private Model _model;
         private View _view;
         private View _msgBox;
@@ -860,6 +862,8 @@ namespace Morpion
         private void Network_click(object sender, EventArgs e)
         {
             MessageBox.Show("En cours de développement.", "Partie en réseau");
+            //_thReader = new Thread(_model.NetworkReader);
+            //_model.NetworkSender("localhost", "test");
         }
         private void Rules_click(object sender, EventArgs e)
         {
