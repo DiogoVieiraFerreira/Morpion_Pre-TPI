@@ -17,7 +17,6 @@ namespace Morpion
     public class Model
     {
         private DataBase _db; 
-        private View _view;
         private NetworkCommunication _ntw;
         private int _scoreP1;
         private int _scoreP2;
@@ -338,7 +337,14 @@ namespace Morpion
             }
             return id;
         }
-
+        public void NtwStartServer()
+        {
+            _ntw.StartServer();
+        }
+        public void NtwStopServer()
+        {
+            _ntw.StopServer();
+        }
         /// <summary>
         /// save score of player(s) in db
         /// </summary>
@@ -464,16 +470,6 @@ namespace Morpion
                 _scoreP2 = value;
             }
         }
-        /// <summary>
-        /// _view's accessor
-        /// </summary>
-        public View View
-        {
-            set
-            {
-                _view = value;
-            }
-        }
 
         /// <summary>
         /// _gameArray's accessor
@@ -527,6 +523,37 @@ namespace Morpion
             get
             {
                 return _lvlAI;
+            }
+        }
+
+        public string myIP
+        {
+            get
+            {
+                return _ntw.myIP;
+            }
+        }
+
+        public string opponentIP
+        {
+            get
+            {
+                return _ntw.opponentIP;
+            }
+            set
+            {
+                _ntw.opponentIP = value;
+            }
+        }
+        public bool ntwRunning
+        {
+            get
+            {
+                return _ntw.running;
+            }
+            set
+            {
+                _ntw.running = value;
             }
         }
     }

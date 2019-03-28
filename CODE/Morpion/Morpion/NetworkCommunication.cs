@@ -15,14 +15,14 @@ namespace Morpion
         private static IPAddress _myIp;
         private static TcpListener _server;
         private static TcpClient _client;
-        private Thread _thSocketReader;
+        private string _opponentIP;
 
         public NetworkCommunication()
         {
-            _myIp = Dns.GetHostEntry("localhost").AddressList[0];
+            //get ipv4 address and not ipv6
+            _myIp = Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
             _server = new TcpListener(_myIp, 8008);
             _client = default(TcpClient);
-            _running = true;
         }
 
         public void SocketSender(string serverIP, string message)
@@ -71,6 +71,44 @@ namespace Morpion
                 }
                 //affichage du message, j'affiche le nombre de charactères à la fin pour vérifier que j'ai tout le message
                 Console.WriteLine(msg);
+            }
+            _server.Stop();
+        }
+        public void StartServer()
+        {
+            _server.Start();
+        }
+        public void StopServer()
+        {
+            _server.Stop();
+        }
+        public string myIP
+        {
+            get
+            {
+                return _myIp.ToString();
+            }
+        }
+        public string opponentIP
+        {
+            get
+            {
+                return _opponentIP;
+            }
+            set
+            {
+                _opponentIP = value;
+            }
+        }
+        public bool running
+        {
+            get
+            {
+                return _running;
+            }
+            set
+            {
+                _running = value;
             }
         }
     }

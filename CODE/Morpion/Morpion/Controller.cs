@@ -25,19 +25,18 @@ namespace Morpion
 
         private TextBox _txtPlayer01;
         private TextBox _txtPlayer02;
-
         /// <summary>
         /// Constructor of control, he call model and ask all data before to execute program
         /// </summary>
         public Controller()
         {
+            //création de  la vue
             _view = new View("Morpion");
-            _view.FormBorderStyle = FormBorderStyle.FixedSingle;
-            _view.StartPosition = FormStartPosition.CenterScreen;
+            _view.FormClosing += new FormClosingEventHandler(View_FormClosing);
+            _view.SuspendLayout();
+
             _model = new Model();
             _model.DbLimit = 10;
-            _model.View = _view;
-            _view.SuspendLayout();
             Show_interface();
             _view.ResumeLayout(false);
             _view.PerformLayout();
@@ -560,8 +559,6 @@ namespace Morpion
         {
             _model.Multi = false;
             _msgBox = new View("Infos");
-            _msgBox.FormBorderStyle = FormBorderStyle.FixedSingle;
-            _msgBox.StartPosition = FormStartPosition.CenterScreen;
             _msgBox.Size = new Size(200, 150);
 
             //
@@ -681,8 +678,6 @@ namespace Morpion
         {
             _msgBox = new View("Niveau de l'IA");
             _msgBox.Size = new Size(284, 130);
-            _msgBox.FormBorderStyle = FormBorderStyle.None;
-            _msgBox.StartPosition = FormStartPosition.CenterScreen;
 
 
             Label lblTitle = new Label();
@@ -813,6 +808,101 @@ namespace Morpion
                 Replay();
             }
         }
+        private void AskIP()
+        {
+            _model.Multi = false;
+            _msgBox = new View("Jouer avec?");
+            _msgBox.Size = new Size(200, 180);
+
+            //
+            // lblInfo01
+            // label show "IP adversaire:"
+            //
+            Label lblMyIP = new Label();
+            lblMyIP.Text = "Mon ip\n" + _model.myIP + "\n\nIp de l'adversaire:";
+            lblMyIP.Name = "lblMyIP";
+            lblMyIP.AutoSize = true;
+            lblMyIP.Location = new Point(15, 5);
+            _msgBox.Controls.Add(lblMyIP);
+
+            //
+            // _txtPlayer01
+            // containt the name of first user
+            //
+            TextBox txtIP = new TextBox();
+            txtIP.Name = "txtIP";
+            txtIP.Size = new Size(_msgBox.Size.Width - 40, 20);
+            txtIP.Location = new Point(15, lblMyIP.Location.Y + lblMyIP.Size.Height + 10);
+            txtIP.KeyDown += MsgBoxAskIP_KeyDown;
+            txtIP.TabIndex = 1;
+            _msgBox.Controls.Add(txtIP);
+
+            //
+            // cmdOk
+            // send to cmdOl_click method
+            //
+            Button cmdOk = new Button();
+            cmdOk.Name = "cmdOk";
+            cmdOk.Text = "Ok";
+            cmdOk.AutoSize = true;
+            cmdOk.Location = new Point(txtIP.Location.X + txtIP.Size.Width - cmdOk.Size.Width, txtIP.Location.Y + txtIP.Size.Height + 5);
+            cmdOk.Click += NtwCmdOkIP_Click;
+            cmdOk.TabIndex = 3;
+            _msgBox.Controls.Add(cmdOk);
+            
+            //show the view, user have to close the view to access other views
+            _msgBox.ShowDialog();
+        }
+        private void MsgBoxAskIP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if(!string.IsNullOrEmpty(_msgBox.Controls.Find("txtIP", true)[0].Text))
+                    ConnectUser(_msgBox.Controls.Find("txtIP", true)[0].Text);
+            }
+        }
+        private void NtwCmdOkIP_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(_msgBox.Controls.Find("txtIP", true)[0].Text))
+                ConnectUser(_msgBox.Controls.Find("txtIP", true)[0].Text);
+        }
+
+        private void ConnectUser(string opponentIP)
+        {
+            try
+            {
+                _model.opponentIP = opponentIP;
+                _model.NtwStartServer();
+                _model.ntwRunning = true;
+                _thReader = new Thread(_model.NetworkReader);
+                _thReader.Start();            
+                _model.NetworkSender(_model.opponentIP, "test");
+            }
+            catch(Exception ex)
+            {
+                StopNetorking();
+                MessageBox.Show("Veuillez entrer la bonne adresse ip");
+            }
+        }
+
+        private void StopNetorking()
+        {
+            if (!(_thReader == null))
+            {
+                _model.ntwRunning = false;
+                try
+                {
+                    _model.NtwStopServer();
+                    var a = _thReader.ThreadState;
+                    _thReader.Interrupt();
+                    _thReader.Abort();
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+        }
         /// <summary>
         /// view to ask rematch to user
         /// </summary>
@@ -862,8 +952,7 @@ namespace Morpion
         private void Network_click(object sender, EventArgs e)
         {
             MessageBox.Show("Bientôt disponible.", "Partie en réseau");
-            //_thReader = new Thread(_model.NetworkReader);
-            //_model.NetworkSender("localhost", "test");
+            AskIP();
         }
         private void Rules_click(object sender, EventArgs e)
         {
@@ -876,6 +965,13 @@ namespace Morpion
             //show information interface
             Show_interface(2);
         }
+        
+            
+        private void View_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            StopNetorking();
+        }
+
 
         private void End_program()
         {
