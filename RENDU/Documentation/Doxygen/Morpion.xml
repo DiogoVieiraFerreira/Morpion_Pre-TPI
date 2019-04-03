@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Morpion</name>
+    </assembly>
+    <members>
+        <member name="T:Morpion.Controller">
+            <summary>
+            Controlor manage the application.
+            To access data, controlor call model and ask specific data.
+            when it has data, he send to view.
+            </summary>
+        </member>
+        <member name="M:Morpion.Controller.#ctor">
+            <summary>
+            Constructor of control, he call model and ask all data before to execute program
+            </summary>
+        </member>
+        <member name="M:Morpion.Controller.Show_interface(System.Int32)">
+            <summary>
+            menu 0: welcome page,
+            menu 1: game interface
+            menu 2: informations interface
+            </summary>
+            <param name="menu">type of interface</param>
+        </member>
+        <member name="M:Morpion.Controller.TopMenu">
+            <summary>
+            display the top menu
+            </summary>
+        </member>
+        <member name="M:Morpion.Controller.Main_menu">
+            <summary>
+            display main interface, same menus of top menu
+            </summary>
+        </member>
+        <member name="M:Morpion.Controller.Game_int">
+            <summary>
+            show game interface with user data and game data
+            </summary>
+        </member>
+        <member name="M:Morpion.Controller.AskUserName(System.Int32)">
+            <summary>
+            messagebox ask user(s) name(s)
+            </summary>
+            <param name="oneOrTwoPlayers"></param>
+        </member>
+        <member name="M:Morpion.Controller.PopUpUserName">
+            <summary>
+            check data of messagebox and start game if game ok
+            </summary>
+        </member>
+        <member name="M:Morpion.Controller.AskLvlAI">
+            <summary>
+            pop to ask level of AI
+            </summary>
+        </member>
+        <member name="M:Morpion.Controller.CmdlvlAI_Click(System.Object,System.EventArgs)">
+            <summary>
+            set AI level
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Morpion.Controller.UserClick(System.Object,System.EventArgs)">
+            <summary>
+            send the pictureBox where user's click
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Morpion.Controller.ThinkingGame(System.Windows.Forms.PictureBox)">
+            <summary>
+            function check the state of game and when finished game or equality, ask if user wants a revenge 
+            </summary>
+            <param name="pic">picturebox where user has click</param>
+        </member>
+        <member name="M:Morpion.Controller.Replay">
+            <summary>
+            view to ask rematch to user
+            </summary>
+        </member>
+        <member name="T:Morpion.DataBase">
+            <summary>
+            The class give access to DB
+            </summary>
+        </member>
+        <member name="M:Morpion.DataBase.#ctor(System.String)">
+            <summary>
+            Create Database and table scores
+            </summary>
+            <param name="dbName">name of Database</param>
+        </member>
+        <member name="M:Morpion.DataBase.OpenDB">
+            <summary>
+            Open DB for use this
+            </summary>
+        </member>
+        <member name="M:Morpion.DataBase.CloseDB">
+            <summary>
+            close DB
+            </summary>
+        </member>
+        <member name="M:Morpion.DataBase.CreateTable(System.String)">
+            <summary>
+            create Table
+            </summary>
+            <param name="query"></param>
+        </member>
+        <member name="M:Morpion.DataBase.DeleteScores">
+            <summary>
+            Delete the oldest data when the db has more columns than the limit (defenied by parametre)
+            </summary>
+        </member>
+        <member name="M:Morpion.DataBase.ClearScores">
+            <summary>
+            clear all scores
+            </summary>
+        </member>
+        <member name="M:Morpion.DataBase.InsertScore(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Add column in database with param values
+            </summary>
+            <param name="userName01">name of first user</param>
+            <param name="userName02">name of second user</param>
+            <param name="score01">score of first user</param>
+            <param name="score02">score of second user</param>
+        </member>
+        <member name="M:Morpion.DataBase.ScoreList">
+            <summary>
+            Select all scores in db and send a list with them
+            </summary>
+            <returns>list with all scores</returns>
+        </member>
+        <member name="P:Morpion.DataBase.limit">
+            <summary>
+            get or set limit values in db
+            </summary>
+        </member>
+        <member name="T:Morpion.Model">
+            <summary>
+            containt all data of the game and sends the required data to control 
+            </summary>
+        </member>
+        <member name="M:Morpion.Model.#ctor">
+            <summary>
+            constructor of model's class
+            </summary>
+        </member>
+        <member name="M:Morpion.Model.CheckPossibilities(System.Int32)">
+            <summary>
+            check possibilities by symbol and return true bool if ok
+            </summary>
+            <param name="symbolCheck">number of player</param>
+            <returns></returns>
+        </member>
+        <member name="M:Morpion.Model.CheckGame(System.Int32)">
+            <summary>
+            Check state of game
+            when user put the last our symbol, return true value
+            when equality an exception are generate
+            </summary>
+            <param name="id">match a location where player have place his symbol in game array</param>
+            <returns></returns>
+        </member>
+        <member name="M:Morpion.Model.AI(System.Int32)">
+            <summary>
+            generate AI to play with user
+            </summary>
+            <param name="lvl">insert the difficult of AI. 1 easy, 2 medium, 3 hard</param>
+        </member>
+        <member name="M:Morpion.Model.SaveGame">
+            <summary>
+            save score of player(s) in db
+            </summary>
+        </member>
+        <member name="P:Morpion.Model.GetScore">
+            <summary>
+            send all records on database
+            </summary>
+        </member>
+        <member name="M:Morpion.Model.ClearDB">
+            <summary>
+            delete all scores in db
+            </summary>
+        </member>
+        <member name="M:Morpion.Model.NetworkReader">
+            <summary>
+            read all data
+            </summary>
+        </member>
+        <member name="M:Morpion.Model.NetworkSender(System.String,System.String)">
+            <summary>
+            send the last turn
+            </summary>
+            <param name="ip"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="P:Morpion.Model.Multi">
+            <summary>
+            _multi's accessor
+            it's a multiplayer game?
+            </summary>
+        </member>
+        <member name="P:Morpion.Model.NameP1">
+            <summary>
+            _nameP1's accessor
+            get or set name of player 02
+            </summary>
+        </member>
+        <member name="P:Morpion.Model.ScoreP1">
+            <summary>
+            _scoreP1's accessor
+            get or set score of player 01
+            </summary>
+        </member>
+        <member name="P:Morpion.Model.NameP2">
+            <summary>
+            _nameP2's accessor
+            get or set name of player 02
+            </summary>
+        </member>
+        <member name="P:Morpion.Model.ActualPlayer">
+            <summary>
+            get name current player
+            </summary>
+        </member>
+        <member name="P:Morpion.Model.ScoreP2">
+            <summary>
+            _scoreP2's accessor
+            get or set score of player 02
+            </summary>
+        </member>
+        <member name="P:Morpion.Model.View">
+            <summary>
+            _view's accessor
+            </summary>
+        </member>
+        <member name="P:Morpion.Model.GameArray">
+            <summary>
+            _gameArray's accessor
+            get or set the plateform's game
+            </summary>
+        </member>
+        <member name="P:Morpion.Model.WhatPlayer">
+            <summary>
+            _wahtPlayer's accessor
+            return number of player, 1 or 2
+            </summary>
+        </member>
+        <member name="P:Morpion.Model.DbLimit">
+            <summary>
+            define limit of scores in db
+            </summary>
+        </member>
+        <member name="P:Morpion.Model.LvlAI">
+            <summary>
+            define the level of AI (Artificial Intelligence)
+            </summary>
+        </member>
+        <member name="T:Morpion.score">
+            <summary>
+            this class allows to create an object containing the score between 2 players
+            </summary>
+        </member>
+        <member name="P:Morpion.score.nameP01">
+            <summary>
+            accessor of first player's name
+            </summary>
+        </member>
+        <member name="P:Morpion.score.nameP02">
+            <summary>
+            accessor of second player's name
+            </summary>
+        </member>
+        <member name="P:Morpion.score.scoreP01">
+            <summary>
+            accessor of first player's score
+            </summary>
+        </member>
+        <member name="P:Morpion.score.scoreP02">
+            <summary>
+            accessor of second player's score
+            </summary>
+        </member>
+        <member name="T:Morpion.View">
+            <summary>
+            The form Contain all views of game
+            </summary>
+            <summary>
+            Form view, allows the display of the different interfaces
+            </summary>
+        </member>
+        <member name="M:Morpion.View.#ctor(System.String,System.String)">
+            <summary>
+            Define the name and the texte of form and disable the
+            maximize box.
+            </summary>
+        </member>
+        <member name="F:Morpion.View.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Morpion.View.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Morpion.View.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Morpion.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:Morpion.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Morpion.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Morpion.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Morpion.Properties.Resources.circle">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Morpion.Properties.Resources.cross">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>
